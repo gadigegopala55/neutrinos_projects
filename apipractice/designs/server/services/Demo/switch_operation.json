@@ -1,0 +1,564 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "type": "tab",
+        "createdDate": "2023-06-22T06:12:27.904Z",
+        "label": "switch_operation",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "switch_operation",
+        "relativeParentPath": "Demo"
+    },
+    {
+        "id": "sd_45AZoYn1WG8BBMSn",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "switch-operation",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 105,
+        "y": 260,
+        "wires": [
+            [
+                "sd_mjMEd9V7GkI8vLTi"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "switch_operation",
+        "functionName": "sd_45AZoYn1WG8BBMSn",
+        "generated": false
+    },
+    {
+        "id": "sd_XH30s9ssviTowOgR",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_XH30s9ssviTowOgR",
+        "category": "HTTP",
+        "x": 1205,
+        "y": 200,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_x2S6sJIgUOOgTuqU",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "marks",
+        "propertyType": "bh",
+        "propertyGv": "bh.marks",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "90",
+                "vt": "num",
+                "gv": "90"
+            },
+            {
+                "t": "gte",
+                "v": "80",
+                "vt": "num",
+                "gv": "80"
+            },
+            {
+                "t": "gte",
+                "v": "70",
+                "vt": "num",
+                "gv": "70"
+            },
+            {
+                "t": "gte",
+                "v": "60",
+                "vt": "num",
+                "gv": "60"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 5,
+        "functionName": "sd_x2S6sJIgUOOgTuqU",
+        "category": "Function",
+        "x": 645,
+        "y": 260,
+        "wires": [
+            [
+                "sd_JMPs4osqQ87IPzrb"
+            ],
+            [
+                "sd_r2gglVfcmZMYWqa0"
+            ],
+            [
+                "sd_j0NeS23UlVuhbS66"
+            ],
+            [
+                "sd_RA4XWkRKwTliHkKK"
+            ],
+            [
+                "sd_gWcYjWe1C4uV2qD9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_Xgr3d8za2mFyntuo",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.marks = bh.input.body.mark;\nconsole.log(bh.marks);",
+        "functionName": "sd_Xgr3d8za2mFyntuo",
+        "category": "Function",
+        "x": 525,
+        "y": 260,
+        "wires": [
+            [
+                "sd_x2S6sJIgUOOgTuqU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_JMPs4osqQ87IPzrb",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"Result\": \"Grade A\"};",
+        "functionName": "sd_JMPs4osqQ87IPzrb",
+        "category": "Function",
+        "x": 885,
+        "y": 140,
+        "wires": [
+            [
+                "sd_XH30s9ssviTowOgR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_r2gglVfcmZMYWqa0",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"Result\": \"Grade B\"};",
+        "functionName": "sd_r2gglVfcmZMYWqa0",
+        "category": "Function",
+        "x": 885,
+        "y": 220,
+        "wires": [
+            [
+                "sd_XH30s9ssviTowOgR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_j0NeS23UlVuhbS66",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"Result\": \"Grade C\"};",
+        "functionName": "sd_j0NeS23UlVuhbS66",
+        "category": "Function",
+        "x": 885,
+        "y": 300,
+        "wires": [
+            [
+                "sd_XH30s9ssviTowOgR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_RA4XWkRKwTliHkKK",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"Result\": \"Grade D\"};",
+        "functionName": "sd_RA4XWkRKwTliHkKK",
+        "category": "Function",
+        "x": 885,
+        "y": 400,
+        "wires": [
+            [
+                "sd_XH30s9ssviTowOgR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_gWcYjWe1C4uV2qD9",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"Result\": \"Fail\"};",
+        "functionName": "sd_gWcYjWe1C4uV2qD9",
+        "category": "Function",
+        "x": 885,
+        "y": 480,
+        "wires": [
+            [
+                "sd_XH30s9ssviTowOgR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_mjMEd9V7GkI8vLTi",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+            "type": "tab",
+            "createdDate": "2023-06-22T06:12:27.904Z",
+            "label": "switch_operation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_Sdj9B8sCZDAghuMr",
+            "flowName": "validate_input"
+        },
+        "inputVariables": [
+            {
+                "key": "mark",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.mark"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./switch_operation",
+        "startName": "validate_input",
+        "inputParams": [
+            "bh.input.body.mark",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_mjMEd9V7GkI8vLTi",
+        "category": "General",
+        "x": 225,
+        "y": 260,
+        "wires": [
+            [
+                "sd_4N3MludfZ284qw5d"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "switch_operation"
+    },
+    {
+        "id": "sd_Sdj9B8sCZDAghuMr",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "validate_input",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "mark",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "validate_input",
+        "category": "General",
+        "x": 100,
+        "y": 540,
+        "wires": [
+            [
+                "sd_AP9FvSCPdxVBCeXB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "switch_operation",
+        "generated": false
+    },
+    {
+        "id": "sd_AP9FvSCPdxVBCeXB",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.mark){\n    bh.input.status = false;\n    bh.input.result = {'message': 'mark field is required'};\n}",
+        "functionName": "sd_AP9FvSCPdxVBCeXB",
+        "category": "Function",
+        "x": 245,
+        "y": 540,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_4N3MludfZ284qw5d",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_4N3MludfZ284qw5d",
+        "category": "Function",
+        "x": 345,
+        "y": 260,
+        "wires": [
+            [
+                "sd_Xgr3d8za2mFyntuo"
+            ],
+            [
+                "sd_F1W0zR4EASAKpFjY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_F1W0zR4EASAKpFjY",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_iShGrErozsfhMeuJ",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_F1W0zR4EASAKpFjY",
+        "category": "HTTP",
+        "x": 525,
+        "y": 380,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "switch_operation",
+        "generated": true
+    }
+]

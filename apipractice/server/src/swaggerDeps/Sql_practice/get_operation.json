@@ -1,0 +1,15 @@
+{
+    "/get-operation": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "get_operation"
+            ]
+        }
+    }
+}

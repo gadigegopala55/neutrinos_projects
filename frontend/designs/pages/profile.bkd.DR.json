@@ -1,0 +1,1649 @@
+{
+    "514b7529-86b4-4ed9-f2c0-6cd19cbbf37b": {
+        "paletteKey": "FlexLayoutCol",
+        "isCommented": "false",
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "componentLabel",
+                "_value": "Column",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "style",
+                "_value": "margin-top: 60px;",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": [
+                    "height-100"
+                ],
+                "_type": "dav",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "fxFlex",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "fxLayoutGap",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "wrap",
+                "_value": "wrap",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "layoutAlign",
+                "_value": "start",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "pLayoutAlign",
+                "_value": "center",
+                "_type": "a",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "[fxShow]",
+                "_value": "true",
+                "_type": "kv",
+                "_attrDef": "p"
+            }
+        ],
+        "6bedf5d1-d07e-7142-ce7c-f91a520d703a": {
+            "paletteKey": "Html5",
+            "parentEditorKey": "514b7529-86b4-4ed9-f2c0-6cd19cbbf37b",
+            "isAdvancedComponent": true,
+            "isCommented": "false",
+            "commentid": null,
+            "designerReference": [
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "htmlElement",
+                    "_value": "h1",
+                    "_type": "dav",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "tagType",
+                    "_value": "h1",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "name",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "sandbox",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "src",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "srcdoc",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "width",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "[autoplay]",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "[loop]",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "data",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "audioSource",
+                    "_value": [],
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "videoSource",
+                    "_value": [],
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "audioDatasource",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "audioSrc",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "audioType",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "videoDatasource",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "videoSrc",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "videoType",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "(audioplay)",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "(videoplay)",
+                    "_value": "",
+                    "_type": "a",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "(audiopause)",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "(videopause)",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "(audioended)",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                },
+                {
+                    "_key": "(videoended)",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_visibility": false
+                }
+            ],
+            "1c294a81-558d-83a6-a079-2b89254ce5ba": {
+                "paletteKey": "html-editor",
+                "parentEditorKey": "6bedf5d1-d07e-7142-ce7c-f91a520d703a",
+                "isAdvancedChildComponent": true,
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "html",
+                        "_value": "Profile",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    }
+                ]
+            }
+        },
+        "b8394176-d257-c8bb-0ddc-33b0f2283b61": {
+            "paletteKey": "NG-Form",
+            "parentEditorKey": "514b7529-86b4-4ed9-f2c0-6cd19cbbf37b",
+            "isCommented": "false",
+            "commentid": null,
+            "designerReference": [
+                {
+                    "_key": "componentLabel",
+                    "_value": "Form",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "action",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "method",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "target",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "(ngSubmit)",
+                    "_value": "user_register()",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "(reset)",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[formGroup]",
+                    "_value": "page.registerForm",
+                    "_type": "kv",
+                    "_attrDef": "c"
+                }
+            ],
+            "d9a7e2e0-ccd3-895a-d8a9-ac755622e61b": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b8394176-d257-c8bb-0ddc-33b0f2283b61",
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Row",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "start",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "stretch",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "2faa60c8-1ed9-c92c-6f83-95c8bc971f19": {
+                    "paletteKey": "NG-Input",
+                    "parentEditorKey": "d9a7e2e0-ccd3-895a-d8a9-ac755622e61b",
+                    "isAdvancedComponent": true,
+                    "isCommented": "false",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "placeholder",
+                            "_value": "Enter your name",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "value",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[appearance]",
+                            "_value": "'legacy'",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[required]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[(ngModel)]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[formControl]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "readonly",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "id",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[floatLabel]",
+                            "_value": "'auto'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[hideRequiredMarker]",
+                            "_value": "false",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_complexity": "advanced"
+                        },
+                        {
+                            "_key": "matError",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "inputHint",
+                            "_value": [
+                                {
+                                    "input1": "page.registerForm.controls['name']",
+                                    "input2": "Alphabeticals only allowed",
+                                    "toggle": {
+                                        "toggleData": [],
+                                        "selected": "end"
+                                    }
+                                }
+                            ],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Label",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix Icon",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(suffixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix Icon",
+                            "_value": "person",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(prefixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "formControlName",
+                            "_value": "name",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                }
+            },
+            "5795c316-ae51-da27-cdfd-085586991943": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b8394176-d257-c8bb-0ddc-33b0f2283b61",
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Row",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "start",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "stretch",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "450ee659-bb7d-2aa4-1ed7-df847b48cdc5": {
+                    "paletteKey": "NG-Input",
+                    "parentEditorKey": "5795c316-ae51-da27-cdfd-085586991943",
+                    "isAdvancedComponent": true,
+                    "isCommented": "false",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "placeholder",
+                            "_value": "Enter your password",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "value",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[appearance]",
+                            "_value": "'legacy'",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[required]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[(ngModel)]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "password",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[formControl]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "readonly",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "id",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[floatLabel]",
+                            "_value": "'auto'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[hideRequiredMarker]",
+                            "_value": "false",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_complexity": "advanced"
+                        },
+                        {
+                            "_key": "matError",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "inputHint",
+                            "_value": [
+                                {
+                                    "input1": "page.registerForm.controls['password']",
+                                    "input2": "AlphaNumeric only allowed",
+                                    "toggle": {
+                                        "toggleData": [],
+                                        "selected": "end"
+                                    }
+                                }
+                            ],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Label",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix Icon",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(suffixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix Icon",
+                            "_value": "lock",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(prefixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "formControlName",
+                            "_value": "password",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                }
+            },
+            "51884671-6053-108a-18e5-1fbfa12603c1": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b8394176-d257-c8bb-0ddc-33b0f2283b61",
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Row",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "start",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "stretch",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "45e9c71e-601f-8a56-caab-c988f583c7de": {
+                    "paletteKey": "NG-Input",
+                    "parentEditorKey": "51884671-6053-108a-18e5-1fbfa12603c1",
+                    "isAdvancedComponent": true,
+                    "isCommented": "false",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "placeholder",
+                            "_value": "Enter your phone number",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "value",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[appearance]",
+                            "_value": "'legacy'",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[required]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[(ngModel)]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "number",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[formControl]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "readonly",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "id",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[floatLabel]",
+                            "_value": "'auto'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[hideRequiredMarker]",
+                            "_value": "false",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_complexity": "advanced"
+                        },
+                        {
+                            "_key": "matError",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "inputHint",
+                            "_value": [
+                                {
+                                    "input1": "page.registerForm.controls['phone']",
+                                    "input2": "numeric only allowed",
+                                    "toggle": {
+                                        "toggleData": [],
+                                        "selected": "end"
+                                    }
+                                }
+                            ],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Label",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix Icon",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(suffixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix Icon",
+                            "_value": "phone",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(prefixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "formControlName",
+                            "_value": "phone",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                }
+            },
+            "6f5f93d8-9d14-045b-7036-72c5205aabe8": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b8394176-d257-c8bb-0ddc-33b0f2283b61",
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Row",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "start",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "stretch",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "96d3628b-fe79-ade4-db0b-389c575a267b": {
+                    "paletteKey": "NG-Input",
+                    "parentEditorKey": "6f5f93d8-9d14-045b-7036-72c5205aabe8",
+                    "isAdvancedComponent": true,
+                    "isCommented": "false",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "placeholder",
+                            "_value": "Enter your Email",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "value",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[appearance]",
+                            "_value": "'legacy'",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[required]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[(ngModel)]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "email",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[formControl]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "readonly",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "id",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[floatLabel]",
+                            "_value": "'auto'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[hideRequiredMarker]",
+                            "_value": "false",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_complexity": "advanced"
+                        },
+                        {
+                            "_key": "matError",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "inputHint",
+                            "_value": [
+                                {
+                                    "input1": "page.registerForm.controls['email']",
+                                    "input2": "Emails only allowed",
+                                    "toggle": {
+                                        "toggleData": [],
+                                        "selected": "end"
+                                    }
+                                }
+                            ],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Label",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix Icon",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(suffixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix Icon",
+                            "_value": "mail",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(prefixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "formControlName",
+                            "_value": "email",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                }
+            },
+            "43f84c80-4131-75c3-8a9f-792b8f0d5bbf": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "b8394176-d257-c8bb-0ddc-33b0f2283b61",
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Row",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "start",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "stretch",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "e4784292-9477-74e1-02e4-0391740301dd": {
+                    "paletteKey": "NG-Input",
+                    "parentEditorKey": "43f84c80-4131-75c3-8a9f-792b8f0d5bbf",
+                    "isAdvancedComponent": true,
+                    "isCommented": "false",
+                    "commentid": null,
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "placeholder",
+                            "_value": "Enter your Date of Birth",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "value",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[appearance]",
+                            "_value": "'legacy'",
+                            "_type": "a",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[required]",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[(ngModel)]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "name",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "date",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[formControl]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "readonly",
+                            "_value": "true",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "id",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[floatLabel]",
+                            "_value": "'auto'",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[hideRequiredMarker]",
+                            "_value": "false",
+                            "_type": "kv",
+                            "_attrDef": "p",
+                            "_complexity": "advanced"
+                        },
+                        {
+                            "_key": "matError",
+                            "_value": [],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "inputHint",
+                            "_value": [
+                                {
+                                    "input1": "page.registerForm.controls['date']",
+                                    "input2": "Date only allowed",
+                                    "toggle": {
+                                        "toggleData": [],
+                                        "selected": "end"
+                                    }
+                                }
+                            ],
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Label",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix Icon",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(suffixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix Icon",
+                            "_value": "D",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "(prefixIconClick)",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Prefix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "Suffix",
+                            "_value": "",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_visibility": true
+                        },
+                        {
+                            "_key": "formControlName",
+                            "_value": "date",
+                            "_type": "kv",
+                            "_attrDef": "c"
+                        }
+                    ]
+                }
+            },
+            "db260046-8c70-c844-9815-bb2dd5f8b3c7": {
+                "paletteKey": "NG-RaisedButton",
+                "parentEditorKey": "b8394176-d257-c8bb-0ddc-33b0f2283b61",
+                "isCommented": "false",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "buttonname",
+                        "_value": "Update",
+                        "_type": "a",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "color",
+                        "_value": "primary",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[disabled]",
+                        "_value": "page.registerForm.invalid",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_customAttributeFlag": "customInput"
+                    },
+                    {
+                        "_key": "[disableRipple]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "type",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "routerLink",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ]
+            }
+        }
+    }
+}

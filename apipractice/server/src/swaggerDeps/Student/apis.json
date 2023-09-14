@@ -1,0 +1,67 @@
+{
+    "/add-student": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/add-subject": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/add-exam": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/add-mark": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/get-rank": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    }
+}

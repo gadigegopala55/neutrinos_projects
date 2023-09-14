@@ -1,0 +1,38 @@
+{
+    "/dm/books/book/update-by-id": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "book": {
+                                "$ref": "#/definitions/books ~ book",
+                                "required": []
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/books ~ book"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "book"
+            ]
+        }
+    }
+}

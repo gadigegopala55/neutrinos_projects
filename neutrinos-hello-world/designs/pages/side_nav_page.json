@@ -1,0 +1,138 @@
+[
+    {
+        "id": "sd_CoXzmlEhhp0qSsgJ",
+        "type": "tab",
+        "createdDate": "2023-08-04T05:44:09.248Z",
+        "label": "side_nav_page",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "side_nav_pageComponent"
+    },
+    {
+        "id": "sd_yNPhdWkOt27WU7MK",
+        "type": "OnInit",
+        "z": "sd_CoXzmlEhhp0qSsgJ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_yNPhdWkOt27WU7MK",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 60,
+        "wires": [
+            [
+                "sd_pYpfB1RA9cpatFzi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "side_nav_pageComponent"
+    },
+    {
+        "id": "sd_pYpfB1RA9cpatFzi",
+        "type": "PageVariables",
+        "z": "sd_CoXzmlEhhp0qSsgJ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_pYpfB1RA9cpatFzi",
+        "category": "Function",
+        "x": 185,
+        "y": 60,
+        "wires": [
+            [
+                "sd_ZCyhaHsxxE5F5Swf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "side_nav_pageComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ZCyhaHsxxE5F5Swf",
+        "type": "Script",
+        "z": "sd_CoXzmlEhhp0qSsgJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.sidenavlist = [\n    {\n        'name': 'card-task',\n        'value': 'side-nav-page/card-task',\n        'icon': 'list'\n    },\n    {\n        'name': 'create-book',\n        'value': 'side-nav-page/create-book',\n        'icon': 'add'\n    }\n];",
+        "functionName": "sd_ZCyhaHsxxE5F5Swf",
+        "category": "Function",
+        "x": 325,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "side_nav_pageComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UZ0JkxyHYCvK0zi8",
+        "type": "PageStart",
+        "z": "sd_CoXzmlEhhp0qSsgJ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "submitdata",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "path",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "submitdata",
+        "category": "General",
+        "x": 45,
+        "y": 200,
+        "wires": [
+            [
+                "sd_54B1YI8jxEbq6HFG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "side_nav_pageComponent"
+    },
+    {
+        "id": "sd_54B1YI8jxEbq6HFG",
+        "type": "Navigation",
+        "z": "sd_CoXzmlEhhp0qSsgJ",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "pathMap": {
+            "type": "bh.input",
+            "value": "path"
+        },
+        "resultMapping": {
+            "type": "this.page",
+            "value": "response"
+        },
+        "functionName": "sd_54B1YI8jxEbq6HFG",
+        "category": "Navigation",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "side_nav_pageComponent",
+        "generated": true
+    }
+]

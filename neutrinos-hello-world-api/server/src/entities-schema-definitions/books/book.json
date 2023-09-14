@@ -1,0 +1,117 @@
+{
+    "name": "book",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_c83pxvywl4",
+    "y": 62,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_mawv6zo3q0",
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "title": {
+            "name": "title",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_fk3u1xx0bp",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "category": {
+            "name": "category",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_kfqp4p5sjn",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "published_date": {
+            "name": "published_date",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_1gm4asmb0t",
+                "subCategoryType": "date",
+                "nullable": false,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "specialDateColumnType": "none"
+                },
+                "precision": 6
+            }
+        }
+    },
+    "required": [
+        "title",
+        "category",
+        "published_date"
+    ],
+    "value": "",
+    "x": 139.28125,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create"
+            },
+            {
+                "name": "create-all"
+            },
+            {
+                "name": "delete-all"
+            },
+            {
+                "name": "delete-by-id"
+            },
+            {
+                "name": "find-all"
+            },
+            {
+                "name": "find-by-id"
+            },
+            {
+                "name": "update-all"
+            },
+            {
+                "name": "update-by-id"
+            }
+        ]
+    }
+}

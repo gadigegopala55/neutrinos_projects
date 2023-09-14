@@ -1,0 +1,78 @@
+[
+    {
+        "id": "sd_pSjzHlu5JGEmelLE",
+        "type": "tab",
+        "createdDate": "2023-08-03T07:24:43.755Z",
+        "label": "Card_task",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "Card_taskComponent"
+    },
+    {
+        "id": "sd_PCjM4Q2KBukmqOFb",
+        "type": "OnInit",
+        "z": "sd_pSjzHlu5JGEmelLE",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_PCjM4Q2KBukmqOFb",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 80,
+        "wires": [
+            [
+                "sd_7353NT1cqtWFgMRu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "Card_taskComponent"
+    },
+    {
+        "id": "sd_7353NT1cqtWFgMRu",
+        "type": "PageVariables",
+        "z": "sd_pSjzHlu5JGEmelLE",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_7353NT1cqtWFgMRu",
+        "category": "Function",
+        "x": 215,
+        "y": 80,
+        "wires": [
+            [
+                "sd_diy4SrJS9NjRNseR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Card_taskComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_diy4SrJS9NjRNseR",
+        "type": "Script",
+        "z": "sd_pSjzHlu5JGEmelLE",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.types = ['Basic', 'Admin'];",
+        "functionName": "sd_diy4SrJS9NjRNseR",
+        "category": "Function",
+        "x": 360,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "Card_taskComponent",
+        "generated": true
+    }
+]

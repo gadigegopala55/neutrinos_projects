@@ -1,0 +1,141 @@
+[
+    {
+        "id": "sd_F7g4oYq0AUxFoyYB",
+        "type": "tab",
+        "createdDate": "2023-08-05T12:54:42.651Z",
+        "label": "task_home",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "task_homeComponent"
+    },
+    {
+        "id": "sd_uzzxINf0hL5x0WmH",
+        "type": "OnInit",
+        "z": "sd_F7g4oYq0AUxFoyYB",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_uzzxINf0hL5x0WmH",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 80,
+        "wires": [
+            [
+                "sd_9JDEvlf78wBVWfW2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_homeComponent"
+    },
+    {
+        "id": "sd_9JDEvlf78wBVWfW2",
+        "type": "PageVariables",
+        "z": "sd_F7g4oYq0AUxFoyYB",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_9JDEvlf78wBVWfW2",
+        "category": "Function",
+        "x": 205,
+        "y": 80,
+        "wires": [
+            [
+                "sd_e1fZZR3ADCXIDM0v"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_e1fZZR3ADCXIDM0v",
+        "type": "Script",
+        "z": "sd_F7g4oYq0AUxFoyYB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.items = [\n    {\n        'name': 'Add Task',\n        'path': 'task-home/task-add',\n        'icon': 'library_add'\n    },\n    {\n        'name': 'Task Data',\n        'path': 'task-home/task-data',\n        'icon': 'view_list'\n    }\n]\n\nconsole.log(bh.system);",
+        "functionName": "sd_e1fZZR3ADCXIDM0v",
+        "category": "Function",
+        "x": 365,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JAZuDJGwbWnKKgx0",
+        "type": "PageStart",
+        "z": "sd_F7g4oYq0AUxFoyYB",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "navigatePage",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "path",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "navigatePage",
+        "category": "General",
+        "x": 65,
+        "y": 220,
+        "wires": [
+            [
+                "sd_HC7fJ6SfiDYEUCqW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_homeComponent"
+    },
+    {
+        "id": "sd_HC7fJ6SfiDYEUCqW",
+        "type": "Navigation",
+        "z": "sd_F7g4oYq0AUxFoyYB",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "",
+        "pathMap": {
+            "type": "bh.input",
+            "value": "path"
+        },
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_HC7fJ6SfiDYEUCqW",
+        "category": "Navigation",
+        "x": 205,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_homeComponent",
+        "generated": true
+    }
+]

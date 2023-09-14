@@ -1,0 +1,54 @@
+{
+    "/upload-file": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "upload_file"
+            ]
+        }
+    },
+    "/download-file": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "upload_file"
+            ]
+        }
+    },
+    "/upload-multiple-files": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "upload_file"
+            ]
+        }
+    },
+    "/testing": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "upload_file"
+            ]
+        }
+    }
+}

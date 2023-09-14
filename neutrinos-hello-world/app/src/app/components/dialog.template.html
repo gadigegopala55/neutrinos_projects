@@ -1,0 +1,13 @@
+<div fxLayout="column wrap" class="dialog-container" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <h1>
+      {{page.data.header}}
+    </h1>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <h2 *ngIf="page.data.priority === &apos;welcome&apos;">
+      {{page.data.content}}
+    </h2>
+  </div>
+  <div fxLayout="row wrap" class="margin-10" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button color="accent" (click)="negativeAction()">{{page.data.negativeAction}}</button><button mat-raised-button color="primary" (click)="positiveAction()">{{page.data.positiveAction}}</button></div>
+</div>

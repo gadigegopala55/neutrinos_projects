@@ -1,0 +1,13 @@
+{
+    "classes": [
+        "height-100",
+        "width-50",
+        "margin-top-40",
+        "margin-top-20",
+        "bg-blue",
+        "bg-black",
+        "header-icon",
+        "color-white",
+        "pointer"
+    ]
+}

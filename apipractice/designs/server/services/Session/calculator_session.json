@@ -1,0 +1,510 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "type": "tab",
+        "createdDate": "2023-07-05T11:09:26.642Z",
+        "label": "calculator_session",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "calculator_session",
+        "relativeParentPath": "Session"
+    },
+    {
+        "id": "sd_VVANtu3bHnte3SNG",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "calculator-login",
+        "path": "calculator-login",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 180,
+        "wires": [
+            [
+                "sd_cdnWKrnJxrVVt2u5"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "calculator_session",
+        "functionName": "sd_VVANtu3bHnte3SNG"
+    },
+    {
+        "id": "sd_KDeaxkTPxUE8Vyen",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = 'SELECT id from users where username=$1 and password = $2';\n\nbh.params = [\n    bh.input.body.username,\n    bh.input.body.password\n]",
+        "functionName": "sd_KDeaxkTPxUE8Vyen",
+        "category": "Function",
+        "x": 505,
+        "y": 140,
+        "wires": [
+            [
+                "sd_IAONYUM8wdAAHSEW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_cdnWKrnJxrVVt2u5",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_DAYsUO068kNZ9veI",
+            "type": "tab",
+            "createdDate": "2023-07-04T15:53:07.663Z",
+            "label": "user_session",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_G6kBbkDmADUfkQAA",
+            "flowName": "user_validation_function"
+        },
+        "inputVariables": [
+            {
+                "key": "username",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.username"
+            },
+            {
+                "key": "password",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.password"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./user_session",
+        "startName": "user_validation_function",
+        "inputParams": [
+            "bh.input.body.username",
+            "bh.input.body.password",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_cdnWKrnJxrVVt2u5",
+        "category": "General",
+        "x": 265,
+        "y": 180,
+        "wires": [
+            [
+                "sd_Mj27WEMyJugxKGSy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_Mj27WEMyJugxKGSy",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_Mj27WEMyJugxKGSy",
+        "category": "Function",
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "sd_KDeaxkTPxUE8Vyen"
+            ],
+            [
+                "sd_UxNdk9prSenYV08g"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_UxNdk9prSenYV08g",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_UxNdk9prSenYV08g",
+        "category": "HTTP",
+        "x": 505,
+        "y": 260,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_IAONYUM8wdAAHSEW",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "resultMap": {
+            "type": "bh",
+            "value": "user_result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_IAONYUM8wdAAHSEW",
+        "category": "Storage",
+        "x": 625,
+        "y": 140,
+        "wires": [
+            [
+                "sd_A3WCNGy9RhLX9XNO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_A3WCNGy9RhLX9XNO",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(bh.user_result.length == 0){\n    bh.status = false;\n    bh.result = {\"message\": \"invalid credentials\"};\n}else{\n    bh.session = {\n        \"calculator\": bh.input.body.username\n    }\n    bh.result = {\"message\": \"login successful\"};\n}",
+        "functionName": "sd_A3WCNGy9RhLX9XNO",
+        "category": "Function",
+        "x": 725,
+        "y": 140,
+        "wires": [
+            [
+                "sd_9u6MNOyB9NCT2bmn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_9u6MNOyB9NCT2bmn",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_9u6MNOyB9NCT2bmn",
+        "category": "Function",
+        "x": 825,
+        "y": 140,
+        "wires": [
+            [
+                "sd_Ansz8OMaGVjObNcQ"
+            ],
+            [
+                "sd_xQNDUsRTQa1zH2Q5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_Ansz8OMaGVjObNcQ",
+        "type": "Session",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "mark_session",
+        "operationType": "update",
+        "data": "",
+        "resultMapping": "bh",
+        "dataMapping": "bh.session",
+        "functionName": "mark_session",
+        "category": "HTTP",
+        "x": 945,
+        "y": 120,
+        "wires": [
+            [
+                "sd_op6ViGvukCMBt2fn"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "dataMapping": {
+                "type": "bh",
+                "value": "session",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_xQNDUsRTQa1zH2Q5",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 401,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 401,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_xQNDUsRTQa1zH2Q5",
+        "category": "HTTP",
+        "x": 945,
+        "y": 220,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    },
+    {
+        "id": "sd_op6ViGvukCMBt2fn",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_cH6mL9PgWz56tHoa",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_op6ViGvukCMBt2fn",
+        "category": "HTTP",
+        "x": 1085,
+        "y": 120,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator_session",
+        "generated": true
+    }
+]

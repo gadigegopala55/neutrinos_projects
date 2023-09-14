@@ -1,0 +1,13 @@
+{
+    "classes": [
+        "card-container",
+        "width-250",
+        "width-50percent",
+        "padding-top-20",
+        "image-logo",
+        "margin-10",
+        "cursor-pointer",
+        "image-container",
+        "dialog-container"
+    ]
+}

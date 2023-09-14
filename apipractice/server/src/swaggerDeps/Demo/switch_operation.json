@@ -1,0 +1,15 @@
+{
+    "/switch-operation": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "switch_operation"
+            ]
+        }
+    }
+}

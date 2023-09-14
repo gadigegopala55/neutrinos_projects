@@ -1,0 +1,54 @@
+<div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <h1>
+        Add Task</h1>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form [formGroup]="page.addForm">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="Enter Your Title" [required]="false" formControlName="name">
+            <mat-error align="start" *ngIf="page.addForm?.controls?.name?.errors?.required">Please provide the Task Name</mat-error><mat-error align="start" *ngIf="page.addForm?.controls?.name?.errors?.minlength">Required Minimum 3 Characters</mat-error> <mat-label>{{page.locales.keys.Title}}</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="Enter Task Description" [required]="false" formControlName="description">
+            <mat-error align="start" *ngIf="page.addForm?.controls?.description?.errors?.required">Please Provide the Description</mat-error><mat-error align="start" *ngIf="page.addForm?.controls?.description?.errors?.minlength">Required Minimum 3 Characters</mat-error> <mat-label>{{page.locales.keys.Description}}</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;legacy&apos;">
+            <mat-label>{{page.locales.keys.due_date}}</mat-label>
+            <input matInput placeholder="Enter Due Date" [matDatepicker]="picker" formControlName="due_date" [required]="false" [disabled]="false">
+            <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+            <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+            <mat-error align="start" *ngIf="page.addForm?.controls?.due_date?.errors?.required">Please Provide the Due_Date</mat-error>
+          </mat-form-field><mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+            <mat-label>{{page.locales.keys.priority}}</mat-label>
+            <mat-select formControlName="priority" placeholder="Enter Task Priority" [required]="false">
+              <ng-template ngFor let-option [ngForOf]="page.priority" let-i="index">
+                <mat-option [value]="option">{{option}}</mat-option>
+              </ng-template>
+            </mat-select>
+            <mat-error align="start" *ngIf="page.addForm?.controls?.priority?.errors?.required">Please Provide the Priority</mat-error>
+          </mat-form-field><mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+            <mat-label>{{page.locales.keys.status}}</mat-label>
+            <mat-select formControlName="status_a" placeholder="Enter Status" [required]="false">
+              <ng-template ngFor let-option [ngForOf]="page.status_a" let-i="index">
+                <mat-option [value]="option">{{option}}</mat-option>
+              </ng-template>
+            </mat-select>
+            <mat-error align="start" *ngIf="page.addForm?.controls?.priority?.errors?.required">Please Provide the Priority</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button color="primary" (click)="addData()" [disabled]="!page.addForm.valid">Add</button></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-button-toggle-group [appearance]="&apos;standard&apos;">
+
+            <mat-button-toggle (change)="languageChange(language[0])" *ngFor="let language of page.options"> {{language[1] }}
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button (click)="logout()">logout</button></div>

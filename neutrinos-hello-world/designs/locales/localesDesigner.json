@@ -1,0 +1,38 @@
+{
+    "en": {
+        "localeId": "en",
+        "localeName": "English",
+        "isDefaultLanguage": true,
+        "properties": {
+            "Title": "Title",
+            "Description": "Description",
+            "due_date": "Due Date",
+            "priority": "Priority",
+            "status": "status"
+        }
+    },
+    "te": {
+        "localeId": "te",
+        "localeName": "Telugu",
+        "isDefaultLanguage": false,
+        "properties": {
+            "Title": "శీర్షిక",
+            "Description": "వివరణ",
+            "due_date": "గడువు తేది",
+            "priority": "ప్రాధాన్యత",
+            "status": "హోదా"
+        }
+    },
+    "kn": {
+        "localeId": "kn",
+        "localeName": "Kannada",
+        "isDefaultLanguage": false,
+        "properties": {
+            "Title": "ಶೀರ್ಷಿಕೆ",
+            "Description": "ವಿವರಣೆ",
+            "due_date": "ಅಂತಿಮ ದಿನಾಂಕ",
+            "priority": "ಆದ್ಯತೆ",
+            "status": "ಸ್ಥಿತಿ"
+        }
+    }
+}

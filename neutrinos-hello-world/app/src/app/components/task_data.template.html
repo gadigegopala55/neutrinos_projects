@@ -1,0 +1,17 @@
+<div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true"><mat-card *ngFor="let card of page.response" fxFlex="30" fxFlex.md="45" fxFlex.xs="90" fxLayoutGap="20px" style="padding-left:6%;" class="card-container margin-10">
+    <mat-card-title>Title : {{card.name}}</mat-card-title>
+
+    <mat-card-subtitle>Id : {{card.id}}</mat-card-subtitle>
+
+    <mat-card-subtitle>Description : {{card.description}}</mat-card-subtitle>
+
+    <mat-card-subtitle>Due Date : {{card.due_date}}</mat-card-subtitle>
+
+    <mat-card-subtitle>Priority : {{card.priority}}</mat-card-subtitle>
+
+    <mat-card-subtitle>Status : {{card.status}}</mat-card-subtitle>
+
+    <mat-card-actions>
+      <div fxLayout="row wrap" fxLayoutGap="60px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button color="warn" (click)="deleteclick(card.id)">Delete</button><button mat-raised-button color="primary" (click)="updateclick(card.id)">Edit Status</button></div>
+    </mat-card-actions>
+  </mat-card></div>

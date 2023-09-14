@@ -1,0 +1,15 @@
+{
+    "/request-practice": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "http_request_practice"
+            ]
+        }
+    }
+}

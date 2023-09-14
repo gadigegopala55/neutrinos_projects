@@ -1,0 +1,28 @@
+{
+    "/async-operation": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "async_operation"
+            ]
+        }
+    },
+    "/sync-operation": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "async_operation"
+            ]
+        }
+    }
+}

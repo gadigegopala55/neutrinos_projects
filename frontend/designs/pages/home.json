@@ -1,0 +1,97 @@
+[
+    {
+        "id": "sd_nrTPd9so84H0xpgK",
+        "type": "tab",
+        "createdDate": "2023-07-10T06:58:20.082Z",
+        "label": "home",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_RIoaVfkrcZrxbmoP",
+        "type": "OnInit",
+        "z": "sd_nrTPd9so84H0xpgK",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_RIoaVfkrcZrxbmoP",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 80,
+        "wires": [
+            [
+                "sd_GgcaGXIiKMUf5pAI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_GgcaGXIiKMUf5pAI",
+        "type": "PageVariables",
+        "z": "sd_nrTPd9so84H0xpgK",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "hidePerson",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "persons",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "persons"
+                }
+            }
+        ],
+        "functionName": "sd_GgcaGXIiKMUf5pAI",
+        "category": "Function",
+        "x": 195,
+        "y": 80,
+        "wires": [
+            [
+                "sd_FlEaTyzv0KkfZPV8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FlEaTyzv0KkfZPV8",
+        "type": "Script",
+        "z": "sd_nrTPd9so84H0xpgK",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.persons = [\n    {\"name\": \"gopal\", \"email\": \"gopal@gmail.com\"},\n    {\"name\": \"krishna\", \"email\": \"krishna@gmail.com\"},\n    {\"name\": \"user1\", \"email\": \"user1@gmail.com\"},\n]",
+        "functionName": "sd_FlEaTyzv0KkfZPV8",
+        "category": "Function",
+        "x": 340,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    }
+]

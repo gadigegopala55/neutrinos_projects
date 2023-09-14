@@ -1,0 +1,106 @@
+[
+    {
+        "id": "sd_gXiE1g8HjZkPMiOb",
+        "type": "tab",
+        "createdDate": "2023-08-03T09:15:46.577Z",
+        "label": "CreateBook",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "CreateBookComponent"
+    },
+    {
+        "id": "sd_N5lo0tGXc69EEuXB",
+        "type": "OnInit",
+        "z": "sd_gXiE1g8HjZkPMiOb",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_N5lo0tGXc69EEuXB",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 60,
+        "wires": [
+            [
+                "sd_FYmeVmCKoz3mMtFL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CreateBookComponent"
+    },
+    {
+        "id": "sd_FYmeVmCKoz3mMtFL",
+        "type": "PageVariables",
+        "z": "sd_gXiE1g8HjZkPMiOb",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_FYmeVmCKoz3mMtFL",
+        "category": "Function",
+        "x": 205,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CreateBookComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yVT5zT5AdDOQIzwv",
+        "type": "PageStart",
+        "z": "sd_gXiE1g8HjZkPMiOb",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "printName",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "printName",
+        "category": "General",
+        "x": 45,
+        "y": 200,
+        "wires": [
+            [
+                "sd_PkGgTSK3u6xdUVPx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "CreateBookComponent"
+    },
+    {
+        "id": "sd_PkGgTSK3u6xdUVPx",
+        "type": "Log",
+        "z": "sd_gXiE1g8HjZkPMiOb",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.name",
+        "functionName": "sd_PkGgTSK3u6xdUVPx",
+        "category": "General",
+        "x": 205,
+        "y": 200,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "name",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "CreateBookComponent",
+        "generated": true
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "id": "sd_orwRxzGMTMwgiuOa",
+        "type": "tab",
+        "createdDate": "2023-08-07T12:44:24.105Z",
+        "label": "cards_data",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "cards_dataComponent"
+    },
+    {
+        "id": "sd_g9hnv2ExJaXjQqyI",
+        "type": "OnInit",
+        "z": "sd_orwRxzGMTMwgiuOa",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_g9hnv2ExJaXjQqyI",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 80,
+        "wires": [
+            [
+                "sd_QpCgmf1nPlQh0X3z"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cards_dataComponent"
+    },
+    {
+        "id": "sd_QpCgmf1nPlQh0X3z",
+        "type": "PageVariables",
+        "z": "sd_orwRxzGMTMwgiuOa",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_QpCgmf1nPlQh0X3z",
+        "category": "Function",
+        "x": 205,
+        "y": 80,
+        "wires": [
+            [
+                "sd_17WPiUzt6PgNxk7E"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cards_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_17WPiUzt6PgNxk7E",
+        "type": "PageCallService",
+        "z": "sd_orwRxzGMTMwgiuOa",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fwssyW0CyBk692ak",
+            "type": "tab",
+            "createdDate": "2023-08-02T09:55:15.113Z",
+            "label": "books",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_CZqura2MQIknmUoQ",
+            "flowName": "getShips"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "response",
+                "valueType": "this.page",
+                "value": "response",
+                "mapVarName": "response",
+                "localVar": "this.page.response"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/books",
+        "startName": "getShips",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_17WPiUzt6PgNxk7E",
+        "category": "General",
+        "x": 340,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cards_dataComponent",
+        "generated": true
+    }
+]

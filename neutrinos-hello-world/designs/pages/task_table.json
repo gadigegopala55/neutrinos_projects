@@ -1,0 +1,399 @@
+[
+    {
+        "id": "sd_VnM6LeFnU1jYeMZJ",
+        "type": "tab",
+        "createdDate": "2023-08-07T10:07:44.993Z",
+        "label": "task_table",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 3,
+        "generateNext": true,
+        "serviceName": "task_tableComponent"
+    },
+    {
+        "id": "sd_Urjr8oNTjiT5tI6x",
+        "type": "OnInit",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_Urjr8oNTjiT5tI6x",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 40,
+        "wires": [
+            [
+                "sd_eGTEmpZkEHSp7tHd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_tableComponent"
+    },
+    {
+        "id": "sd_eGTEmpZkEHSp7tHd",
+        "type": "PageVariables",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_eGTEmpZkEHSp7tHd",
+        "category": "Function",
+        "x": 205,
+        "y": 40,
+        "wires": [
+            [
+                "sd_t6tJV7XlYF7nvR9u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_t6tJV7XlYF7nvR9u",
+        "type": "Script",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.dataSource = new MatTableDataSource([\n  {\n    position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' }\n  ,\n  {\n    position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' }\n  ,\n  {\n    position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' }\n  ,\n  {\n    position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' }\n  ,\n  {\n    position: 5, name: 'Boron', weight: 10.811, symbol: 'B' }\n  ,\n  {\n    position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }\n  ,\n  {\n    position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' }\n  ,\n  {\n    position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' }\n  ,\n  {\n    position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' }\n  ,\n  {\n    position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' }\n  ,\n]);",
+        "functionName": "sd_eJuzOUTYKNgXaqdz_1",
+        "category": "Function",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "sd_kls2fB0W3FrBuVTu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_kls2fB0W3FrBuVTu",
+        "type": "PageVariables",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "dataSource"
+                }
+            }
+        ],
+        "functionName": "sd_E9QbOlnVduPNV5MO_1",
+        "category": "Function",
+        "x": 485,
+        "y": 40,
+        "wires": [
+            [
+                "sd_fmK3w4bwhyWBBihB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Tw6Dyfr66HHVOr5r",
+        "type": "AfterViewInit",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 250,
+        "wires": [
+            [
+                "sd_OzYThNABfBs6bhFS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_tableComponent"
+    },
+    {
+        "id": "sd_OzYThNABfBs6bhFS",
+        "type": "ViewPicker",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatSort"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_1",
+        "category": "Function",
+        "x": 205,
+        "y": 250,
+        "wires": [
+            [
+                "sd_oAl6zMKxWpbKpZPk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oAl6zMKxWpbKpZPk",
+        "type": "Script",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.sort = this.MatSort;",
+        "functionName": "sd_2VNGqvcKee34lvOz_1",
+        "category": "Function",
+        "x": 345,
+        "y": 250,
+        "wires": [
+            [
+                "sd_bcuNHfXdRHrTxLSq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bcuNHfXdRHrTxLSq",
+        "type": "ViewPicker",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatPaginator"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_2",
+        "category": "Function",
+        "x": 485,
+        "y": 260,
+        "wires": [
+            [
+                "sd_WgOWudOj9kbQUZbn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WgOWudOj9kbQUZbn",
+        "type": "Script",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.paginator = this.MatPaginator;",
+        "functionName": "sd_2VNGqvcKee34lvOz_2",
+        "category": "Function",
+        "x": 625,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_vFnukBc3E7WgsFw8",
+        "type": "Script",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.filterEvent);\nconst filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\nthis.page.tableData.filter = filterValue.trim().toLowerCase();",
+        "functionName": "sd_iBlFYTlpoczCmWts_3",
+        "category": "Function",
+        "x": 205,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xWqaldnSgnmIoQEw",
+        "type": "PageStart",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onFilter_3",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filterEvent",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onFilter_3",
+        "category": "General",
+        "x": 60,
+        "y": 480,
+        "wires": [
+            [
+                "sd_vFnukBc3E7WgsFw8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_tableComponent"
+    },
+    {
+        "id": "sd_fmK3w4bwhyWBBihB",
+        "type": "PageCallService",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fwssyW0CyBk692ak",
+            "type": "tab",
+            "createdDate": "2023-08-02T09:55:15.113Z",
+            "label": "books",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_YOKFcUDikkMFNKsN",
+            "flowName": "getRockets"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "response",
+                "valueType": "this.page",
+                "value": "response",
+                "mapVarName": "response",
+                "localVar": "this.page.response"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/books",
+        "startName": "getRockets",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_fmK3w4bwhyWBBihB",
+        "category": "General",
+        "x": 625,
+        "y": 40,
+        "wires": [
+            [
+                "sd_CQe3CzlFSfPuJpbV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_CQe3CzlFSfPuJpbV",
+        "type": "Script",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.dataSource = new MatTableDataSource(page.response)\n\nthis.page.tableData.paginator = this.MatPaginator;",
+        "functionName": "sd_CQe3CzlFSfPuJpbV",
+        "category": "Function",
+        "x": 765,
+        "y": 40,
+        "wires": [
+            [
+                "sd_YqqyeUafvQxpfPk4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YqqyeUafvQxpfPk4",
+        "type": "PageVariables",
+        "z": "sd_VnM6LeFnU1jYeMZJ",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "page2",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "dataSource"
+                }
+            }
+        ],
+        "functionName": "page2",
+        "category": "Function",
+        "x": 885,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_tableComponent",
+        "generated": true
+    }
+]

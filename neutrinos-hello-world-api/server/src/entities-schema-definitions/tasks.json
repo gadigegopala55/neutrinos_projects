@@ -1,0 +1,9 @@
+{
+    "_DM_yqyidqer1": {
+        "id": "_DM_yqyidqer1",
+        "name": "tasks",
+        "dbType": "dbModel",
+        "dbConfigId": "sd_CBLIAWobuM7NxcGd",
+        "dbName": "postgres"
+    }
+}

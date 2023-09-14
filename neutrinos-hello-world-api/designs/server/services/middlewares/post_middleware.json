@@ -1,0 +1,102 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_LAOHdsfp7vgDPdyT",
+        "type": "tab",
+        "createdDate": "2023-08-08T06:47:50.635Z",
+        "label": "post_middleware",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "post_middleware",
+        "relativeParentPath": "middlewares"
+    },
+    {
+        "id": "sd_ONzEqgeLfDSVyrL4",
+        "type": "MiddlewareStart",
+        "z": "SSD_SERVICE_ID_sd_LAOHdsfp7vgDPdyT",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "post_auth",
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "sd_LM6nqSomFZjE2Gc5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "post_middleware",
+        "functionName": "sd_ONzEqgeLfDSVyrL4"
+    },
+    {
+        "id": "sd_LM6nqSomFZjE2Gc5",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_LAOHdsfp7vgDPdyT",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('post_auth_called');",
+        "functionName": "sd_LM6nqSomFZjE2Gc5",
+        "category": "Function",
+        "x": 265,
+        "y": 120,
+        "wires": [
+            [
+                "sd_4mZESnbtFhmam8KH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_middleware",
+        "generated": true
+    },
+    {
+        "id": "sd_4mZESnbtFhmam8KH",
+        "type": "MiddlewareEnd",
+        "z": "SSD_SERVICE_ID_sd_LAOHdsfp7vgDPdyT",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "web.req.response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.web.req.response",
+            "send": "bh.web.req.response"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_4mZESnbtFhmam8KH",
+        "category": "HTTP",
+        "x": 425,
+        "y": 120,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_middleware",
+        "generated": true
+    }
+]

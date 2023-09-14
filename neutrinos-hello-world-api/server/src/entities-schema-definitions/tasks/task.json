@@ -1,0 +1,153 @@
+{
+    "name": "task",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_3hzaxfib2t",
+    "y": -2,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_y46artr11j",
+                "nullable": false,
+                "dbType": "bigint",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "name": {
+            "name": "name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_iro8jcnut1",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "description": {
+            "name": "description",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_i5n98unjaj",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "due_date": {
+            "name": "due_date",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_5r9y0lacfz",
+                "subCategoryType": "date",
+                "nullable": false,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "specialDateColumnType": "none"
+                },
+                "precision": 6
+            }
+        },
+        "priority": {
+            "name": "priority",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_6nxg0kylk0",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "status": {
+            "name": "status",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_67nkk1ff3h",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "text",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "due_date",
+        "priority",
+        "status"
+    ],
+    "value": "",
+    "x": 254.28125,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create"
+            },
+            {
+                "name": "create-all"
+            },
+            {
+                "name": "delete-all"
+            },
+            {
+                "name": "delete-by-id"
+            },
+            {
+                "name": "find-all"
+            },
+            {
+                "name": "find-by-id"
+            },
+            {
+                "name": "update-all"
+            },
+            {
+                "name": "update-by-id"
+            }
+        ]
+    }
+}

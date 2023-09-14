@@ -1,0 +1,17 @@
+<div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <h1>
+      {{page.data.header}}
+    </h1>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.data?.allow"><mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+      <mat-label>Status</mat-label>
+      <mat-select placeholder="Enter Status" [(ngModel)]="page.status_b" [required]="false">
+        <ng-template ngFor let-option [ngForOf]="page.status_a" let-i="index">
+          <mat-option [value]="option">{{option}}</mat-option>
+        </ng-template>
+      </mat-select>
+      <mat-error align="start" *ngIf="page.addForm?.controls?.priority?.errors?.required">Please Provide the Priority</mat-error>
+    </mat-form-field></div>
+  <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button (click)="negativeAction()">{{page.data.negativeAction}}</button><button mat-raised-button (click)="positiveAction()">{{page.data.positiveAction}}</button></div>
+</div>

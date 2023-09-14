@@ -1,0 +1,1006 @@
+{
+    "packages": [
+        {
+            "name": "neutrinos-all-default-nodes-plugin",
+            "default": true,
+            "visible": false,
+            "dependencies": [
+                {
+                    "name": "ndefault-all-nodes",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            "ChildProcess",
+                            "CORS",
+                            "DBConfig",
+                            "GlobalMiddlewareEnd",
+                            "GlobalMiddlewareStart",
+                            "GlobalNext",
+                            "HttpIn",
+                            "HttpOut",
+                            "HttpProxyConfig",
+                            "ServerHttpRequest",
+                            "MiddlewareEnd",
+                            "MiddlewareStart",
+                            "Next",
+                            "RouteMiddlewareEnd",
+                            "RouteMiddlewareStart",
+                            "ServerLog",
+                            "TLSConfig",
+                            "Processor"
+                        ],
+                        "common": [
+                            "Catch",
+                            "Comments",
+                            "Script",
+                            "Unknown"
+                        ],
+                        "pages": [
+                            "PageCallService",
+                            "PageStart",
+                            "PageSwitch",
+                            "ViewPicker",
+                            "PageVariables",
+                            "PageServiceVariables",
+                            "PageAsync"
+                        ],
+                        "client-server": [
+                            "ServiceVariables",
+                            "CallService",
+                            "Start",
+                            "Switch",
+                            "Async"
+                        ],
+                        "client-pages": [
+                            "Environment",
+                            "HttpRequest",
+                            "Log",
+                            "Navigation",
+                            "SnackBar",
+                            "Storage",
+                            "CallSSDApi",
+                            "UseDependency",
+                            "neutrinos-ngzone"
+                        ],
+                        "client": [
+                            "CanActivate",
+                            "CanDeactivate",
+                            "Resolve"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-active-directory-plugin",
+            "description": "All dependencies to do active directory operations.",
+            "displayName": "Active Directory",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-active-directory",
+                    "packageType": "studio-nodes",
+                    "displayName": "Active Directory Node",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "ActiveDirectory",
+                                "dependencies": [
+                                    {
+                                        "name": "activedirectory",
+                                        "version": "0.7.2"
+                                    },
+                                    {
+                                        "name": "http-status-codes",
+                                        "version": "2.1.4"
+                                    }
+                                ]
+                            },
+                            "ADConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-data-model",
+            "description": "DataModel Plugin",
+            "displayName": "DataModel Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-datamodel",
+                    "packageType": "studio-nodes",
+                    "displayName": "Data Model",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "insert"
+                            },
+                            {
+                                "name": "update"
+                            },
+                            {
+                                "name": "remove"
+                            },
+                            {
+                                "name": "find"
+                            },
+                            {
+                                "name": "validate"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-amqp-plugin",
+            "description": "AMQP Plugin",
+            "displayName": "AMQP Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-amqp-producer",
+                    "packageType": "studio-nodes",
+                    "displayName": "AMPQ Producer",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "AMQPProducer",
+                                "dependencies": [
+                                    {
+                                        "name": "amqplib",
+                                        "version": "0.10.0"
+                                    }
+                                ],
+                                "devDependencies": [
+                                    {
+                                        "name": "@types/amqplib",
+                                        "version": "0.5.17"
+                                    }
+                                ]
+                            },
+                            "AMQPConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-csv-plugin",
+            "description": "CSV Plugin",
+            "displayName": "CSV Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-csv",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "CSV",
+                                "dependencies": [
+                                    {
+                                        "name": "csv-parse",
+                                        "version": "5.3.0"
+                                    },
+                                    {
+                                        "name": "csv-stringify",
+                                        "version": "6.2.0"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-file-plugin",
+            "description": "File Plugin",
+            "displayName": "File Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-file",
+                    "packageType": "studio-nodes",
+                    "displayName": "File In/Out",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "FileIn",
+                                "dependencies": [
+                                    {
+                                        "name": "iconv-lite",
+                                        "version": "0.6.3"
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "FileOut"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-json-plugin",
+            "description": "JSON Parser",
+            "displayName": "JSON Parser",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-json",
+                    "packageType": "studio-nodes",
+                    "displayName": "JSON",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "JSONConverter"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-mongodb-plugin",
+            "description": "MongoDB",
+            "displayName": "MongoDB",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-mongodb",
+                    "packageType": "studio-nodes",
+                    "displayName": "MongoDB",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Mongodb",
+                                "dependencies": [
+                                    {
+                                        "name": "mongodb",
+                                        "version": "4.8.0"
+                                    },
+                                    {
+                                        "name": "bson",
+                                        "version": "4.6.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-session-plugin",
+            "description": "Session Management Plugin",
+            "displayName": "Session Management Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-session",
+                    "packageType": "studio-nodes",
+                    "displayName": "Session",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Session"
+                            },
+                            {
+                                "name": "GlobalSession"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-mongo-session-plugin",
+            "description": "Mongo Session Plugin",
+            "displayName": "Mongo Session Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-mongo-session",
+                    "packageType": "studio-nodes",
+                    "displayName": "Mongo Session",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "GlobalMongoSession",
+                                "dependencies": [
+                                    {
+                                        "name": "mongodb",
+                                        "version": "4.8.0"
+                                    },
+                                    {
+                                        "name": "bson",
+                                        "version": "4.6.5"
+                                    },
+                                    {
+                                        "name": "neutrinos-mongodb-session-store",
+                                        "version": "0.0.2-beta.1"
+                                    },
+                                    {
+                                        "name": "@types/express-session",
+                                        "version": "1.17.5"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-sql-plugin",
+            "description": "SQL Plugin",
+            "displayName": "SQL Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-sql",
+                    "packageType": "studio-nodes",
+                    "displayName": "SQL",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "ExecuteSql",
+                                "dependencies": [
+                                    {
+                                        "name": "typeorm",
+                                        "version": "0.2.38"
+                                    },
+                                    {
+                                        "name": "typeorm-static",
+                                        "version": "1.1.1"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-xml-plugin",
+            "description": "XML Plugin",
+            "displayName": "XML Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-xml",
+                    "packageType": "studio-nodes",
+                    "displayName": "XML",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "XML",
+                                "dependencies": [
+                                    {
+                                        "name": "xml2js",
+                                        "version": "0.4.23"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-yml-plugin",
+            "description": "YML Plugin",
+            "displayName": "YML Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-yml",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "YML",
+                                "dependencies": [
+                                    {
+                                        "name": "js-yaml",
+                                        "version": "4.1.0"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-email-plugin",
+            "description": "Email Plugin",
+            "displayName": "Email Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-email",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "EmailOut",
+                                "dependencies": [
+                                    {
+                                        "name": "poplib",
+                                        "version": "0.1.7"
+                                    },
+                                    {
+                                        "name": "nodemailer",
+                                        "version": "6.7.7"
+                                    },
+                                    {
+                                        "name": "mailparser",
+                                        "version": "3.5.0"
+                                    },
+                                    {
+                                        "name": "imap",
+                                        "version": "0.8.19"
+                                    }
+                                ]
+                            },
+                            "EmailOutConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-callsoap-plugin",
+            "description": "Call Soap Plugin",
+            "displayName": "Call Soap Plugin",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-call-soap",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "Soap",
+                                "dependencies": [
+                                    {
+                                        "name": "strong-soap",
+                                        "version": "3.4.0"
+                                    }
+                                ]
+                            },
+                            "SoapConfig",
+                            "BasicAuthConfig"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "name": "neutrinos-pub-sub",
+            "description": "Pub Sub for server",
+            "displayName": "Pub Sub for server",
+            "default": true,
+            "dependencies": [
+                {
+                    "name": "ndefault-pub-sub",
+                    "packageType": "studio-nodes",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "listen",
+                                "dependencies": []
+                            },
+                            {
+                                "name": "emit",
+                                "dependencies": []
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "62d16da97bc1d057f5e4de0d",
+            "name": "neutrinos-idp-nodes",
+            "averageRating": 0,
+            "description": "IDP NODES",
+            "devid": "83428cb3-3d86-3ade-97de-a29bb312b1b1",
+            "displayName": "IDP NODES",
+            "lastUpdated": "2022-08-19T06:34:15.680Z",
+            "numberOfDownloads": 0,
+            "packageType": [
+                "studio-nodes"
+            ],
+            "platformSupportVersion": "8.1.1",
+            "pluginImage": "neutrinos-idp-audit-1654086965629.png",
+            "publisher": "Neutrinos",
+            "uploadedDate": "2022-07-15T13:37:45.358Z",
+            "username": "settivaripalli.gunasekhar@neutrinos.co",
+            "version": "1.0.4",
+            "versions": {
+                "1.0.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-nodes",
+                            "displayName": "IDP NODES",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.0",
+                            "nodes": {
+                                "client-pages": [
+                                    {
+                                        "name": "a35af22e-20bb-17a5-4b26-a20f4941d432",
+                                        "displayName": "Get Access Token"
+                                    },
+                                    {
+                                        "name": "3ccd2507-83e8-85c4-f56c-97370798f53f",
+                                        "displayName": "Create Job"
+                                    },
+                                    {
+                                        "name": "37519303-142d-2d6e-0971-9374fa1f5f85",
+                                        "displayName": "Upload Files To A Job"
+                                    },
+                                    {
+                                        "name": "e1bb2abb-939c-f482-7738-9923b613e6a1",
+                                        "displayName": "Start Document Analysis"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {}
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "83428cb3-3d86-3ade-97de-a29bb312b1b1",
+                        "name": "neutrinos-idp-nodes",
+                        "displayName": "IDP NODES",
+                        "version": "1.0.0",
+                        "username": "settivaripalli.gunasekhar@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "pluginImage": "neutrinos-idp-audit-1654086965629.png",
+                        "description": "IDP NODES"
+                    },
+                    "version": "1.0.0"
+                },
+                "1.0.1": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-nodes",
+                            "displayName": "IDP NODES",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.1",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "a35af22e-20bb-17a5-4b26-a20f4941d432",
+                                        "displayName": "Get Access Token"
+                                    },
+                                    {
+                                        "name": "3ccd2507-83e8-85c4-f56c-97370798f53f",
+                                        "displayName": "Create Job"
+                                    },
+                                    {
+                                        "name": "37519303-142d-2d6e-0971-9374fa1f5f85",
+                                        "displayName": "Upload Files To A Job"
+                                    },
+                                    {
+                                        "name": "e1bb2abb-939c-f482-7738-9923b613e6a1",
+                                        "displayName": "Start Document Analysis"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "qs": "6.11.0",
+                                "fs-extra": "10.1.0",
+                                "axios": "0.27.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "83428cb3-3d86-3ade-97de-a29bb312b1b1",
+                        "name": "neutrinos-idp-nodes",
+                        "displayName": "IDP NODES",
+                        "version": "1.0.1",
+                        "username": "settivaripalli.gunasekhar@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "pluginImage": "neutrinos-idp-audit-1654086965629.png",
+                        "description": "IDP NODES"
+                    },
+                    "version": "1.0.1"
+                },
+                "1.0.2": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-nodes",
+                            "displayName": "IDP NODES",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.2",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "a35af22e-20bb-17a5-4b26-a20f4941d432",
+                                        "displayName": "Get Access Token"
+                                    },
+                                    {
+                                        "name": "3ccd2507-83e8-85c4-f56c-97370798f53f",
+                                        "displayName": "Create Job"
+                                    },
+                                    {
+                                        "name": "37519303-142d-2d6e-0971-9374fa1f5f85",
+                                        "displayName": "Upload Files To A Job"
+                                    },
+                                    {
+                                        "name": "e1bb2abb-939c-f482-7738-9923b613e6a1",
+                                        "displayName": "Start Document Analysis"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "qs": "6.11.0",
+                                "fs-extra": "10.1.0",
+                                "axios": "0.27.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "83428cb3-3d86-3ade-97de-a29bb312b1b1",
+                        "name": "neutrinos-idp-nodes",
+                        "displayName": "IDP NODES",
+                        "version": "1.0.2",
+                        "username": "settivaripalli.gunasekhar@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "pluginImage": "neutrinos-idp-audit-1654086965629.png",
+                        "description": "IDP NODES"
+                    },
+                    "version": "1.0.2"
+                },
+                "1.0.3": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-nodes",
+                            "displayName": "IDP NODES",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.3",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "a35af22e-20bb-17a5-4b26-a20f4941d432",
+                                        "displayName": "Get Access Token"
+                                    },
+                                    {
+                                        "name": "3ccd2507-83e8-85c4-f56c-97370798f53f",
+                                        "displayName": "Create Job"
+                                    },
+                                    {
+                                        "name": "37519303-142d-2d6e-0971-9374fa1f5f85",
+                                        "displayName": "Upload Files To A Job"
+                                    },
+                                    {
+                                        "name": "e1bb2abb-939c-f482-7738-9923b613e6a1",
+                                        "displayName": "Start Document Analysis"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "qs": "6.11.0",
+                                "fs-extra": "10.1.0",
+                                "axios": "0.27.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "83428cb3-3d86-3ade-97de-a29bb312b1b1",
+                        "name": "neutrinos-idp-nodes",
+                        "displayName": "IDP NODES",
+                        "version": "1.0.3",
+                        "username": "settivaripalli.gunasekhar@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "pluginImage": "neutrinos-idp-audit-1654086965629.png",
+                        "description": "IDP NODES"
+                    },
+                    "version": "1.0.3"
+                },
+                "1.0.4": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-nodes",
+                            "displayName": "IDP NODES",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.4",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "a35af22e-20bb-17a5-4b26-a20f4941d432",
+                                        "displayName": "Get Access Token"
+                                    },
+                                    {
+                                        "name": "3ccd2507-83e8-85c4-f56c-97370798f53f",
+                                        "displayName": "Create Job"
+                                    },
+                                    {
+                                        "name": "37519303-142d-2d6e-0971-9374fa1f5f85",
+                                        "displayName": "Upload Files To A Job"
+                                    },
+                                    {
+                                        "name": "e1bb2abb-939c-f482-7738-9923b613e6a1",
+                                        "displayName": "Start Document Analysis"
+                                    },
+                                    {
+                                        "name": "01550383-df6d-8e7c-90f5-bff9c4c94563",
+                                        "displayName": "List Documents"
+                                    },
+                                    {
+                                        "name": "69e286bf-903f-4d5a-8390-180a1bc5a42d",
+                                        "displayName": "Get Document Result"
+                                    },
+                                    {
+                                        "name": "e9890fa2-f78e-86aa-7ec7-ad034f459618",
+                                        "displayName": "Job Metadata"
+                                    }
+                                ]
+                            },
+                            "packageDependencies": {
+                                "qs": "6.11.0",
+                                "fs-extra": "10.1.0",
+                                "axios": "0.27.2"
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "83428cb3-3d86-3ade-97de-a29bb312b1b1",
+                        "name": "neutrinos-idp-nodes",
+                        "displayName": "IDP NODES",
+                        "version": "1.0.4",
+                        "username": "settivaripalli.gunasekhar@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "pluginImage": "neutrinos-idp-audit-1654086965629.png",
+                        "description": "IDP NODES"
+                    },
+                    "version": "1.0.4"
+                }
+            },
+            "archiveFile": "api/zips/undefined",
+            "guide": "62ff2ee89bfc5e001b78eefe",
+            "icon": "api/resource/icons/62ff2ee79bfc5e001b78eef8",
+            "screenshots": [
+                "api/resource/screenshots/62ff2ee89bfc5e001b78eefa",
+                "api/resource/screenshots/62ff2ee89bfc5e001b78eefc"
+            ],
+            "no_of_downloads_by_packages": {
+                "neutrinos-idp-nodes": 51
+            },
+            "dependencies": [
+                {
+                    "name": "neutrinos-idp-nodes",
+                    "displayName": "IDP NODES",
+                    "packageType": "studio-nodes",
+                    "version": "1.0.4",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "a35af22e-20bb-17a5-4b26-a20f4941d432",
+                                "displayName": "Get Access Token"
+                            },
+                            {
+                                "name": "3ccd2507-83e8-85c4-f56c-97370798f53f",
+                                "displayName": "Create Job"
+                            },
+                            {
+                                "name": "37519303-142d-2d6e-0971-9374fa1f5f85",
+                                "displayName": "Upload Files To A Job"
+                            },
+                            {
+                                "name": "e1bb2abb-939c-f482-7738-9923b613e6a1",
+                                "displayName": "Start Document Analysis"
+                            },
+                            {
+                                "name": "01550383-df6d-8e7c-90f5-bff9c4c94563",
+                                "displayName": "List Documents"
+                            },
+                            {
+                                "name": "69e286bf-903f-4d5a-8390-180a1bc5a42d",
+                                "displayName": "Get Document Result"
+                            },
+                            {
+                                "name": "e9890fa2-f78e-86aa-7ec7-ad034f459618",
+                                "displayName": "Job Metadata"
+                            }
+                        ]
+                    },
+                    "packageDependencies": {
+                        "qs": "6.11.0",
+                        "fs-extra": "10.1.0",
+                        "axios": "0.27.2"
+                    }
+                }
+            ]
+        },
+        {
+            "_id": "62474ec4121d3ae0cadd0a79",
+            "name": "neutrinos-idp-data-parser",
+            "averageRating": 5,
+            "description": "Parses IDP data",
+            "devid": "eda40402-27fb-b92f-9f89-c6f16c6e4e71",
+            "displayName": "IDP Data Parser",
+            "lastUpdated": "2022-04-04T09:24:16.506Z",
+            "numberOfDownloads": 0,
+            "packageType": [
+                "studio-nodes"
+            ],
+            "platformSupportVersion": "8.1.1",
+            "pluginImage": "neutrinos-idp-data-parser-1648838889946.png",
+            "publisher": "Neutrinos",
+            "uploadedDate": "2022-04-01T19:13:08.586Z",
+            "username": "gaurav.pandey@neutrinos.co",
+            "version": "1.0.2",
+            "versions": {
+                "1.0.0": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-data-parser",
+                            "displayName": "IDP Data Parser",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.0",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "2a83acdf-f516-e3c8-74a4-d83c583e37a7",
+                                        "displayName": "IDP Data Parser"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "eda40402-27fb-b92f-9f89-c6f16c6e4e71",
+                        "name": "neutrinos-idp-data-parser",
+                        "displayName": "IDP Data Parser",
+                        "version": "1.0.0",
+                        "username": "gaurav.pandey@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "description": "Parses IDP data",
+                        "pluginImage": "neutrinos-idp-data-parser-1648838889946.png"
+                    },
+                    "version": "1.0.0"
+                },
+                "1.0.1": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-data-parser",
+                            "displayName": "IDP Data Parser",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.1",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "2a83acdf-f516-e3c8-74a4-d83c583e37a7",
+                                        "displayName": "IDP Data Parser"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "eda40402-27fb-b92f-9f89-c6f16c6e4e71",
+                        "name": "neutrinos-idp-data-parser",
+                        "displayName": "IDP Data Parser",
+                        "version": "1.0.1",
+                        "username": "gaurav.pandey@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "description": "Parses IDP data",
+                        "pluginImage": "neutrinos-idp-data-parser-1648838889946.png"
+                    },
+                    "version": "1.0.1"
+                },
+                "1.0.2": {
+                    "packages": [
+                        {
+                            "name": "neutrinos-idp-data-parser",
+                            "displayName": "IDP Data Parser",
+                            "packageType": "studio-nodes",
+                            "version": "1.0.2",
+                            "nodes": {
+                                "server": [
+                                    {
+                                        "name": "2a83acdf-f516-e3c8-74a4-d83c583e37a7",
+                                        "displayName": "IDP Data Parser"
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "platformSupportVersion": {
+                        "min": "8.1.1"
+                    },
+                    "metadata": {
+                        "devid": "eda40402-27fb-b92f-9f89-c6f16c6e4e71",
+                        "name": "neutrinos-idp-data-parser",
+                        "displayName": "IDP Data Parser",
+                        "version": "1.0.2",
+                        "username": "gaurav.pandey@neutrinos.co",
+                        "publisher": "Neutrinos",
+                        "platformSupportVersion": {
+                            "min": "8.1.1"
+                        },
+                        "description": "Parses IDP data",
+                        "pluginImage": "neutrinos-idp-data-parser-1648838889946.png"
+                    },
+                    "version": "1.0.2"
+                }
+            },
+            "archiveFile": "api/zips/undefined",
+            "guide": "624ab941f6c220001a5a42df",
+            "icon": "api/resource/icons/624ab940f6c220001a5a42d9",
+            "screenshots": [
+                "api/resource/screenshots/624ab940f6c220001a5a42db",
+                "api/resource/screenshots/624ab941f6c220001a5a42dd"
+            ],
+            "no_of_downloads_by_packages": {
+                "neutrinos-idp-data-parser": 7
+            },
+            "dependencies": [
+                {
+                    "name": "neutrinos-idp-data-parser",
+                    "displayName": "IDP Data Parser",
+                    "packageType": "studio-nodes",
+                    "version": "1.0.2",
+                    "nodes": {
+                        "server": [
+                            {
+                                "name": "2a83acdf-f516-e3c8-74a4-d83c583e37a7",
+                                "displayName": "IDP Data Parser"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

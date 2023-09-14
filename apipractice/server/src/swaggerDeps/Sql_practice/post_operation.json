@@ -1,0 +1,15 @@
+{
+    "/post-operation": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "post_operation"
+            ]
+        }
+    }
+}

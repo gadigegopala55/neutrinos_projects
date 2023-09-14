@@ -1,0 +1,13 @@
+{
+    "displayName": "testingapp",
+    "appName": "testingapp",
+    "description": "testingapp",
+    "lastModified": "2023-07-15T13:10:37.742Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-07-15T13:10:37.221Z",
+    "analyticsId": "15153b59-df6a-8855-9e9f-15364dcc7c90",
+    "createdStudioVersion": "9.1.4"
+}

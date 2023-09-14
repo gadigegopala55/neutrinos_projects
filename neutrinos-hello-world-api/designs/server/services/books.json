@@ -1,0 +1,1041 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "type": "tab",
+        "createdDate": "2023-08-02T10:50:40.860Z",
+        "label": "books",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "books",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_8wEN63DK36uBBX0p",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "get books",
+        "path": "books",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 60,
+        "wires": [
+            [
+                "sd_MeDSt8oVtUh72Xc0"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "books",
+        "functionName": "sd_8wEN63DK36uBBX0p"
+    },
+    {
+        "id": "sd_GmcbxUovDPNXKX2l",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_GmcbxUovDPNXKX2l",
+        "category": "HTTP",
+        "x": 430,
+        "y": 60,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_MeDSt8oVtUh72Xc0",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const books = [\n    {\n        \"title\": \"Mahabharatha\",\n        \"description\": \"very good book\"\n    },\n    {\n        \"title\": \"Bible\",\n        \"description\": \"good book\"\n    },\n    {\n        \"title\": \"Book3\",\n        \"description\": \"good book\"\n    },\n    {\n        \"title\": \"Book4\",\n        \"description\": \"good book\"\n    },\n]\n\nbh.local.response = {\n    message: \"Successful\",\n    data: books\n}",
+        "functionName": "sd_MeDSt8oVtUh72Xc0",
+        "category": "Function",
+        "x": 290,
+        "y": 60,
+        "wires": [
+            [
+                "sd_GmcbxUovDPNXKX2l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_ecUI88jXeKiTlbgK",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let response = {\n    'id': bh.input.body.id\n}\n\nbh.local.response = {\n    message: 'Success',\n    data: response\n}\n",
+        "functionName": "sd_ecUI88jXeKiTlbgK",
+        "category": "Function",
+        "x": 285,
+        "y": 220,
+        "wires": [
+            [
+                "sd_II3lrkSpHALTlA93"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_AcMehBhw5pTG86m5",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "add book",
+        "path": "book",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [
+                {
+                    "key": "title",
+                    "desc": "title",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_La1Zu9JqqVmtFc7w",
+                    "valid": true
+                },
+                {
+                    "key": "description",
+                    "desc": "description",
+                    "type": "body",
+                    "required": true,
+                    "rowId": "sd_fsQs67cJfecfz6zj",
+                    "valid": true
+                }
+            ],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 150,
+        "y": 220,
+        "wires": [
+            [
+                "sd_ecUI88jXeKiTlbgK"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "books",
+        "functionName": "sd_AcMehBhw5pTG86m5"
+    },
+    {
+        "id": "sd_II3lrkSpHALTlA93",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_II3lrkSpHALTlA93",
+        "category": "HTTP",
+        "x": 430,
+        "y": 220,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_vftzJ7HyCo5ZrpBQ",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_f4nPAR7KNwtz5TC3",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "response"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.local",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {},
+        "dbType": "postgres",
+        "functionName": "sd_vftzJ7HyCo5ZrpBQ",
+        "category": "Storage",
+        "x": 430,
+        "y": 380,
+        "wires": [
+            [
+                "sd_Pv3uIcnxLhOnVBPV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_Swj3iQBJFNKIro0J",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.query = `select * from book`;",
+        "functionName": "sd_Swj3iQBJFNKIro0J",
+        "category": "Function",
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "sd_vftzJ7HyCo5ZrpBQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_VClLQNUQJRRpts3Q",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "book",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 380,
+        "wires": [
+            [
+                "sd_Swj3iQBJFNKIro0J"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "books",
+        "functionName": "sd_VClLQNUQJRRpts3Q"
+    },
+    {
+        "id": "sd_Pv3uIcnxLhOnVBPV",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.response",
+            "send": "bh.local.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_Pv3uIcnxLhOnVBPV",
+        "category": "HTTP",
+        "x": 570,
+        "y": 380,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_uLqow7Q7o3B0TfTl",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "rockets",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 520,
+        "wires": [
+            [
+                "sd_OuauLF7CvjRNeqdC"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "books",
+        "functionName": "sd_uLqow7Q7o3B0TfTl"
+    },
+    {
+        "id": "sd_GofpcTB2MUDiSYqg",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response.payload",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.response.payload",
+            "send": "bh.local.response.payload"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_GofpcTB2MUDiSYqg",
+        "category": "HTTP",
+        "x": 565,
+        "y": 520,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_OuauLF7CvjRNeqdC",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = bh.system.environment.SPACE_X_URL;\n\nbh.local.url += 'rockets';\n\n",
+        "functionName": "sd_OuauLF7CvjRNeqdC",
+        "category": "Function",
+        "x": 285,
+        "y": 520,
+        "wires": [
+            [
+                "sd_1VUbCv3ccekQ2wSh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_1VUbCv3ccekQ2wSh",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_1VUbCv3ccekQ2wSh",
+        "category": "HTTP",
+        "x": 425,
+        "y": 520,
+        "wires": [
+            [
+                "sd_GofpcTB2MUDiSYqg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_Vl0CwmPzKCAIiyu5",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "ships",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "custom_sequence",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 660,
+        "wires": [
+            [
+                "sd_Af55h8uxE7i2b6gN"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "books",
+        "functionName": "sd_Vl0CwmPzKCAIiyu5"
+    },
+    {
+        "id": "sd_eGkUQijsCPuIpcL8",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "response.payload",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "next",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "next": "bh.local.response.payload"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_eGkUQijsCPuIpcL8",
+        "category": "HTTP",
+        "x": 565,
+        "y": 660,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_Af55h8uxE7i2b6gN",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = bh.system.environment.SPACE_X_URL;\n\nbh.local.url += 'ships';\n\n",
+        "functionName": "sd_Af55h8uxE7i2b6gN",
+        "category": "Function",
+        "x": 285,
+        "y": 660,
+        "wires": [
+            [
+                "sd_nRFMtGUBBQ4Ygt3r"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_nRFMtGUBBQ4Ygt3r",
+        "type": "ServerHttpRequest",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.web.req.response",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "web.req.response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "authType": "",
+        "useAuthTypeMappingObj": {},
+        "useAuthTypeMap": {},
+        "useAuthType": "",
+        "useAuthUsername": "",
+        "useAuthUsernameMappingObj": "",
+        "useAuthPassword": "",
+        "useAuthPasswordMappingObj": "",
+        "useAuthToken": "",
+        "useAuthTokenMappingObj": "",
+        "useQueryString": false,
+        "tls": "",
+        "followRedirect": true,
+        "paytoqs": false,
+        "useAuthentication": false,
+        "rejectUnauthorized": false,
+        "proxy": "",
+        "useProxy": false,
+        "usetls": false,
+        "cookies": [],
+        "cookiesMapObj": {},
+        "cookiesList": {},
+        "switchStates": {
+            "cookies": "Map"
+        },
+        "editableListData": {},
+        "timeout": {
+            "type": "num",
+            "value": ""
+        },
+        "functionName": "sd_nRFMtGUBBQ4Ygt3r",
+        "category": "HTTP",
+        "x": 425,
+        "y": 660,
+        "wires": [
+            [
+                "sd_eGkUQijsCPuIpcL8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_qZDFEJ2il4qyiTYc",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "calc",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 140,
+        "y": 820,
+        "wires": [
+            [
+                "sd_HZiWadIWYIS2DqAw"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "books",
+        "functionName": "sd_qZDFEJ2il4qyiTYc"
+    },
+    {
+        "id": "sd_uV8u9xAiHtPPrDJl",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.result);\n\nbh.input.paylod={\n    \"response\": bh.input.result\n}",
+        "functionName": "sd_uV8u9xAiHtPPrDJl",
+        "category": "Function",
+        "x": 440,
+        "y": 820,
+        "wires": [
+            [
+                "sd_gIqTgC3aVX1R5XSo"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_gIqTgC3aVX1R5XSo",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.input",
+            "value": "paylod",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.input.paylod",
+            "send": "bh.input.paylod"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_gIqTgC3aVX1R5XSo",
+        "category": "HTTP",
+        "x": 525,
+        "y": 820,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    },
+    {
+        "id": "sd_HZiWadIWYIS2DqAw",
+        "type": "2236485b-d961-ce5f-409c-20db37a79a58",
+        "z": "SSD_SERVICE_ID_sd_SXSHm1HFNiIFeIiS",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "firstNumber": 45,
+        "secondNumber": 45,
+        "operation": "addition",
+        "resultingNode": "bh.input.result",
+        "functionName": "sd_HZiWadIWYIS2DqAw",
+        "category": "General",
+        "x": 265,
+        "y": 820,
+        "wires": [
+            [
+                "sd_uV8u9xAiHtPPrDJl"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "firstNumber": {
+                "type": "num",
+                "value": "45",
+                "constant": false
+            },
+            "secondNumber": {
+                "type": "num",
+                "value": "45",
+                "constant": false
+            },
+            "resultingNode": {
+                "type": "bh.input",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "books",
+        "generated": true
+    }
+]

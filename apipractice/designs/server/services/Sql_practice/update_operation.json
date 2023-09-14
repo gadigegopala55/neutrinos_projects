@@ -1,0 +1,581 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "type": "tab",
+        "createdDate": "2023-06-27T12:36:34.836Z",
+        "label": "update_operation",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "update_operation",
+        "relativeParentPath": "Sql_practice"
+    },
+    {
+        "id": "sd_9GLDb0V7cLxNH1GV",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "update_function",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "name",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "update_function",
+        "category": "General",
+        "x": 125,
+        "y": 400,
+        "wires": [
+            [
+                "sd_t9TaJpUmlOdadRGO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "update_operation",
+        "generated": false
+    },
+    {
+        "id": "sd_t9TaJpUmlOdadRGO",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.id){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"id required\"};\n}else if(!bh.input.name){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"name required\"}\n}",
+        "functionName": "sd_t9TaJpUmlOdadRGO",
+        "category": "Function",
+        "x": 285,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_CAEFn7MOm68deY6Q",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "put-operation",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "put",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 120,
+        "y": 160,
+        "wires": [
+            [
+                "sd_4nd8BkjQmEpKnUxY"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "update_operation",
+        "functionName": "sd_CAEFn7MOm68deY6Q",
+        "generated": false
+    },
+    {
+        "id": "sd_4nd8BkjQmEpKnUxY",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+            "type": "tab",
+            "createdDate": "2023-06-27T12:36:34.836Z",
+            "label": "update_operation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_9GLDb0V7cLxNH1GV",
+            "flowName": "update_function"
+        },
+        "inputVariables": [
+            {
+                "key": "id",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.id"
+            },
+            {
+                "key": "name",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.name"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./update_operation",
+        "startName": "update_function",
+        "inputParams": [
+            "bh.input.body.id",
+            "bh.input.body.name",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_4nd8BkjQmEpKnUxY",
+        "category": "General",
+        "x": 260,
+        "y": 160,
+        "wires": [
+            [
+                "sd_CJeVIPF63VSjEPn3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "update_operation"
+    },
+    {
+        "id": "sd_CJeVIPF63VSjEPn3",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_CJeVIPF63VSjEPn3",
+        "category": "Function",
+        "x": 385,
+        "y": 160,
+        "wires": [
+            [
+                "sd_6olRvAa0hXXOJ6hF"
+            ],
+            [
+                "sd_Je6zDBP9h9mcCMw8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_vMiDwaF7x0Pijcu5",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = 'UPDATE employee SET name=$2 WHERE id=$1';\n\nbh.params = [\n    bh.input.body.id,\n    bh.input.body.name\n];",
+        "functionName": "sd_vMiDwaF7x0Pijcu5",
+        "category": "Function",
+        "x": 865,
+        "y": 200,
+        "wires": [
+            [
+                "sd_IS1rZ0A7M9XcRe2u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_Je6zDBP9h9mcCMw8",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_Je6zDBP9h9mcCMw8",
+        "category": "HTTP",
+        "x": 865,
+        "y": 380,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_JTacDYDOmnpmCsQr",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_JTacDYDOmnpmCsQr",
+        "category": "HTTP",
+        "x": 1205,
+        "y": 200,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_IS1rZ0A7M9XcRe2u",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "resultMap": {
+            "type": "bh",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_IS1rZ0A7M9XcRe2u",
+        "category": "Storage",
+        "x": 985,
+        "y": 200,
+        "wires": [
+            [
+                "sd_cIZdXfsWdwmqxvP0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_6olRvAa0hXXOJ6hF",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.getQuery = 'SELECT name from employee where id = $1';\n\nbh.getParams = [bh.input.body.id];",
+        "functionName": "sd_6olRvAa0hXXOJ6hF",
+        "category": "Function",
+        "x": 485,
+        "y": 80,
+        "wires": [
+            [
+                "sd_gqmiB3xxaaZTLaJK"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_gqmiB3xxaaZTLaJK",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "resultMap": {
+            "type": "bh",
+            "value": "getResult"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "getQuery"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "getParams"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_gqmiB3xxaaZTLaJK",
+        "category": "Storage",
+        "x": 585,
+        "y": 80,
+        "wires": [
+            [
+                "sd_wDgxfXbpADSeQU3C"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_wDgxfXbpADSeQU3C",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(bh.getResult.length == 0){\n    bh.status = false;\n    bh.result = {\"message\": \"employee details not exists for the given id\"};\n}",
+        "functionName": "sd_wDgxfXbpADSeQU3C",
+        "category": "Function",
+        "x": 685,
+        "y": 80,
+        "wires": [
+            [
+                "sd_WwMl0960e9FUS1M4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_WwMl0960e9FUS1M4",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_WwMl0960e9FUS1M4",
+        "category": "Function",
+        "x": 745,
+        "y": 220,
+        "wires": [
+            [
+                "sd_vMiDwaF7x0Pijcu5"
+            ],
+            [
+                "sd_Je6zDBP9h9mcCMw8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_cIZdXfsWdwmqxvP0",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_qpbWmdmoVAprshNg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"message\": \"Data updated successfully\"};",
+        "functionName": "sd_cIZdXfsWdwmqxvP0",
+        "category": "Function",
+        "x": 1085,
+        "y": 200,
+        "wires": [
+            [
+                "sd_JTacDYDOmnpmCsQr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "update_operation",
+        "generated": true
+    }
+]

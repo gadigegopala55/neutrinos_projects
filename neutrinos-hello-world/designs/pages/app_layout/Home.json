@@ -1,0 +1,613 @@
+[
+    {
+        "id": "sd_cs4BbFJuDihoAuYm",
+        "type": "tab",
+        "createdDate": "2023-08-02T05:08:51.231Z",
+        "label": "Home",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_ohE3a057puTOZJ7C",
+        "type": "OnInit",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_ohE3a057puTOZJ7C",
+        "category": "Lifecycle Events",
+        "x": 85,
+        "y": 120,
+        "wires": [
+            [
+                "sd_ajldUF8v4AT1gHmp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_ajldUF8v4AT1gHmp",
+        "type": "PageVariables",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "username",
+                "typedIpValue": {
+                    "type": "str",
+                    "value": "Gopala Krishna"
+                }
+            }
+        ],
+        "functionName": "sd_ajldUF8v4AT1gHmp",
+        "category": "Function",
+        "x": 235,
+        "y": 120,
+        "wires": [
+            [
+                "sd_KrMKlluEeKZnN2uv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ET5FzFHKQOs9ntXg",
+        "type": "PageStart",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onButtonClick",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "name",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "place",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onButtonClick",
+        "category": "General",
+        "x": 85,
+        "y": 280,
+        "wires": [
+            [
+                "sd_L7yZs3KwFuCTiquc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_L7yZs3KwFuCTiquc",
+        "type": "Log",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.place",
+        "functionName": "sd_L7yZs3KwFuCTiquc",
+        "category": "General",
+        "x": 245,
+        "y": 280,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "place",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4yMOYzQWbpvbU6WR",
+        "type": "PageCallService",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_cs4BbFJuDihoAuYm",
+            "type": "tab",
+            "createdDate": "2023-08-02T05:08:51.231Z",
+            "label": "Home",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_ET5FzFHKQOs9ntXg",
+            "flowName": "onButtonClick"
+        },
+        "inputVariables": [
+            {
+                "key": "name",
+                "map": true,
+                "valueType": "bh.local",
+                "value": "name"
+            },
+            {
+                "key": "place",
+                "map": true,
+                "valueType": "this.page",
+                "value": "place"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "onButtonClick",
+        "inputParams": [
+            "bh.local.name",
+            "this.page.place"
+        ],
+        "accept_csd": false,
+        "functionName": "sd_4yMOYzQWbpvbU6WR",
+        "category": "General",
+        "x": 645,
+        "y": 400,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_KrMKlluEeKZnN2uv",
+        "type": "Script",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log('script node executed');\nconsole.log(page.username);\n\npage.email = 'gopal@heptagon.in';\nconsole.log(page.email);\n\nbh.place = 'bangalore';\nconsole.log(bh.place);\n\nbh.local.name = 'gopal';\n\npage.place = 'kurnool';\n\npage.name = 'gopala krishna';\n\nbh.local.num1 = 2;\nbh.local.num2 = 4;\n\n// page.books = [\n//     {\n//         \"title\": \"mahabharatha\",\n//         \"description\": \"good book\"\n//     },\n//     {\n//         \"title\": \"ramayanam\",\n//         \"description\": \"very good book\"\n//     },\n// ]",
+        "functionName": "sd_KrMKlluEeKZnN2uv",
+        "category": "Function",
+        "x": 385,
+        "y": 120,
+        "wires": [
+            [
+                "sd_54GefA1sbvDdOtGL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lMGek7SMKn9JopvM",
+        "type": "PageStart",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "addNumber",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "num1",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "num2",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "sum",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "addNumber",
+        "category": "General",
+        "x": 85,
+        "y": 440,
+        "wires": [
+            [
+                "sd_5cn4y5lyiccD9eiy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_5cn4y5lyiccD9eiy",
+        "type": "Script",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.num1);\nconsole.log(bh.input.num2);\n\nbh.input.sum = bh.input.num1 +  bh.input.num2;\n\nconsole.log(bh.input.sum);",
+        "functionName": "sd_5cn4y5lyiccD9eiy",
+        "category": "Function",
+        "x": 245,
+        "y": 440,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_54GefA1sbvDdOtGL",
+        "type": "PageCallService",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_cs4BbFJuDihoAuYm",
+            "type": "tab",
+            "createdDate": "2023-08-02T05:08:51.231Z",
+            "label": "Home",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_lMGek7SMKn9JopvM",
+            "flowName": "addNumber"
+        },
+        "inputVariables": [
+            {
+                "key": "num1",
+                "map": true,
+                "valueType": "bh.local",
+                "value": "num1"
+            },
+            {
+                "key": "num2",
+                "map": true,
+                "valueType": "bh.local",
+                "value": "num2"
+            },
+            {
+                "key": "sum",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "sum",
+                "valueType": "bh.local",
+                "value": "sum",
+                "mapVarName": "sum",
+                "localVar": "bh.local.sum"
+            }
+        ],
+        "serviceImportPath": "./",
+        "startName": "addNumber",
+        "inputParams": [
+            "bh.local.num1",
+            "bh.local.num2",
+            null
+        ],
+        "accept_csd": false,
+        "functionName": "sd_54GefA1sbvDdOtGL",
+        "category": "General",
+        "x": 525,
+        "y": 120,
+        "wires": [
+            [
+                "sd_cLhz04YFlDr9gsWl"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GrDCsfWKT3IbLETX",
+        "type": "Script",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.sum);\n\nconsole.log(page.books);",
+        "functionName": "sd_GrDCsfWKT3IbLETX",
+        "category": "Function",
+        "x": 785,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dW7K7KxGLhw6SoTa",
+        "type": "PageStart",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "navigate",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "path",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "navigate",
+        "category": "General",
+        "x": 85,
+        "y": 600,
+        "wires": [
+            [
+                "sd_IwOrFMqUrEPijZYh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_YTUauVtKv9F2QoCM",
+        "type": "Navigation",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "pathMap": {
+            "type": "bh.input",
+            "value": "path"
+        },
+        "qparamsMap": {
+            "type": "bh.local",
+            "value": "query"
+        },
+        "functionName": "sd_YTUauVtKv9F2QoCM",
+        "category": "Navigation",
+        "x": 405,
+        "y": 600,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_IwOrFMqUrEPijZYh",
+        "type": "Script",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.query = {\n    username : 'gopala',\n    place : 'kurnool'\n}\n\n// bh.local.path = '/login';",
+        "functionName": "sd_IwOrFMqUrEPijZYh",
+        "category": "Function",
+        "x": 245,
+        "y": 600,
+        "wires": [
+            [
+                "sd_YTUauVtKv9F2QoCM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cLhz04YFlDr9gsWl",
+        "type": "PageCallService",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "call get books",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fwssyW0CyBk692ak",
+            "type": "tab",
+            "createdDate": "2023-08-02T09:55:15.113Z",
+            "label": "books",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_g5pkBCmQ1ANqfj0A",
+            "flowName": "getBook"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "books",
+                "valueType": "this.page",
+                "value": "books",
+                "mapVarName": "books",
+                "localVar": "this.page.books"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/books",
+        "startName": "getBook",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "callGetBooks",
+        "category": "General",
+        "x": 665,
+        "y": 120,
+        "wires": [
+            [
+                "sd_GrDCsfWKT3IbLETX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yM754xu8EKpKN3al",
+        "type": "PageStart",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "call add books",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "callAddBooks",
+        "category": "General",
+        "x": 85,
+        "y": 760,
+        "wires": [
+            [
+                "sd_fvYbb8gKob5MNSsE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "HomeComponent"
+    },
+    {
+        "id": "sd_fvYbb8gKob5MNSsE",
+        "type": "PageCallService",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_fwssyW0CyBk692ak",
+            "type": "tab",
+            "createdDate": "2023-08-02T09:55:15.113Z",
+            "label": "books",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_t4V9Vcn9u6iCEp3e",
+            "flowName": "addBooks"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "response",
+                "valueType": "this.page",
+                "value": "response",
+                "mapVarName": "response",
+                "localVar": "this.page.response"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/books",
+        "startName": "addBooks",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_fvYbb8gKob5MNSsE",
+        "category": "General",
+        "x": 245,
+        "y": 760,
+        "wires": [
+            [
+                "sd_Yn61ZGtGu7SQws9M"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Yn61ZGtGu7SQws9M",
+        "type": "Script",
+        "z": "sd_cs4BbFJuDihoAuYm",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.response.data.id);\n\npage.outputId = page.response.data.id;",
+        "functionName": "sd_Yn61ZGtGu7SQws9M",
+        "category": "Function",
+        "x": 405,
+        "y": 760,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "HomeComponent",
+        "generated": true
+    }
+]

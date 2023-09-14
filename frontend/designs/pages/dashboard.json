@@ -1,0 +1,244 @@
+[
+    {
+        "id": "sd_PO3uKM6ZKmF4v1JM",
+        "type": "tab",
+        "createdDate": "2023-07-14T02:07:50.174Z",
+        "label": "dashboard",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_imH3AoM9XGlQ5uE4",
+        "type": "OnInit",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_imH3AoM9XGlQ5uE4",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_QEeg4vhV6ENeW6wG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_QEeg4vhV6ENeW6wG",
+        "type": "PageVariables",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_QEeg4vhV6ENeW6wG",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_LNhQZROudzXjYNoV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LNhQZROudzXjYNoV",
+        "type": "Storage",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "profileData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "profileData"
+        },
+        "functionName": "sd_LNhQZROudzXjYNoV",
+        "category": "Storage",
+        "x": 345,
+        "y": 40,
+        "wires": [
+            [
+                "sd_8B34EEwH45rbqHSU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_8B34EEwH45rbqHSU",
+        "type": "Script",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.profileName = page.profileData.name;",
+        "functionName": "sd_8B34EEwH45rbqHSU",
+        "category": "Function",
+        "x": 505,
+        "y": 40,
+        "wires": [
+            [
+                "sd_RVuoDJ6LPooRMX5H"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_RY3P8GIksGG36bCG",
+        "type": "PageStart",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "logout",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logout",
+        "category": "General",
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "sd_hFWmBcP0nFFc7Br3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_hFWmBcP0nFFc7Br3",
+        "type": "Storage",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "clear",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {},
+        "value": {},
+        "resultMapping": {},
+        "functionName": "sd_hFWmBcP0nFFc7Br3",
+        "category": "Storage",
+        "x": 220,
+        "y": 200,
+        "wires": [
+            [
+                "sd_aSE5l6SokitW1YQW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_aSE5l6SokitW1YQW",
+        "type": "Navigation",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "functionName": "sd_aSE5l6SokitW1YQW",
+        "category": "Navigation",
+        "x": 380,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_RVuoDJ6LPooRMX5H",
+        "type": "UseDependency",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "commonService",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "services"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "app/services/common/common.service",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_RVuoDJ6LPooRMX5H",
+        "category": "Function",
+        "x": 660,
+        "y": 40,
+        "wires": [
+            [
+                "sd_nCpQYtSpFhKAxJCk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_nCpQYtSpFhKAxJCk",
+        "type": "Script",
+        "z": "sd_PO3uKM6ZKmF4v1JM",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.services);",
+        "functionName": "sd_nCpQYtSpFhKAxJCk",
+        "category": "Function",
+        "x": 805,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    }
+]

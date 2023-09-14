@@ -1,0 +1,350 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_HIYPPXmsXlk72dEP",
+        "type": "tab",
+        "createdDate": "2023-07-06T04:27:02.962Z",
+        "label": "flows",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "flows",
+        "relativeParentPath": "Register"
+    },
+    {
+        "id": "sd_NA8tGXsxCbYkpgzA",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_HIYPPXmsXlk72dEP",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "register_flow",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "name",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "register_flow",
+        "category": "General",
+        "x": 125,
+        "y": 180,
+        "wires": [
+            [
+                "sd_NMPe8lajeGQuYxeb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows"
+    },
+    {
+        "id": "sd_5ismZCf1J3QLkZgw",
+        "type": "Comments",
+        "z": "SSD_SERVICE_ID_sd_HIYPPXmsXlk72dEP",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "comments": "<p>Registration_flow_for_the_user</p>",
+        "category": "General",
+        "x": 125,
+        "y": 60,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows",
+        "functionName": "sd_5ismZCf1J3QLkZgw"
+    },
+    {
+        "id": "sd_NMPe8lajeGQuYxeb",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_HIYPPXmsXlk72dEP",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.name){\n    bh.input.status = false;\n    bh.input.result = {message: 'Name field required'}\n}else if(!bh.input.email){\n    bh.input.status = false;\n    bh.input.result = {message: \"email field required\"}\n}\n\nif(bh.input.email){\n    \n}",
+        "functionName": "sd_NMPe8lajeGQuYxeb",
+        "category": "Function",
+        "x": 260,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    },
+    {
+        "id": "sd_ia2MmqiWN3JSWlTy",
+        "type": "EmailOut",
+        "z": "SSD_SERVICE_ID_sd_HIYPPXmsXlk72dEP",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "emailoutconfig": "sd_RPVwySyFdRxV15nL",
+        "from": "\"demomail224@gmail.com\"",
+        "to": "\"gadigegopala55@gmail.com\"",
+        "cc": "undefined",
+        "bcc": "undefined",
+        "subject": "\"testing\"",
+        "body": "\"mail received successfully\"",
+        "html": "undefined",
+        "attachment": [],
+        "attachmentList": {},
+        "switchStates": {
+            "attachment": "Map"
+        },
+        "editableListData": {},
+        "routingoptions": "undefined",
+        "iCal": "undefined",
+        "contentoptions": "undefined",
+        "headeroptions": "undefined",
+        "securityoptions": "undefined",
+        "outputs": 1,
+        "resultMapping": "bh.response",
+        "functionName": "sd_ia2MmqiWN3JSWlTy",
+        "category": "Messaging",
+        "x": 245,
+        "y": 320,
+        "wires": [
+            [
+                "sd_wweDZ4S9VEDDIIpZ"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "from": {
+                "type": "str",
+                "value": "demomail224@gmail.com",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "to": {
+                "type": "str",
+                "value": "gadigegopala55@gmail.com",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "cc": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "bcc": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "subject": {
+                "type": "str",
+                "value": "testing",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "body": {
+                "type": "str",
+                "value": "mail received successfully",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "html": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "routingoptions": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "iCal": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "contentoptions": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "headeroptions": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "securityoptions": {
+                "type": "bh",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "response",
+                "nullable": "true",
+                "nullableValue": "undefined",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    },
+    {
+        "id": "sd_jyZlp8zFz0CeDT3B",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_HIYPPXmsXlk72dEP",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "sending-email",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 320,
+        "wires": [
+            [
+                "sd_ia2MmqiWN3JSWlTy"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows",
+        "functionName": "sd_jyZlp8zFz0CeDT3B"
+    },
+    {
+        "id": "sd_wweDZ4S9VEDDIIpZ",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_HIYPPXmsXlk72dEP",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.response",
+            "send": "bh.response"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_wweDZ4S9VEDDIIpZ",
+        "category": "HTTP",
+        "x": 380,
+        "y": 320,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    }
+]

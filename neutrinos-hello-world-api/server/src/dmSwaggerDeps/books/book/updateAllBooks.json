@@ -1,0 +1,49 @@
+{
+    "/dm/books/book/update-all": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "filter": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "id"
+                                ]
+                            },
+                            "book": {
+                                "$ref": "#/definitions/books ~ book",
+                                "required": []
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/books ~ book"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "book"
+            ]
+        }
+    }
+}

@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_QEdle2mzMfl9Szus",
+        "type": "tab",
+        "createdDate": "2023-08-02T07:31:15.302Z",
+        "label": "Register",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "RegisterComponent"
+    },
+    {
+        "id": "sd_F9vcvcGqzdkJAtyv",
+        "type": "OnInit",
+        "z": "sd_QEdle2mzMfl9Szus",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_F9vcvcGqzdkJAtyv",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "sd_M8Cd3EnAQeA4MMxH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "RegisterComponent"
+    },
+    {
+        "id": "sd_M8Cd3EnAQeA4MMxH",
+        "type": "PageVariables",
+        "z": "sd_QEdle2mzMfl9Szus",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_M8Cd3EnAQeA4MMxH",
+        "category": "Function",
+        "x": 215,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "RegisterComponent",
+        "generated": true
+    }
+]

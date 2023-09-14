@@ -1,0 +1,101 @@
+{
+    "routes": [
+        {
+            "path": "home",
+            "component": "HomeComponent",
+            "children": [
+                {
+                    "path": "card-task",
+                    "component": "Card_taskComponent"
+                },
+                {
+                    "path": "create-book",
+                    "component": "CreateBookComponent"
+                },
+                {
+                    "path": "cards",
+                    "component": "CardsComponent"
+                }
+            ]
+        },
+        {
+            "path": "login",
+            "component": "LoginComponent"
+        },
+        {
+            "path": "register",
+            "component": "RegisterComponent"
+        },
+        {
+            "path": "cards",
+            "component": "CardsComponent"
+        },
+        {
+            "path": "card-task",
+            "component": "Card_taskComponent"
+        },
+        {
+            "path": "create-book",
+            "component": "CreateBookComponent"
+        },
+        {
+            "path": "side-nav-page",
+            "component": "side_nav_pageComponent",
+            "children": [
+                {
+                    "path": "card-task",
+                    "component": "Card_taskComponent"
+                },
+                {
+                    "path": "create-book",
+                    "component": "CreateBookComponent"
+                }
+            ]
+        },
+        {
+            "path": "task-home",
+            "component": "task_homeComponent",
+            "children": [
+                {
+                    "path": "task-add",
+                    "component": "task_addComponent"
+                },
+                {
+                    "path": "task-data",
+                    "component": "task_dataComponent"
+                },
+                {
+                    "path": "task-table",
+                    "component": "task_tableComponent"
+                }
+            ],
+            "canActivate": {
+                "edited": true,
+                "value": "NeutrinosAuthGuardService"
+            }
+        },
+        {
+            "path": "cards-data",
+            "component": "cards_dataComponent"
+        },
+        {
+            "path": "dialog",
+            "component": "dialog_pendingComponent"
+        },
+        {
+            "path": "testing-data",
+            "component": "periodicDataContainerComponent",
+            "data": "{'display': true}"
+        },
+        {
+            "path": "''",
+            "redirectTo": "home/cards",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

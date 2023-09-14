@@ -1,0 +1,176 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_wgeNXhZTkyRgcjAK",
+        "type": "tab",
+        "createdDate": "2023-06-27T06:12:16.624Z",
+        "label": "get_operation",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "get_operation",
+        "relativeParentPath": "Sql_practice"
+    },
+    {
+        "id": "sd_kICtRmTVaklc1NDt",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_wgeNXhZTkyRgcjAK",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "get-operation",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 180,
+        "y": 160,
+        "wires": [
+            [
+                "sd_sL08D6gqQgindRuU"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "get_operation",
+        "functionName": "sd_kICtRmTVaklc1NDt"
+    },
+    {
+        "id": "sd_N7FV2o0ucMG52Q8s",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_wgeNXhZTkyRgcjAK",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "response",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.response",
+            "send": "bh.response"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_N7FV2o0ucMG52Q8s",
+        "category": "HTTP",
+        "x": 725,
+        "y": 160,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "get_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_sL08D6gqQgindRuU",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_wgeNXhZTkyRgcjAK",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = 'SELECT id,name,email,phone from employee ORDER BY id';",
+        "functionName": "sd_sL08D6gqQgindRuU",
+        "category": "Function",
+        "x": 365,
+        "y": 160,
+        "wires": [
+            [
+                "sd_WwWY4BoZbShMX6AD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "get_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_WwWY4BoZbShMX6AD",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_wgeNXhZTkyRgcjAK",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "resultMap": {
+            "type": "bh",
+            "value": "response"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_WwWY4BoZbShMX6AD",
+        "category": "Storage",
+        "x": 525,
+        "y": 160,
+        "wires": [
+            [
+                "sd_N7FV2o0ucMG52Q8s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "get_operation",
+        "generated": true
+    }
+]

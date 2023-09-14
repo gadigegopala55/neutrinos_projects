@@ -1,0 +1,91 @@
+{
+    "/books": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "books"
+            ]
+        }
+    },
+    "/book": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "title",
+                    "description": "title",
+                    "required": true
+                },
+                {
+                    "in": "body",
+                    "name": "description",
+                    "description": "description",
+                    "required": true
+                }
+            ],
+            "responses": {},
+            "tags": [
+                "books"
+            ]
+        },
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "books"
+            ]
+        }
+    },
+    "/rockets": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "books"
+            ]
+        }
+    },
+    "/ships": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "books"
+            ]
+        }
+    },
+    "/calc": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "books"
+            ]
+        }
+    }
+}

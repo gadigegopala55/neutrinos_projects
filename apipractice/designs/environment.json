@@ -1,0 +1,71 @@
+{
+    "TYPE": {
+        "name": "TYPE",
+        "properties": {
+            "production": "client",
+            "ssdURL": "client",
+            "tenantName": "client",
+            "appName": "client",
+            "namespace": "client",
+            "useDefaultExceptionUI": "client",
+            "isIDSEnabled": "client",
+            "SSD_BASE_PATH": "server",
+            "SSD_DEFAULT_PORT": "server",
+            "webAppMountpoint": "both",
+            "CLOCK_TOLERANCE": "server",
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "POSTGRES_USERNAME": "server",
+            "POSTGRES_PASSWORD": "server",
+            "DATABASE_NAME": "server",
+            "DATABASE_SCHEMA": "server",
+            "REQUEST_URL": "server",
+            "HTTP_REQUEST_URL": "server"
+        }
+    },
+    "dev": {
+        "name": "dev",
+        "properties": {
+            "production": false,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "Heptagon",
+            "appName": "apipractice",
+            "namespace": "com.Heptagon.apipractice",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "POSTGRES_USERNAME": "postgres",
+            "POSTGRES_PASSWORD": "postgres",
+            "DATABASE_NAME": "practice",
+            "DATABASE_SCHEMA": "public",
+            "REQUEST_URL": "https://reqres.in/api",
+            "HTTP_REQUEST_URL": "https://gorest.co.in/public/v2"
+        }
+    },
+    "prod": {
+        "name": "prod",
+        "properties": {
+            "production": true,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "Heptagon",
+            "appName": "apipractice",
+            "namespace": "com.Heptagon.apipractice",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "POSTGRES_USERNAME": "postgres",
+            "POSTGRES_PASSWORD": "postgres",
+            "DATABASE_NAME": "practice",
+            "DATABASE_SCHEMA": "public",
+            "REQUEST_URL": "https://reqres.in/api",
+            "HTTP_REQUEST_URL": "https://gorest.co.in/public/v2"
+        }
+    }
+}

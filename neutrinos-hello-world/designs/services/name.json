@@ -1,0 +1,68 @@
+[
+    {
+        "id": "sd_c2q08HMR2qCBU5Bp",
+        "type": "tab",
+        "createdDate": "2023-08-02T09:27:18.702Z",
+        "label": "name",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "name",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_RvnJKVT11GDVToLB",
+        "type": "Start",
+        "z": "sd_c2q08HMR2qCBU5Bp",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "get my name",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "name",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getMyName",
+        "category": "General",
+        "x": 125,
+        "y": 120,
+        "wires": [
+            [
+                "sd_9gZKTdJka03qRoIZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "name"
+    },
+    {
+        "id": "sd_9gZKTdJka03qRoIZ",
+        "type": "Script",
+        "z": "sd_c2q08HMR2qCBU5Bp",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.name = 'gopal';",
+        "functionName": "sd_9gZKTdJka03qRoIZ",
+        "category": "Function",
+        "x": 260,
+        "y": 120,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "name",
+        "generated": true
+    }
+]

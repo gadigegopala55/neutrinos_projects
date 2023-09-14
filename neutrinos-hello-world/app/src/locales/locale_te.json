@@ -1,0 +1,12 @@
+{
+    "localeId": "te",
+    "localeName": "Telugu",
+    "isDefaultLanguage": false,
+    "properties": {
+        "Title": "శీర్షిక",
+        "Description": "వివరణ",
+        "due_date": "గడువు తేది",
+        "priority": "ప్రాధాన్యత",
+        "status": "హోదా"
+    }
+}

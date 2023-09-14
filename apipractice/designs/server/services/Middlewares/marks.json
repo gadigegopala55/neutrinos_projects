@@ -1,0 +1,228 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_P2xrB6D5Qv5xAqgU",
+        "type": "tab",
+        "createdDate": "2023-07-05T15:44:05.037Z",
+        "label": "marks",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "marks",
+        "relativeParentPath": "Middlewares"
+    },
+    {
+        "id": "sd_S1HZE0iJkIea1Wcx",
+        "type": "Session",
+        "z": "SSD_SERVICE_ID_sd_P2xrB6D5Qv5xAqgU",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "get",
+        "data": "",
+        "resultMapping": "bh.session",
+        "dataMapping": "bh",
+        "functionName": "sd_S1HZE0iJkIea1Wcx",
+        "category": "HTTP",
+        "x": 365,
+        "y": 220,
+        "wires": [
+            [
+                "sd_nbBaZXzLslLgDTz3"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "session",
+                "constant": false
+            },
+            "dataMapping": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "marks",
+        "generated": true
+    },
+    {
+        "id": "sd_1a40aXx9sItHO5Tp",
+        "type": "MiddlewareStart",
+        "z": "SSD_SERVICE_ID_sd_P2xrB6D5Qv5xAqgU",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "marks_middleware",
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "x": 225,
+        "y": 220,
+        "wires": [
+            [
+                "sd_S1HZE0iJkIea1Wcx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "marks",
+        "functionName": "sd_1a40aXx9sItHO5Tp"
+    },
+    {
+        "id": "sd_nbBaZXzLslLgDTz3",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_P2xrB6D5Qv5xAqgU",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = false;\nif(bh.session?.data?.marks){\n    bh.status = true\n}else{\n    bh.result = {\n        \"statusCode\": 403,\n        \"error\": \"please login\"\n    }\n}",
+        "functionName": "sd_nbBaZXzLslLgDTz3",
+        "category": "Function",
+        "x": 505,
+        "y": 220,
+        "wires": [
+            [
+                "sd_W1qkJH0k5cA9MdGq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "marks",
+        "generated": true
+    },
+    {
+        "id": "sd_dyxAE5FaGqkpOhhI",
+        "type": "MiddlewareEnd",
+        "z": "SSD_SERVICE_ID_sd_P2xrB6D5Qv5xAqgU",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 0,
+            "ssd_typedInputField": true
+        },
+        "responseType": "next",
+        "responseMapping": {
+            "status": 0,
+            "next": "bh"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_dyxAE5FaGqkpOhhI",
+        "category": "HTTP",
+        "x": 785,
+        "y": 160,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "marks",
+        "generated": true
+    },
+    {
+        "id": "sd_W1qkJH0k5cA9MdGq",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_P2xrB6D5Qv5xAqgU",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_W1qkJH0k5cA9MdGq",
+        "category": "Function",
+        "x": 645,
+        "y": 220,
+        "wires": [
+            [
+                "sd_dyxAE5FaGqkpOhhI"
+            ],
+            [
+                "sd_BJittjXnCxnIXfRe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "marks",
+        "generated": true
+    },
+    {
+        "id": "sd_BJittjXnCxnIXfRe",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_P2xrB6D5Qv5xAqgU",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 403,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 403,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_BJittjXnCxnIXfRe",
+        "category": "HTTP",
+        "x": 785,
+        "y": 280,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "marks",
+        "generated": true
+    }
+]

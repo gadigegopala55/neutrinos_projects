@@ -1,0 +1,36 @@
+<div fxLayout="column wrap" style="margin-top: 60px;" class="height-100" fxLayoutAlign="start center" [fxShow]="true">
+  <h1>
+    Register</h1>
+  <form [formGroup]="page.registerForm" (ngSubmit)="user_register()">
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput placeholder="Enter your name" [required]="true" formControlName="name">
+        <mat-hint align="end" *ngIf="page.registerForm.controls[&apos;name&apos;]">Alphabeticals only allowed</mat-hint> <mat-icon matPrefix>person</mat-icon>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="password" placeholder="Enter your password" [required]="true" formControlName="password">
+        <mat-hint align="end" *ngIf="page.registerForm.controls[&apos;password&apos;]">AlphaNumeric only allowed</mat-hint> <mat-icon matPrefix>lock</mat-icon>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="number" placeholder="Enter your phone number" [required]="true" formControlName="phone">
+        <mat-hint align="end" *ngIf="page.registerForm.controls[&apos;phone&apos;]">numeric only allowed</mat-hint> <mat-icon matPrefix>phone</mat-icon>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="email" placeholder="Enter your Email" [required]="true" formControlName="email">
+        <mat-hint align="end" *ngIf="page.registerForm.controls[&apos;email&apos;]">Emails only allowed</mat-hint> <mat-icon matPrefix>mail</mat-icon>
+      </mat-form-field>
+    </div>
+    <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="date" placeholder="Enter your Date of Birth" [required]="true" formControlName="date">
+        <mat-hint align="end" *ngIf="page.registerForm.controls[&apos;date&apos;]">Date only allowed</mat-hint> <mat-icon matPrefix>D</mat-icon>
+      </mat-form-field>
+    </div><button mat-raised-button color="primary" [disabled]="page.registerForm.invalid">Register</button>
+  </form>
+</div>

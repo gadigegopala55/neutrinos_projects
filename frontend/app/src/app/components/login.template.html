@@ -1,0 +1,23 @@
+<div fxLayout="column wrap" class="height-margin-20" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" class="margin-top-40" fxLayoutAlign="start stretch" [fxShow]="true">
+    <h1>
+      LOGIN</h1>
+  </div>
+  <form [formGroup]="page.loginForm" (ngSubmit)="user_login()">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="text" placeholder="Type your username" [required]="true" formControlName="username">
+        <mat-hint align="end" *ngIf="page.loginForm.controls[&apos;username&apos;]">alphabeticals only allowed</mat-hint> <mat-icon matPrefix>person</mat-icon>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="password" placeholder="Type your password" [required]="true" formControlName="password">
+        <mat-hint align="end" *ngIf="page.loginForm.controls[&apos;password&apos;]">AlphaNumeric only allowed</mat-hint> <mat-icon matPrefix>lock</mat-icon>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="end end" [fxShow]="true"><span>
+                <a href="/register">Register</a></span></div>
+    <div fxLayout="column wrap" class="margin-top-20" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button color="primary" [disabled]="page.loginForm.invalid" type="submit">Login</button></div>
+  </form>
+</div>

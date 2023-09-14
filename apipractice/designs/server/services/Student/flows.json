@@ -1,0 +1,407 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "type": "tab",
+        "createdDate": "2023-06-29T13:35:32.159Z",
+        "label": "flows",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "flows",
+        "relativeParentPath": "Student"
+    },
+    {
+        "id": "sd_nm4dF8L6BfSPqxeu",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "student_function",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "name",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "roll_number",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "clas",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "section",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "student_function",
+        "category": "General",
+        "x": 205,
+        "y": 80,
+        "wires": [
+            [
+                "sd_Y4YWt54LpyppsWA8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows"
+    },
+    {
+        "id": "sd_Y4YWt54LpyppsWA8",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.name){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"name required\"};\n}else if(!bh.input.roll_number){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"roll_number required\"}\n}else if(!bh.input.clas){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"clas required\"}\n}else if(!bh.input.section){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"section required\"}\n}",
+        "functionName": "sd_Y4YWt54LpyppsWA8",
+        "category": "Function",
+        "x": 345,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    },
+    {
+        "id": "sd_97bZ8xb4JyMo9ekZ",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "subject_function",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "subject_name",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "subject_function",
+        "category": "General",
+        "x": 205,
+        "y": 220,
+        "wires": [
+            [
+                "sd_t62nIFWQWIK7h2Ss"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows"
+    },
+    {
+        "id": "sd_t62nIFWQWIK7h2Ss",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.subject_name){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"subject_name required\"};\n}",
+        "functionName": "sd_t62nIFWQWIK7h2Ss",
+        "category": "Function",
+        "x": 345,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    },
+    {
+        "id": "sd_oHRKdA60EwsCMvCL",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "exams_function",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "exam_name",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "exams_function",
+        "category": "General",
+        "x": 205,
+        "y": 360,
+        "wires": [
+            [
+                "sd_OFMXXsDMqIb9Td30"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows"
+    },
+    {
+        "id": "sd_OFMXXsDMqIb9Td30",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.exam_name){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"exam_name required\"};\n}",
+        "functionName": "sd_OFMXXsDMqIb9Td30",
+        "category": "Function",
+        "x": 345,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    },
+    {
+        "id": "sd_lylfaKeIKlIJ2WPL",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "marks_function",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "student_id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "exam_id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "subject_id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "mark",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "marks_function",
+        "category": "General",
+        "x": 205,
+        "y": 500,
+        "wires": [
+            [
+                "sd_I373MzLNeVp7kPi5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows"
+    },
+    {
+        "id": "sd_I373MzLNeVp7kPi5",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.student_id){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"student_id required\"};\n}else if(!bh.input.exam_id){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"exam_id required\"};\n}else if(!bh.input.subject_id){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"subject_id required\"};\n}else if(!bh.input.mark){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"mark required\"};\n}",
+        "functionName": "sd_I373MzLNeVp7kPi5",
+        "category": "Function",
+        "x": 345,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    },
+    {
+        "id": "sd_2A6JVkWHMryrHEyx",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "get_rank",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "exam_id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "get_rank",
+        "category": "General",
+        "x": 625,
+        "y": 80,
+        "wires": [
+            [
+                "sd_BZQKnBXYDl24OnQx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "flows"
+    },
+    {
+        "id": "sd_BZQKnBXYDl24OnQx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.exam_id){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"exam_id required\"};\n}",
+        "functionName": "sd_BZQKnBXYDl24OnQx",
+        "category": "Function",
+        "x": 785,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "flows",
+        "generated": true
+    }
+]

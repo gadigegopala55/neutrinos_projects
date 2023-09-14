@@ -1,0 +1,15 @@
+{
+    "/calculator-operation": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "calc_operation"
+            ]
+        }
+    }
+}

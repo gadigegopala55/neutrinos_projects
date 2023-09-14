@@ -1,0 +1,970 @@
+[
+    {
+        "id": "sd_onhMdqCzxlLCy7d8",
+        "type": "tab",
+        "createdDate": "2023-08-06T11:00:06.487Z",
+        "label": "task_data",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 2,
+        "generateNext": true,
+        "serviceName": "task_dataComponent"
+    },
+    {
+        "id": "sd_E2qV5YQ60xaghJFi",
+        "type": "OnInit",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_E2qV5YQ60xaghJFi",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "sd_iNwNlKonTzT5WNRS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_iNwNlKonTzT5WNRS",
+        "type": "PageVariables",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_iNwNlKonTzT5WNRS",
+        "category": "Function",
+        "x": 205,
+        "y": 60,
+        "wires": [
+            [
+                "sd_HrzG498vCNxWilbF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HrzG498vCNxWilbF",
+        "type": "PageCallService",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_4CBWUeicfjqRkMYB",
+            "type": "tab",
+            "createdDate": "2023-08-05T12:01:23.289Z",
+            "label": "tasks",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_z3Pn07zR0MKXSO3t",
+            "flowName": "gettask"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "response",
+                "valueType": "this.page",
+                "value": "response",
+                "mapVarName": "response",
+                "localVar": "this.page.response"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/tasks",
+        "startName": "gettask",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_HrzG498vCNxWilbF",
+        "category": "General",
+        "x": 345,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "task_dataComponent"
+    },
+    {
+        "id": "sd_SrKMw2oDyBjOgcOW",
+        "type": "PageStart",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "deleteclick",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "deleteclick",
+        "category": "General",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_eZrEi2ooo8pkW1GQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_GiYZfFqpXcHSy7Dt",
+        "type": "PageStart",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "updateclick",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "updateclick",
+        "category": "General",
+        "x": 65,
+        "y": 340,
+        "wires": [
+            [
+                "sd_2ZFWmU6fqvm6gM1M"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_tMRRiDKtqlwDjqM0",
+        "type": "PageCallService",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_4CBWUeicfjqRkMYB",
+            "type": "tab",
+            "createdDate": "2023-08-05T12:01:23.289Z",
+            "label": "tasks",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_JlO15pEZmgr82GY3",
+            "flowName": "deletetask"
+        },
+        "inputVariables": [
+            {
+                "key": "id",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "id"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/tasks",
+        "startName": "deletetask",
+        "inputParams": [
+            "bh.input.id"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_tMRRiDKtqlwDjqM0",
+        "category": "General",
+        "x": 645,
+        "y": 200,
+        "wires": [
+            [
+                "sd_q29Rp4ILDo3cLynk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "task_dataComponent"
+    },
+    {
+        "id": "sd_dD0pYxIKvtQVrzYk",
+        "type": "PageCallService",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_4CBWUeicfjqRkMYB",
+            "type": "tab",
+            "createdDate": "2023-08-05T12:01:23.289Z",
+            "label": "tasks",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_6nFSrMZPRnc7ECOZ",
+            "flowName": "updatetask"
+        },
+        "inputVariables": [
+            {
+                "key": "id",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "id"
+            }
+        ],
+        "outputMapping": [],
+        "serviceImportPath": "app/sd-services/tasks",
+        "startName": "updatetask",
+        "inputParams": [
+            "bh.input.id"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_dD0pYxIKvtQVrzYk",
+        "category": "General",
+        "x": 745,
+        "y": 320,
+        "wires": [
+            [
+                "sd_ptvB83fiFBdZ46t9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_q29Rp4ILDo3cLynk",
+        "type": "Script",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "location.reload();\n",
+        "functionName": "sd_q29Rp4ILDo3cLynk",
+        "category": "Function",
+        "x": 805,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ptvB83fiFBdZ46t9",
+        "type": "Script",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "location.reload();\n//page.response = [];",
+        "functionName": "sd_ptvB83fiFBdZ46t9",
+        "category": "Function",
+        "x": 905,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_j5OwZubr8WAWzV2i",
+        "type": "Script",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.dataSource = new MatTableDataSource([\n  {\n    position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' }\n  ,\n  {\n    position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' }\n  ,\n  {\n    position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' }\n  ,\n  {\n    position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' }\n  ,\n  {\n    position: 5, name: 'Boron', weight: 10.811, symbol: 'B' }\n  ,\n  {\n    position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }\n  ,\n  {\n    position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' }\n  ,\n  {\n    position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' }\n  ,\n  {\n    position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' }\n  ,\n  {\n    position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' }\n  ,\n]);\n\nbh.local.dataSource = page.response;",
+        "functionName": "sd_eJuzOUTYKNgXaqdz_1",
+        "category": "Function",
+        "x": 505,
+        "y": 60,
+        "wires": [
+            [
+                "sd_rCfSocOP5znfISA9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_rCfSocOP5znfISA9",
+        "type": "PageVariables",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "dataSource"
+                }
+            }
+        ],
+        "functionName": "sd_E9QbOlnVduPNV5MO_1",
+        "category": "Function",
+        "x": 645,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_sD4xeRhmrio7OPJE",
+        "type": "AfterViewInit",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_0D6Oq5uxIe6uCyR7",
+        "type": "ViewPicker",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatSort"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_1",
+        "category": "Function",
+        "x": 205,
+        "y": 500,
+        "wires": [
+            [
+                "sd_03vtr9kokDSXYNfp"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_03vtr9kokDSXYNfp",
+        "type": "Script",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.sort = this.MatSort;",
+        "functionName": "sd_2VNGqvcKee34lvOz_1",
+        "category": "Function",
+        "x": 345,
+        "y": 500,
+        "wires": [
+            [
+                "sd_BZXl4VQyKSdcdxDS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_BZXl4VQyKSdcdxDS",
+        "type": "ViewPicker",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatPaginator"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_2",
+        "category": "Function",
+        "x": 485,
+        "y": 500,
+        "wires": [
+            [
+                "sd_fwR3RzLpmedUDzTW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_fwR3RzLpmedUDzTW",
+        "type": "Script",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.paginator = this.MatPaginator;",
+        "functionName": "sd_2VNGqvcKee34lvOz_2",
+        "category": "Function",
+        "x": 625,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "task_dataComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_2ZFWmU6fqvm6gM1M",
+        "type": "Script",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.dialogData = {\n    'header': `Please select the Status to update for id: ${bh.input.id}`,\n    'negativeAction': 'No',\n    'positiveAction': 'Yes',\n    'allow': 'yes'\n}",
+        "functionName": "sd_2ZFWmU6fqvm6gM1M",
+        "category": "Function",
+        "x": 205,
+        "y": 340,
+        "wires": [
+            [
+                "sd_BzRXU32L6GmM2evS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XXImOm2plPoHvby0",
+        "type": "OpenDialog",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_2ymBiWkC5USeGupg",
+            "label": "dialog_pending"
+        },
+        "relativePath": "app/components/dialog_pending",
+        "data": "this.page.dialogData",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "this.page",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page.data",
+        "functionName": "sd_XXImOm2plPoHvby0",
+        "category": "Dialog",
+        "x": 345,
+        "y": 200,
+        "wires": [
+            [],
+            [
+                "sd_MhyxjUXDoN0JzDKp"
+            ],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "dialogData",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "data",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_eZrEi2ooo8pkW1GQ",
+        "type": "Script",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.dialogData = {\n    header: `Please confirm your deletion for id: ${bh.input.id}`,\n    negativeAction: 'No',\n    positiveAction: 'yes'\n}\nconsole.log('confirm');",
+        "functionName": "sd_eZrEi2ooo8pkW1GQ",
+        "category": "Function",
+        "x": 205,
+        "y": 200,
+        "wires": [
+            [
+                "sd_XXImOm2plPoHvby0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_MhyxjUXDoN0JzDKp",
+        "type": "PageSwitch",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "data.status",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.data.status",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_MhyxjUXDoN0JzDKp",
+        "category": "Function",
+        "x": 500,
+        "y": 200,
+        "wires": [
+            [
+                "sd_tMRRiDKtqlwDjqM0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BzRXU32L6GmM2evS",
+        "type": "OpenDialog",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_2ymBiWkC5USeGupg",
+            "label": "dialog_pending"
+        },
+        "relativePath": "app/components/dialog_pending",
+        "data": "this.page.dialogData",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "this.page",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page.data",
+        "functionName": "sd_BzRXU32L6GmM2evS",
+        "category": "Dialog",
+        "x": 345,
+        "y": 340,
+        "wires": [
+            [],
+            [
+                "sd_0o9QbLElZHxX5gpy"
+            ],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "dialogData",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "data",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0o9QbLElZHxX5gpy",
+        "type": "PageSwitch",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "data.status",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.data.status",
+        "rules": [
+            {
+                "t": "true"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 1,
+        "functionName": "sd_0o9QbLElZHxX5gpy",
+        "category": "Function",
+        "x": 465,
+        "y": 400,
+        "wires": [
+            [
+                "sd_YHt2SmYBtwk4tExC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_YHt2SmYBtwk4tExC",
+        "type": "PageSwitch",
+        "z": "sd_onhMdqCzxlLCy7d8",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "data.status_b",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.data.status_b",
+        "rules": [
+            {
+                "t": "se",
+                "v": "Completed",
+                "vt": "str",
+                "gv": "\"Completed\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_YHt2SmYBtwk4tExC",
+        "category": "Function",
+        "x": 585,
+        "y": 400,
+        "wires": [
+            [
+                "sd_dD0pYxIKvtQVrzYk"
+            ],
+            [
+                "sd_BzRXU32L6GmM2evS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "task_dataComponent",
+        "generated": true
+    }
+]

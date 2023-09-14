@@ -1,0 +1,15 @@
+{
+    "/delete-operation": {
+        "delete": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "delete_operation"
+            ]
+        }
+    }
+}

@@ -1,0 +1,477 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "type": "tab",
+        "createdDate": "2023-06-27T07:58:36.390Z",
+        "label": "post_operation",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "post_operation",
+        "relativeParentPath": "Sql_practice"
+    },
+    {
+        "id": "sd_vUF1TfwroTNWXO6y",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "create_function",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "name",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "phone",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "create_function",
+        "category": "General",
+        "x": 125,
+        "y": 280,
+        "wires": [
+            [
+                "sd_3dz59erhoPJbldGF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "post_operation"
+    },
+    {
+        "id": "sd_3dz59erhoPJbldGF",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.name){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"name required\"};\n}else if(!bh.input.email){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"email required\"}\n}else if(!bh.input.phone){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"phone required\"}\n}",
+        "functionName": "sd_3dz59erhoPJbldGF",
+        "category": "Function",
+        "x": 265,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_y7X9nkmxvn6brhSH",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "post-operation",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "user_sequence",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 120,
+        "y": 120,
+        "wires": [
+            [
+                "sd_oVkKXEBan4Tfo50E"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "post_operation",
+        "functionName": "sd_y7X9nkmxvn6brhSH"
+    },
+    {
+        "id": "sd_oVkKXEBan4Tfo50E",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+            "type": "tab",
+            "createdDate": "2023-06-27T07:58:36.390Z",
+            "label": "post_operation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_vUF1TfwroTNWXO6y",
+            "flowName": "create_function"
+        },
+        "inputVariables": [
+            {
+                "key": "name",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.name"
+            },
+            {
+                "key": "email",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.email"
+            },
+            {
+                "key": "phone",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.phone"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./post_operation",
+        "startName": "create_function",
+        "inputParams": [
+            "bh.input.body.name",
+            "bh.input.body.email",
+            "bh.input.body.phone",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_oVkKXEBan4Tfo50E",
+        "category": "General",
+        "x": 260,
+        "y": 120,
+        "wires": [
+            [
+                "sd_gjL8kRWgwZ6g6Owu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_gjL8kRWgwZ6g6Owu",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_gjL8kRWgwZ6g6Owu",
+        "category": "Function",
+        "x": 405,
+        "y": 120,
+        "wires": [
+            [
+                "sd_NzJUILQGZfwaYmm2"
+            ],
+            [
+                "sd_050QkPXkktKX72TI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_NzJUILQGZfwaYmm2",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = 'INSERT INTO employee (name,email,phone) VALUES ($1,$2,$3)';\n\nbh.params = [\n    bh.input.body.name,\n    bh.input.body.email,\n    bh.input.body.phone\n];",
+        "functionName": "sd_NzJUILQGZfwaYmm2",
+        "category": "Function",
+        "x": 565,
+        "y": 60,
+        "wires": [
+            [
+                "sd_YYgSjrHQrjR0TMi9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_050QkPXkktKX72TI",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_050QkPXkktKX72TI",
+        "category": "HTTP",
+        "x": 560,
+        "y": 200,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_kljO34faT2ym42L8",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_kljO34faT2ym42L8",
+        "category": "HTTP",
+        "x": 965,
+        "y": 60,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_YYgSjrHQrjR0TMi9",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_YYgSjrHQrjR0TMi9",
+        "category": "Storage",
+        "x": 705,
+        "y": 60,
+        "wires": [
+            [
+                "sd_UtQkP6izzTHaolKB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_UtQkP6izzTHaolKB",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_6YRzWX735MMzVVkg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"message\": \"Data uploaded successfully\"};",
+        "functionName": "sd_UtQkP6izzTHaolKB",
+        "category": "Function",
+        "x": 825,
+        "y": 60,
+        "wires": [
+            [
+                "sd_kljO34faT2ym42L8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "post_operation",
+        "generated": true
+    }
+]

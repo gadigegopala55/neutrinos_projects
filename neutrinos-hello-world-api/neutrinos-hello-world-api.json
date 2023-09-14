@@ -1,0 +1,13 @@
+{
+    "displayName": "neutrinos-hello-world-api",
+    "appName": "neutrinos-hello-world-api",
+    "description": "neutrinos backend apis",
+    "lastModified": "2023-08-02T10:49:32.848Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "apiOnly",
+    "templateName": "blank",
+    "createDate": "2023-08-02T10:49:31.534Z",
+    "analyticsId": "0ec9b7ee-02db-4d1e-d1c9-eba29b01fce2",
+    "createdStudioVersion": "9.1.4"
+}

@@ -1,0 +1,1348 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "type": "tab",
+        "createdDate": "2023-07-06T17:27:00.674Z",
+        "label": "upload_file",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "relativeParentPath": "Files"
+    },
+    {
+        "id": "sd_Nop1IZ7lsJrl3fv0",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "upload-file",
+        "uploadpath": "\"files\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "krishna",
+                    "maxCount": 3
+                }
+            ],
+            "path": "\"files\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "krishna",
+                    "value": "3",
+                    "rowId": "sd_ycGI59G06BuwSQH8",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 140,
+        "wires": [
+            [
+                "sd_pCEZQgWoKC1llP9m"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "files",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "functionName": "sd_Nop1IZ7lsJrl3fv0"
+    },
+    {
+        "id": "sd_ajgvM8M335I3Ge9T",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_ajgvM8M335I3Ge9T",
+        "category": "HTTP",
+        "x": 890,
+        "y": 60,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_BZpss9c7brNaG8Ms",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "file_upload_function",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "file_data",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "response",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "file_upload_function",
+        "category": "General",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "sd_tLk0TXp9sbRp9I2W"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file"
+    },
+    {
+        "id": "sd_tLk0TXp9sbRp9I2W",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "await new Promise((r) => {\n    const fs = require(\"fs\");\n    const XLSX = require('xlsx');\n    let path = bh.input.file_data[0].path\n    fs.readFile(path, (err, data) => {\n        if (err) throw err;\n        let workbook = XLSX.read(data, {type:'buffer'});\n        let sheet_name_list = workbook.SheetNames;\n        let result = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]])\n        bh.input.response = {data: result};\n        r();\n    });\n})\n\n",
+        "functionName": "sd_tLk0TXp9sbRp9I2W",
+        "category": "Function",
+        "x": 270,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_pCEZQgWoKC1llP9m",
+        "type": "Async",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "flowNodes": [
+            {
+                "serviceId": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+                "serviceName": "upload_file",
+                "flowId": "sd_BZpss9c7brNaG8Ms",
+                "flowName": "file_upload_function",
+                "functionName": "file_upload_function",
+                "inputParams": [
+                    "bh.input.files.krishna",
+                    "bh.response"
+                ],
+                "inputVariables": [
+                    {
+                        "key": "file_data",
+                        "map": true,
+                        "valueType": "bh.input",
+                        "value": "files.krishna"
+                    },
+                    {
+                        "key": "response",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "response"
+                    }
+                ],
+                "accept_bh": false,
+                "randomVal": 589148,
+                "relativePath": "./upload_file"
+            }
+        ],
+        "_flowNodes": [
+            {
+                "serviceId": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+                "serviceName": "upload_file",
+                "flowId": "sd_BZpss9c7brNaG8Ms",
+                "flowName": "file_upload_function",
+                "functionName": "file_upload_function",
+                "inputParams": [
+                    "bh.input.files.krishna",
+                    "bh.response"
+                ],
+                "inputVariables": [
+                    {
+                        "key": "file_data",
+                        "map": true,
+                        "valueType": "bh.input",
+                        "value": "files.krishna"
+                    },
+                    {
+                        "key": "response",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "response"
+                    }
+                ],
+                "accept_bh": false,
+                "randomVal": 589148,
+                "relativePath": "./upload_file"
+            }
+        ],
+        "resultMapping": "bh.response",
+        "isValidNode": true,
+        "functionName": "sd_pCEZQgWoKC1llP9m",
+        "category": "Function",
+        "x": 270,
+        "y": 140,
+        "wires": [
+            [
+                "sd_FHHFCqV7wKjTvz0Y"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "response",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_FHHFCqV7wKjTvz0Y",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = true;\nlet data = bh.response[0].input.response.data;\nlet values = '';\nfor(let row of data){\n    if (Object.keys(row).length == 5){\n        values += `('${row.name}','${row.email}','${row.date_of_birth}','${row.phone_no}','${row.status}'),`\n    }\n}\n\nif(values == ''){\n    bh.status = false;\n    bh.result = {message: 'please add data'};\n}else{\n    values = values.slice(0,-1);\n    bh.query  = 'INSERT INTO user_data (name, email, date_of_birth, phone_no, status) values ' + values;\n}\n\nconsole.log(values);",
+        "functionName": "sd_FHHFCqV7wKjTvz0Y",
+        "category": "Function",
+        "x": 385,
+        "y": 140,
+        "wires": [
+            [
+                "sd_IiImGRvuyYiN0q8K"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_IiImGRvuyYiN0q8K",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_IiImGRvuyYiN0q8K",
+        "category": "Function",
+        "x": 510,
+        "y": 140,
+        "wires": [
+            [
+                "sd_mCaKrc08FPKfJ7Cb"
+            ],
+            [
+                "sd_sMZ4kSwVKVOX3XtZ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_sMZ4kSwVKVOX3XtZ",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_sMZ4kSwVKVOX3XtZ",
+        "category": "HTTP",
+        "x": 625,
+        "y": 220,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_mCaKrc08FPKfJ7Cb",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_z1hHi1Sesg8SeX6u",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "response"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {},
+        "dbType": "postgres",
+        "functionName": "sd_mCaKrc08FPKfJ7Cb",
+        "category": "Storage",
+        "x": 630,
+        "y": 60,
+        "wires": [
+            [
+                "sd_65NGDaP28C4fnZF9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_65NGDaP28C4fnZF9",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {message: \"Data updated successfully\"};",
+        "functionName": "sd_65NGDaP28C4fnZF9",
+        "category": "Function",
+        "x": 750,
+        "y": 60,
+        "wires": [
+            [
+                "sd_ajgvM8M335I3Ge9T"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_bKzfPS4T7O2DgwYy",
+        "type": "Comments",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "comments": "<p>uploading single file user_data to the database</p>",
+        "category": "General",
+        "x": 145,
+        "y": 40,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "functionName": "sd_bKzfPS4T7O2DgwYy"
+    },
+    {
+        "id": "sd_tGJKL84oZdlsP3bp",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "download-file",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 480,
+        "wires": [
+            [
+                "sd_jPKOSqF1puo77Iga"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "functionName": "sd_tGJKL84oZdlsP3bp"
+    },
+    {
+        "id": "sd_jPKOSqF1puo77Iga",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "str",
+            "value": "files/file2.xlsx",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "file",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "file": "\"files/file2.xlsx\""
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_jPKOSqF1puo77Iga",
+        "category": "HTTP",
+        "x": 285,
+        "y": 480,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_RX5SoXKtRqLn5Vt8",
+        "type": "Comments",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "comments": "<p>downloading the empty excel file with headers for uploading user_data&nbsp;</p>",
+        "category": "General",
+        "x": 145,
+        "y": 380,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "functionName": "sd_RX5SoXKtRqLn5Vt8"
+    },
+    {
+        "id": "sd_zTrA3KVsDR6CTSRV",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "upload-multiple-files",
+        "uploadpath": "\"files\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "krishna",
+                    "maxCount": 2
+                }
+            ],
+            "path": "\"files\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "krishna",
+                    "value": "2",
+                    "rowId": "sd_B3TH40gDRV349TOL",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 145,
+        "y": 740,
+        "wires": [
+            [
+                "sd_gzZ6BDNui0986h9Q"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "files",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "functionName": "sd_zTrA3KVsDR6CTSRV"
+    },
+    {
+        "id": "sd_u3UTSsNgGMyVTWPS",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_u3UTSsNgGMyVTWPS",
+        "category": "HTTP",
+        "x": 1085,
+        "y": 660,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_SnoREssOc48Zto1f",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "file_upload_function1",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "file_path1",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "response1",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "file_upload_function1",
+        "category": "General",
+        "x": 145,
+        "y": 860,
+        "wires": [
+            [
+                "sd_AWFryjarZUw6Up3i"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file"
+    },
+    {
+        "id": "sd_AWFryjarZUw6Up3i",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "await new Promise((r) => {\n    const fs = require(\"fs\");\n    const XLSX = require('xlsx');\n    let path = bh.input.file_path1\n    fs.readFile(path, (err, data) => {\n        if (err) throw err;\n        let workbook = XLSX.read(data, {type:'buffer'});\n        let sheet_name_list = workbook.SheetNames;\n        let result = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]])\n        bh.input.response1 = result\n        r();\n    });\n})",
+        "functionName": "sd_AWFryjarZUw6Up3i",
+        "category": "Function",
+        "x": 265,
+        "y": 860,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_sKZ4010UdfeHmBuB",
+        "type": "Async",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "flowNodes": [
+            {
+                "serviceId": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+                "serviceName": "upload_file",
+                "flowId": "sd_SnoREssOc48Zto1f",
+                "flowName": "file_upload_function1",
+                "functionName": "file_upload_function1",
+                "inputParams": [
+                    "bh.file_path1",
+                    "bh.response1"
+                ],
+                "inputVariables": [
+                    {
+                        "key": "file_path1",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "file_path1"
+                    },
+                    {
+                        "key": "response1",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "response1"
+                    }
+                ],
+                "accept_bh": false,
+                "randomVal": 218237,
+                "relativePath": "./upload_file"
+            },
+            {
+                "serviceId": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+                "serviceName": "upload_file",
+                "flowId": "sd_AZ5pgho2IhqwcvaQ",
+                "flowName": "file_upload_function12",
+                "functionName": "file_upload_function12",
+                "inputParams": [
+                    "bh.file_path2",
+                    "bh.response2"
+                ],
+                "inputVariables": [
+                    {
+                        "key": "file_path2",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "file_path2"
+                    },
+                    {
+                        "key": "response2",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "response2"
+                    }
+                ],
+                "accept_bh": false,
+                "randomVal": 188395,
+                "relativePath": "./upload_file"
+            }
+        ],
+        "_flowNodes": [
+            {
+                "serviceId": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+                "serviceName": "upload_file",
+                "flowId": "sd_SnoREssOc48Zto1f",
+                "flowName": "file_upload_function1",
+                "functionName": "file_upload_function1",
+                "inputParams": [
+                    "bh.file_path1",
+                    "bh.response1"
+                ],
+                "inputVariables": [
+                    {
+                        "key": "file_path1",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "file_path1"
+                    },
+                    {
+                        "key": "response1",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "response1"
+                    }
+                ],
+                "accept_bh": false,
+                "randomVal": 218237,
+                "relativePath": "./upload_file"
+            },
+            {
+                "serviceId": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+                "serviceName": "upload_file",
+                "flowId": "sd_AZ5pgho2IhqwcvaQ",
+                "flowName": "file_upload_function12",
+                "functionName": "file_upload_function12",
+                "inputParams": [
+                    "bh.file_path2",
+                    "bh.response2"
+                ],
+                "inputVariables": [
+                    {
+                        "key": "file_path2",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "file_path2"
+                    },
+                    {
+                        "key": "response2",
+                        "map": true,
+                        "valueType": "bh",
+                        "value": "response2"
+                    }
+                ],
+                "accept_bh": false,
+                "randomVal": 188395,
+                "relativePath": "./upload_file"
+            }
+        ],
+        "resultMapping": "bh.response",
+        "isValidNode": true,
+        "functionName": "sd_sKZ4010UdfeHmBuB",
+        "category": "Function",
+        "x": 405,
+        "y": 740,
+        "wires": [
+            [
+                "sd_YhUGPNG0659bVHOS"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "response",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_YhUGPNG0659bVHOS",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = true;\nlet array1 = bh.response[0].input.response1;\nlet array2 = bh.response[1].input.response2;\nlet data = [...array1, ...array2];\nlet values = '';\nfor(let row of data){\n    if (Object.keys(row).length == 5){\n        values += `('${row.name}','${row.email}','${row.date_of_birth}','${row.phone_no}','${row.status}'),`\n    }\n}\n\nif(values == ''){\n    bh.status = false;\n    bh.result = {message: 'please add data'};\n}else{\n    values = values.slice(0,-1);\n    bh.query  = 'INSERT INTO user_data (name, email, date_of_birth, phone_no, status) values ' + values;\n}",
+        "functionName": "sd_YhUGPNG0659bVHOS",
+        "category": "Function",
+        "x": 545,
+        "y": 740,
+        "wires": [
+            [
+                "sd_b1lVfsHw69IpOOBJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_b1lVfsHw69IpOOBJ",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_b1lVfsHw69IpOOBJ",
+        "category": "Function",
+        "x": 685,
+        "y": 740,
+        "wires": [
+            [
+                "sd_1COUv6KJ6rNDe0hE"
+            ],
+            [
+                "sd_Vbj14lNxIyeN93hi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_Vbj14lNxIyeN93hi",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_Vbj14lNxIyeN93hi",
+        "category": "HTTP",
+        "x": 800,
+        "y": 820,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_1COUv6KJ6rNDe0hE",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_z1hHi1Sesg8SeX6u",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "response"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {},
+        "dbType": "postgres",
+        "functionName": "sd_1COUv6KJ6rNDe0hE",
+        "category": "Storage",
+        "x": 805,
+        "y": 660,
+        "wires": [
+            [
+                "sd_Bdpc0stHdd5Kbr08"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_Bdpc0stHdd5Kbr08",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {message: \"Data updated successfully\"};",
+        "functionName": "sd_Bdpc0stHdd5Kbr08",
+        "category": "Function",
+        "x": 945,
+        "y": 660,
+        "wires": [
+            [
+                "sd_u3UTSsNgGMyVTWPS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_hwttRGWpMKBmYx3G",
+        "type": "Comments",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "comments": "<p>uploading two excel files user_data to the database</p>",
+        "category": "General",
+        "x": 145,
+        "y": 640,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "functionName": "sd_hwttRGWpMKBmYx3G"
+    },
+    {
+        "id": "sd_gzZ6BDNui0986h9Q",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.file_path1 = bh.input.files.krishna[0].path;\nbh.file_path2 = bh.input.files.krishna[1].path;",
+        "functionName": "sd_gzZ6BDNui0986h9Q",
+        "category": "Function",
+        "x": 265,
+        "y": 740,
+        "wires": [
+            [
+                "sd_sKZ4010UdfeHmBuB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_AZ5pgho2IhqwcvaQ",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "file_upload_function12",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "file_path2",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "response2",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "file_upload_function12",
+        "category": "General",
+        "x": 145,
+        "y": 980,
+        "wires": [
+            [
+                "sd_IobD1sI2N0Tbh6wh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file"
+    },
+    {
+        "id": "sd_IobD1sI2N0Tbh6wh",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "await new Promise((r) => {\n    const fs = require(\"fs\");\n    const XLSX = require('xlsx');\n    let path = bh.input.file_path2\n    fs.readFile(path, (err, data) => {\n        if (err) throw err;\n        let workbook = XLSX.read(data, {type:'buffer'});\n        let sheet_name_list = workbook.SheetNames;\n        let result = XLSX.utils.sheet_to_json(workbook.Sheets[sheet_name_list[0]])\n        bh.input.response2 = result\n        r();\n    });\n})",
+        "functionName": "sd_IobD1sI2N0Tbh6wh",
+        "category": "Function",
+        "x": 265,
+        "y": 980,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_war7C6t4zAbK4KkC",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "testing",
+        "uploadpath": "\"files\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "resume",
+                    "maxCount": 2
+                }
+            ],
+            "path": "\"files\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "resume",
+                    "value": "2",
+                    "rowId": "sd_vLLV7O5aCLWgpy2M",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 140,
+        "y": 1140,
+        "wires": [
+            [
+                "sd_cA1t5WJFH0OpIx7c"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "files",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "upload_file",
+        "functionName": "sd_war7C6t4zAbK4KkC"
+    },
+    {
+        "id": "sd_X0OHaqpWAKZDtxoj",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "str",
+            "value": "Done",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "\"Done\"",
+            "send": "\"Done\""
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_X0OHaqpWAKZDtxoj",
+        "category": "HTTP",
+        "x": 420,
+        "y": 1140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    },
+    {
+        "id": "sd_cA1t5WJFH0OpIx7c",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_K5phy2EyIIMYtwAu",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const fs = require('fs');\nlet path = bh.input.files.resume[0].path\n\nfs.readFile(path, 'utf8', (err, data) => {\n  if (err) {\n    console.error(err);\n    return;\n  }\n  console.log(data);\n  fs.readFileSync('resume.pdf', data)\n});\n\n",
+        "functionName": "sd_cA1t5WJFH0OpIx7c",
+        "category": "Function",
+        "x": 280,
+        "y": 1140,
+        "wires": [
+            [
+                "sd_X0OHaqpWAKZDtxoj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "upload_file",
+        "generated": true
+    }
+]

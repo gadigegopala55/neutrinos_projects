@@ -1,0 +1,15 @@
+[
+    {
+        "type": "tab",
+        "id": "sd_YVNBe6nHoF3YV2Ej",
+        "disabled": false,
+        "info": "",
+        "label": "register",
+        "createdDate": "2023-07-17T08:14:49.043Z",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "register",
+        "relativeParentPath": ""
+    }
+]

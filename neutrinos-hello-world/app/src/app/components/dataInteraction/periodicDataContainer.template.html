@@ -1,0 +1,7 @@
+<div fxLayout="column wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around space-between" [fxShow]="true">
+    <h1>
+      Welcome to the neutrinos Data sending</h1><button mat-raised-button (click)="removeElementPeriodicTable()">Remove Element</button>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><bh-periodicData style="width:100%;" [perisodicdataFromParent]="page.initialData" (emitAddedElement)="emittedElementFromChild($event)"></bh-periodicData></div>
+</div>

@@ -1,0 +1,71 @@
+{
+    "TYPE": {
+        "name": "TYPE",
+        "properties": {
+            "production": "client",
+            "ssdURL": "client",
+            "tenantName": "client",
+            "appName": "client",
+            "namespace": "client",
+            "useDefaultExceptionUI": "client",
+            "isIDSEnabled": "client",
+            "SSD_BASE_PATH": "server",
+            "SSD_DEFAULT_PORT": "server",
+            "webAppMountpoint": "both",
+            "CLOCK_TOLERANCE": "server",
+            "NGFORAGE_MOBILE_DRIVER": "client",
+            "DATABASE_HOST": "server",
+            "DATABASE_PORT": "server",
+            "DATABASE_USERNAME": "server",
+            "DATABASE_PASSWORD": "server",
+            "DATABASE_NAME": "server",
+            "DATABASE_SCHEMA": "server"
+        }
+    },
+    "dev": {
+        "name": "dev",
+        "properties": {
+            "production": false,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "Heptagon",
+            "appName": "frontend",
+            "namespace": "com.Heptagon.frontend",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "DATABASE_HOST": "localhost",
+            "DATABASE_PORT": "5432",
+            "DATABASE_USERNAME": "postgres",
+            "DATABASE_PASSWORD": "postgres",
+            "DATABASE_NAME": "practice",
+            "DATABASE_SCHEMA": "public"
+        }
+    },
+    "prod": {
+        "name": "prod",
+        "properties": {
+            "production": true,
+            "ssdURL": "http://localhost:8081/api/",
+            "tenantName": "Heptagon",
+            "appName": "frontend",
+            "namespace": "com.Heptagon.frontend",
+            "useDefaultExceptionUI": true,
+            "isIDSEnabled": "false",
+            "SSD_BASE_PATH": "/api",
+            "SSD_DEFAULT_PORT": "8081",
+            "webAppMountpoint": "web",
+            "CLOCK_TOLERANCE": "5",
+            "NGFORAGE_MOBILE_DRIVER": "INDEXED_DB",
+            "DATABASE_HOST": "localhost",
+            "DATABASE_PORT": "5432",
+            "DATABASE_USERNAME": "postgres",
+            "DATABASE_PASSWORD": "postgres",
+            "DATABASE_NAME": "practice",
+            "DATABASE_SCHEMA": "public"
+        }
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "localeId": "kn",
+    "localeName": "Kannada",
+    "isDefaultLanguage": false,
+    "properties": {
+        "Title": "ಶೀರ್ಷಿಕೆ",
+        "Description": "ವಿವರಣೆ",
+        "due_date": "ಅಂತಿಮ ದಿನಾಂಕ",
+        "priority": "ಆದ್ಯತೆ",
+        "status": "ಸ್ಥಿತಿ"
+    }
+}

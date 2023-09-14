@@ -1,0 +1,7 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="space-around stretch" [fxShow]="true"><mat-card *ngFor="let book of page.books" fxFlex="30" fxFlex.sm="45" fxFlex.xs="100" class="card-container">
+      <mat-card-title>{{book.title}}</mat-card-title>
+
+      <mat-card-subtitle>{{book.category}}</mat-card-subtitle>
+    </mat-card></div>
+</div>

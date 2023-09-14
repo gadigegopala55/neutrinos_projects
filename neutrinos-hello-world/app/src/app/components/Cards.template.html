@@ -1,0 +1,22 @@
+<form [formGroup]="page.books">
+  <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+    <input matInput placeholder="Input" [required]="false" formControlName="bookTitle">
+    <mat-error align="start" *ngIf="page.books?.controls?.bookTitle?.errors?.required">please provide a volid title</mat-error><mat-error align="start" *ngIf="page.books?.controls?.bookTitle?.errors?.minlength">required minimum {{page.numLength}} characters</mat-error>
+  </mat-form-field><mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+    <mat-label></mat-label>
+    <mat-select formControlName="bookSelect" placeholder="Select" [required]="false">
+      <ng-template ngFor let-option [ngForOf]="page.categories" let-i="index">
+        <mat-option [value]="option">{{option}}</mat-option>
+      </ng-template>
+    </mat-select>
+
+  </mat-form-field>
+  <mat-form-field [appearance]="&apos;legacy&apos;">
+    <mat-label></mat-label>
+    <input matInput placeholder="Date Picker" [matDatepicker]="picker" formControlName="bookDate" [required]="false" [disabled]="false">
+    <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+    <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+
+  </mat-form-field>
+</form>
+<div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button color="primary" (click)="formSubmit()" [disabled]="!page.books.valid">Submit</button></div>

@@ -1,0 +1,592 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "type": "tab",
+        "createdDate": "2023-06-23T06:38:50.273Z",
+        "label": "calc_operation",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "calc_operation",
+        "relativeParentPath": "Calculator"
+    },
+    {
+        "id": "sd_cCijLEzkU6au1CKg",
+        "type": "Start",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "validate_calc_input",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "a",
+                "defaultValue": {
+                    "type": "num",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "b",
+                "defaultValue": {
+                    "type": "num",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "operation",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": true
+            },
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "validate_calc_input",
+        "category": "General",
+        "x": 145,
+        "y": 360,
+        "wires": [
+            [
+                "sd_x3wwYkaK7wN5OPIa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "calc_operation"
+    },
+    {
+        "id": "sd_T7W15WWF2FRiSGqF",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "calculator-operation",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "calculator_sequence",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 140,
+        "y": 160,
+        "wires": [
+            [
+                "sd_mcrzUQ2P2uU3mCiw"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "calc_operation",
+        "functionName": "sd_T7W15WWF2FRiSGqF"
+    },
+    {
+        "id": "sd_mcrzUQ2P2uU3mCiw",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+            "type": "tab",
+            "createdDate": "2023-06-23T06:38:50.273Z",
+            "label": "calc_operation",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_cCijLEzkU6au1CKg",
+            "flowName": "validate_calc_input"
+        },
+        "inputVariables": [
+            {
+                "key": "a",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.a"
+            },
+            {
+                "key": "b",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.b"
+            },
+            {
+                "key": "operation",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.operation"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./calc_operation",
+        "startName": "validate_calc_input",
+        "inputParams": [
+            "bh.input.body.a",
+            "bh.input.body.b",
+            "bh.input.body.operation",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_mcrzUQ2P2uU3mCiw",
+        "category": "General",
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "sd_nIjGR2rLfVenC1Xz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_x3wwYkaK7wN5OPIa",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(!bh.input.a){\n    bh.input.status = false;\n    bh.input.result = {\"message\": \"a value is required\"};\n}else if(!bh.input.b) {\n    bh.input.status = false;\n    bh.input.result = {\"result\": \"b value is required\"};\n}else if(!bh.input.operation){\n    bh.input.status = false;\n    bh.input.result = {\"result\": \"operation is required\"}\n}",
+        "functionName": "sd_x3wwYkaK7wN5OPIa",
+        "category": "Function",
+        "x": 310,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_nIjGR2rLfVenC1Xz",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_nIjGR2rLfVenC1Xz",
+        "category": "Function",
+        "x": 380,
+        "y": 160,
+        "wires": [
+            [
+                "sd_cYTUGq6F04uZ98AB"
+            ],
+            [
+                "sd_EFxtkWVNDZ8NzkaU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_EFxtkWVNDZ8NzkaU",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_EFxtkWVNDZ8NzkaU",
+        "category": "HTTP",
+        "x": 565,
+        "y": 300,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_gvmGpmjKfBo72K8l",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_gvmGpmjKfBo72K8l",
+        "category": "HTTP",
+        "x": 1005,
+        "y": 60,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_cYTUGq6F04uZ98AB",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "body.operation",
+        "propertyType": "bh.input",
+        "propertyGv": "bh.input.body.operation",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "add",
+                "vt": "str",
+                "gv": "\"add\""
+            },
+            {
+                "t": "eq",
+                "v": "subtract",
+                "vt": "str",
+                "gv": "\"subtract\""
+            },
+            {
+                "t": "eq",
+                "v": "divide",
+                "vt": "str",
+                "gv": "\"divide\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 4,
+        "functionName": "sd_cYTUGq6F04uZ98AB",
+        "category": "Function",
+        "x": 565,
+        "y": 100,
+        "wires": [
+            [
+                "sd_2SsB9V79YuJksvLp"
+            ],
+            [
+                "sd_gbJj5dPndXoVcIKH"
+            ],
+            [
+                "sd_veLNitvwupYKPaFx"
+            ],
+            [
+                "sd_aN12OX4PFmlP67UH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_2SsB9V79YuJksvLp",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"result\": bh.input.body.a + bh.input.body.b};",
+        "functionName": "sd_2SsB9V79YuJksvLp",
+        "category": "Function",
+        "x": 785,
+        "y": 60,
+        "wires": [
+            [
+                "sd_gvmGpmjKfBo72K8l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_gbJj5dPndXoVcIKH",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"result\": bh.input.body.a - bh.input.body.b};",
+        "functionName": "sd_gbJj5dPndXoVcIKH",
+        "category": "Function",
+        "x": 785,
+        "y": 140,
+        "wires": [
+            [
+                "sd_gvmGpmjKfBo72K8l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_veLNitvwupYKPaFx",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"result\": bh.input.body.a / bh.input.body.b};",
+        "functionName": "sd_veLNitvwupYKPaFx",
+        "category": "Function",
+        "x": 785,
+        "y": 220,
+        "wires": [
+            [
+                "sd_gvmGpmjKfBo72K8l"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_aN12OX4PFmlP67UH",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"result\": \"give correct operation\"};",
+        "functionName": "sd_aN12OX4PFmlP67UH",
+        "category": "Function",
+        "x": 785,
+        "y": 340,
+        "wires": [
+            [
+                "sd_juO34GiNt4KKwkjj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    },
+    {
+        "id": "sd_juO34GiNt4KKwkjj",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_jbvqfpI7IDlsI4Ed",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_juO34GiNt4KKwkjj",
+        "category": "HTTP",
+        "x": 1024,
+        "y": 296.8125,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calc_operation",
+        "generated": true
+    }
+]

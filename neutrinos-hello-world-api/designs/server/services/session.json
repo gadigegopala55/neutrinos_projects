@@ -1,0 +1,323 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "type": "tab",
+        "createdDate": "2023-08-08T07:33:04.891Z",
+        "label": "session",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "session",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_X7RVqzuLUtiXjiz1",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "session",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 160,
+        "y": 140,
+        "wires": [
+            [
+                "sd_2nREZTJwTp4w5RkN"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "session",
+        "functionName": "sd_X7RVqzuLUtiXjiz1"
+    },
+    {
+        "id": "sd_0esSRcDY3ct9OuaL",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "session",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.session",
+            "send": "bh.local.session"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_0esSRcDY3ct9OuaL",
+        "category": "HTTP",
+        "x": 605,
+        "y": 140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "session",
+        "generated": true
+    },
+    {
+        "id": "sd_rfMtptMTh4uH13H0",
+        "type": "Session",
+        "z": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "update",
+        "data": "",
+        "resultMapping": "bh",
+        "dataMapping": "bh.local.session",
+        "functionName": "sd_rfMtptMTh4uH13H0",
+        "category": "HTTP",
+        "x": 465,
+        "y": 140,
+        "wires": [
+            [
+                "sd_0esSRcDY3ct9OuaL"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "dataMapping": {
+                "type": "bh.local",
+                "value": "session",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "session",
+        "generated": true
+    },
+    {
+        "id": "sd_2nREZTJwTp4w5RkN",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.session = {\n    'data': new Date()\n}",
+        "functionName": "sd_2nREZTJwTp4w5RkN",
+        "category": "Function",
+        "x": 305,
+        "y": 140,
+        "wires": [
+            [
+                "sd_rfMtptMTh4uH13H0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "session",
+        "generated": true
+    },
+    {
+        "id": "sd_1EW0X0Vf0qyFRTVH",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "session",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 165,
+        "y": 300,
+        "wires": [
+            [
+                "sd_IqmhBIQXuNfdHeXi"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "session",
+        "functionName": "sd_1EW0X0Vf0qyFRTVH"
+    },
+    {
+        "id": "sd_czinWxwsnU7eo9LK",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "session",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.session",
+            "send": "bh.local.session"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_czinWxwsnU7eo9LK",
+        "category": "HTTP",
+        "x": 445,
+        "y": 300,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "session",
+        "generated": true
+    },
+    {
+        "id": "sd_IqmhBIQXuNfdHeXi",
+        "type": "Session",
+        "z": "SSD_SERVICE_ID_sd_0l5wDs3ASaCGtqGC",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "get",
+        "data": "",
+        "resultMapping": "bh.local.session",
+        "dataMapping": "bh.local.session",
+        "functionName": "sd_IqmhBIQXuNfdHeXi",
+        "category": "HTTP",
+        "x": 305,
+        "y": 300,
+        "wires": [
+            [
+                "sd_czinWxwsnU7eo9LK"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "session",
+                "constant": false
+            },
+            "dataMapping": {
+                "type": "bh.local",
+                "value": "session",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "session",
+        "generated": true
+    }
+]

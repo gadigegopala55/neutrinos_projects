@@ -1,0 +1,457 @@
+[
+    {
+        "id": "sd_4CBWUeicfjqRkMYB",
+        "type": "tab",
+        "createdDate": "2023-08-05T12:01:23.289Z",
+        "label": "tasks",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "tasks",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_h6RuJ9MLShEAskVS",
+        "type": "Start",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "add task",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "inputValues",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "response",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "addTask",
+        "category": "General",
+        "x": 85,
+        "y": 100,
+        "wires": [
+            [
+                "sd_Ib7KUTwkKz1C8qx6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tasks"
+    },
+    {
+        "id": "sd_Ib7KUTwkKz1C8qx6",
+        "type": "Script",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = `http://localhost:8081/api/add-task`,\n\nbh.local.body = {\n    \"name\": bh.input.inputValues.name,\n    \"description\": bh.input.inputValues.description,\n    \"due_date\": bh.input.inputValues.due_date,\n    \"priority\": bh.input.inputValues.priority\n}",
+        "functionName": "sd_Ib7KUTwkKz1C8qx6",
+        "category": "Function",
+        "x": 220,
+        "y": 100,
+        "wires": [
+            [
+                "sd_oE4eu2oWm7DD9GKV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_oE4eu2oWm7DD9GKV",
+        "type": "HttpRequest",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.local.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_oE4eu2oWm7DD9GKV",
+        "category": "HTTP",
+        "x": 360,
+        "y": 100,
+        "wires": [
+            [
+                "sd_ZhjQFcbcj4ausiEy"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_ZhjQFcbcj4ausiEy",
+        "type": "Script",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.response = bh.local.response.message || [];",
+        "functionName": "sd_ZhjQFcbcj4ausiEy",
+        "category": "Function",
+        "x": 500,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_z3Pn07zR0MKXSO3t",
+        "type": "Start",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "gettask",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "response",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "gettask",
+        "category": "General",
+        "x": 85,
+        "y": 240,
+        "wires": [
+            [
+                "sd_O15QqFVmpLmqBz3n"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tasks"
+    },
+    {
+        "id": "sd_O15QqFVmpLmqBz3n",
+        "type": "Script",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = `http://localhost:8081/api/get-task`;",
+        "functionName": "sd_O15QqFVmpLmqBz3n",
+        "category": "Function",
+        "x": 225,
+        "y": 240,
+        "wires": [
+            [
+                "sd_KsDf5Epfa1lcMPrQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_KsDf5Epfa1lcMPrQ",
+        "type": "HttpRequest",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_KsDf5Epfa1lcMPrQ",
+        "category": "HTTP",
+        "x": 365,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_JlO15pEZmgr82GY3",
+        "type": "Start",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "deletetask",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "deletetask",
+        "category": "General",
+        "x": 85,
+        "y": 380,
+        "wires": [
+            [
+                "sd_wgH2ZfUEgV6DQZ6e"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tasks"
+    },
+    {
+        "id": "sd_wgH2ZfUEgV6DQZ6e",
+        "type": "Script",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = `http://localhost:8081/api/dm/tasks/task/delete-by-id`;\n\nbh.local.body = {\n  \"filter\": {\n    \"id\": bh.input.id\n  }\n}",
+        "functionName": "sd_wgH2ZfUEgV6DQZ6e",
+        "category": "Function",
+        "x": 220,
+        "y": 380,
+        "wires": [
+            [
+                "sd_0muo5iXtTjvXpiir"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_6nFSrMZPRnc7ECOZ",
+        "type": "Start",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "updatetask",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "updatetask",
+        "category": "General",
+        "x": 85,
+        "y": 520,
+        "wires": [
+            [
+                "sd_eGxKIygPCDgtALNw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "tasks"
+    },
+    {
+        "id": "sd_eGxKIygPCDgtALNw",
+        "type": "Script",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.url = `http://localhost:8081/api/update-task`;\n\nbh.local.body = {\n    id: bh.input.id\n}",
+        "functionName": "sd_eGxKIygPCDgtALNw",
+        "category": "Function",
+        "x": 220,
+        "y": 520,
+        "wires": [
+            [
+                "sd_W8IW2NkQrt5K3xCe"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_0muo5iXtTjvXpiir",
+        "type": "HttpRequest",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.local.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_0muo5iXtTjvXpiir",
+        "category": "HTTP",
+        "x": 365,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    },
+    {
+        "id": "sd_W8IW2NkQrt5K3xCe",
+        "type": "HttpRequest",
+        "z": "sd_4CBWUeicfjqRkMYB",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.local.url",
+        "urlMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.local.body",
+        "reqBodyObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.local.response",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_W8IW2NkQrt5K3xCe",
+        "category": "HTTP",
+        "x": 365,
+        "y": 520,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "tasks",
+        "generated": true
+    }
+]

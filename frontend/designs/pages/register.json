@@ -1,0 +1,277 @@
+[
+    {
+        "id": "sd_Ce7AnjwIkIFhu2p2",
+        "type": "tab",
+        "createdDate": "2023-07-12T04:21:43.583Z",
+        "label": "register",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "registerComponent"
+    },
+    {
+        "id": "sd_9Ea9DqvcHbjjS9A4",
+        "type": "OnInit",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "inputVariables": [],
+        "localVariables": [],
+        "outputVariables": [],
+        "pageVariables": [],
+        "functionName": "sd_9Ea9DqvcHbjjS9A4",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 100,
+        "wires": [
+            [
+                "sd_956CRtryiCvdbTP3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "registerComponent"
+    },
+    {
+        "id": "sd_956CRtryiCvdbTP3",
+        "type": "PageVariables",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_956CRtryiCvdbTP3",
+        "category": "Function",
+        "x": 215,
+        "y": 100,
+        "wires": [
+            [
+                "sd_ffWBRfvHiN6Q4eSU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ffWBRfvHiN6Q4eSU",
+        "type": "UseDependency",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "FormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormControl",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormBuilder",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "fb"
+                },
+                "injectable": true
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_ffWBRfvHiN6Q4eSU",
+        "category": "Function",
+        "x": 380,
+        "y": 100,
+        "wires": [
+            [
+                "sd_TfSnUtZidZe9uVYI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TfSnUtZidZe9uVYI",
+        "type": "Script",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.registerForm = page.fb.group({\n    name : [''],\n    password: [''],\n    phone: [''],\n    email: [''],\n    date: ['']\n})",
+        "functionName": "sd_TfSnUtZidZe9uVYI",
+        "category": "Function",
+        "x": 545,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_AK0neOFquZWv1Spp",
+        "type": "PageStart",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "user_register",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "user_register",
+        "category": "General",
+        "x": 60,
+        "y": 280,
+        "wires": [
+            [
+                "sd_UndygyS9R5miEbuA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "registerComponent"
+    },
+    {
+        "id": "sd_5doCEjACcHfg0p7t",
+        "type": "SnackBar",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Registered successfully"
+        },
+        "action": {
+            "type": "str",
+            "value": "ok"
+        },
+        "duration": {
+            "type": "num",
+            "value": "5000"
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_5doCEjACcHfg0p7t",
+        "category": "General",
+        "x": 325,
+        "y": 280,
+        "wires": [
+            [
+                "sd_UckfEkgWOrv0l3cF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KT12ia5vf9EfANS0",
+        "type": "Navigation",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "functionName": "sd_KT12ia5vf9EfANS0",
+        "category": "Navigation",
+        "x": 605,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UndygyS9R5miEbuA",
+        "type": "Script",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.registerForm.value);",
+        "functionName": "sd_UndygyS9R5miEbuA",
+        "category": "Function",
+        "x": 185,
+        "y": 280,
+        "wires": [
+            [
+                "sd_5doCEjACcHfg0p7t"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UckfEkgWOrv0l3cF",
+        "type": "Storage",
+        "z": "sd_Ce7AnjwIkIFhu2p2",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "localStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "profileData"
+        },
+        "value": {
+            "type": "this.page",
+            "value": "registerForm.value"
+        },
+        "resultMapping": {},
+        "functionName": "sd_UckfEkgWOrv0l3cF",
+        "category": "Storage",
+        "x": 465,
+        "y": 280,
+        "wires": [
+            [
+                "sd_KT12ia5vf9EfANS0"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    }
+]

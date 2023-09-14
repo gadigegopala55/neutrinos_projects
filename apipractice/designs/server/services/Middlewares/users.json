@@ -1,0 +1,228 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_Gf1oR1rpw2MwHMqk",
+        "type": "tab",
+        "createdDate": "2023-07-04T17:05:44.967Z",
+        "label": "users",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "users",
+        "relativeParentPath": "Middlewares"
+    },
+    {
+        "id": "sd_cSPlbFqN5SH4uQca",
+        "type": "Session",
+        "z": "SSD_SERVICE_ID_sd_Gf1oR1rpw2MwHMqk",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "get",
+        "data": "",
+        "resultMapping": "bh.session",
+        "dataMapping": "bh",
+        "functionName": "sd_cSPlbFqN5SH4uQca",
+        "category": "HTTP",
+        "x": 385,
+        "y": 200,
+        "wires": [
+            [
+                "sd_xJpFi8eZEzZU65uO"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "session",
+                "constant": false
+            },
+            "dataMapping": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    },
+    {
+        "id": "sd_2X5I37AlZa57GiUy",
+        "type": "MiddlewareStart",
+        "z": "SSD_SERVICE_ID_sd_Gf1oR1rpw2MwHMqk",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "user_middleware",
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "x": 245,
+        "y": 200,
+        "wires": [
+            [
+                "sd_cSPlbFqN5SH4uQca"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "users",
+        "functionName": "sd_2X5I37AlZa57GiUy"
+    },
+    {
+        "id": "sd_xJpFi8eZEzZU65uO",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Gf1oR1rpw2MwHMqk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = false;\nif(bh.session?.data?.users){\n    bh.status = true\n}else{\n    bh.result = {\n        \"statusCode\": 403,\n        \"error\": \"please login\"\n    }\n}",
+        "functionName": "sd_xJpFi8eZEzZU65uO",
+        "category": "Function",
+        "x": 525,
+        "y": 200,
+        "wires": [
+            [
+                "sd_LWQ06FmLWtjiEUi3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    },
+    {
+        "id": "sd_i2tqMQsAaCkfBMVH",
+        "type": "MiddlewareEnd",
+        "z": "SSD_SERVICE_ID_sd_Gf1oR1rpw2MwHMqk",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 0,
+            "ssd_typedInputField": true
+        },
+        "responseType": "next",
+        "responseMapping": {
+            "status": 0,
+            "next": "bh"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_i2tqMQsAaCkfBMVH",
+        "category": "HTTP",
+        "x": 805,
+        "y": 140,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    },
+    {
+        "id": "sd_LWQ06FmLWtjiEUi3",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_Gf1oR1rpw2MwHMqk",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_LWQ06FmLWtjiEUi3",
+        "category": "Function",
+        "x": 665,
+        "y": 200,
+        "wires": [
+            [
+                "sd_i2tqMQsAaCkfBMVH"
+            ],
+            [
+                "sd_2TgrHFGUykVs4iG7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    },
+    {
+        "id": "sd_2TgrHFGUykVs4iG7",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Gf1oR1rpw2MwHMqk",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 403,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 403,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_2TgrHFGUykVs4iG7",
+        "category": "HTTP",
+        "x": 805,
+        "y": 260,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "users",
+        "generated": true
+    }
+]

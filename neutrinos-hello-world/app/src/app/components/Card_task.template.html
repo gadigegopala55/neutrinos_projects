@@ -1,0 +1,30 @@
+<div fxLayout="row wrap" class="card-container mat-elevation-z8" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="row wrap" fxFlex="90" fxLayoutGap="20px" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="image-container" fxFlex="45" fxLayoutAlign="start stretch" [fxShow]="true" fxHide.xs="true"><img imgSrc="/Web/login.jpg" alt="image not found" style="width: 90%;height :100%;" fxFlex="90"></div>
+    <div fxLayout="column wrap" fxFlex="50" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true" fxFlex.xs="90">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="Web/images.png" fxFlex="20"></div>
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h1 class="padding-top-20">
+          Login to account</h1>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+          <mat-label>User type</mat-label>
+          <mat-select placeholder="Select the user type" [required]="false">
+            <ng-template ngFor let-option [ngForOf]="page.types" let-i="index">
+              <mat-option [value]="option">{{option}}</mat-option>
+            </ng-template>
+          </mat-select>
+
+        </mat-form-field>
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput type="text" placeholder="Enter your username" [required]="false">
+          <mat-label>Username</mat-label>
+        </mat-form-field>
+        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput type="password" placeholder="Enter your password" [required]="false">
+          <mat-label>Password</mat-label>
+        </mat-form-field>
+      </div><button mat-raised-button color="primary">login</button>
+    </div>
+  </div>
+</div>

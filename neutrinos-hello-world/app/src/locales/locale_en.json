@@ -1,0 +1,12 @@
+{
+    "localeId": "en",
+    "localeName": "English",
+    "isDefaultLanguage": true,
+    "properties": {
+        "Title": "Title",
+        "Description": "Description",
+        "due_date": "Due Date",
+        "priority": "Priority",
+        "status": "status"
+    }
+}

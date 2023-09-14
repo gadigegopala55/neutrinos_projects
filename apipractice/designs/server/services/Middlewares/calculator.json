@@ -1,0 +1,228 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_gIEVMxiMbATgQSXI",
+        "type": "tab",
+        "createdDate": "2023-07-05T16:24:36.202Z",
+        "label": "calculator",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "calculator",
+        "relativeParentPath": "Middlewares"
+    },
+    {
+        "id": "sd_cW01CHOkm2dYGTfV",
+        "type": "Session",
+        "z": "SSD_SERVICE_ID_sd_gIEVMxiMbATgQSXI",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "get",
+        "data": "",
+        "resultMapping": "bh.session",
+        "dataMapping": "bh",
+        "functionName": "sd_cW01CHOkm2dYGTfV",
+        "category": "HTTP",
+        "x": 405,
+        "y": 240,
+        "wires": [
+            [
+                "sd_Juol5GVWW8JD4KH8"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "resultMapping": {
+                "type": "bh",
+                "value": "session",
+                "constant": false
+            },
+            "dataMapping": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator",
+        "generated": true
+    },
+    {
+        "id": "sd_YB5WrfRrkkGZyzy5",
+        "type": "MiddlewareStart",
+        "z": "SSD_SERVICE_ID_sd_gIEVMxiMbATgQSXI",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "calculator_middleware",
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "x": 265,
+        "y": 240,
+        "wires": [
+            [
+                "sd_cW01CHOkm2dYGTfV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "calculator",
+        "functionName": "sd_YB5WrfRrkkGZyzy5"
+    },
+    {
+        "id": "sd_Juol5GVWW8JD4KH8",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_gIEVMxiMbATgQSXI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.status = false;\nif(bh.session?.data?.calculator){\n    bh.status = true\n}else{\n    bh.result = {\n        \"statusCode\": 403,\n        \"error\": \"please login\"\n    }\n}",
+        "functionName": "sd_Juol5GVWW8JD4KH8",
+        "category": "Function",
+        "x": 545,
+        "y": 240,
+        "wires": [
+            [
+                "sd_vkGOvxMrMW7l7FPW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator",
+        "generated": true
+    },
+    {
+        "id": "sd_QAs9vILB9zliUAzJ",
+        "type": "MiddlewareEnd",
+        "z": "SSD_SERVICE_ID_sd_gIEVMxiMbATgQSXI",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 0,
+            "ssd_typedInputField": true
+        },
+        "responseType": "next",
+        "responseMapping": {
+            "status": 0,
+            "next": "bh"
+        },
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_QAs9vILB9zliUAzJ",
+        "category": "HTTP",
+        "x": 825,
+        "y": 180,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator",
+        "generated": true
+    },
+    {
+        "id": "sd_vkGOvxMrMW7l7FPW",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_gIEVMxiMbATgQSXI",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_vkGOvxMrMW7l7FPW",
+        "category": "Function",
+        "x": 685,
+        "y": 240,
+        "wires": [
+            [
+                "sd_QAs9vILB9zliUAzJ"
+            ],
+            [
+                "sd_5dCdEC3ISN1MCZB1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator",
+        "generated": true
+    },
+    {
+        "id": "sd_5dCdEC3ISN1MCZB1",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_gIEVMxiMbATgQSXI",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 403,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 403,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_5dCdEC3ISN1MCZB1",
+        "category": "HTTP",
+        "x": 825,
+        "y": 300,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "calculator",
+        "generated": true
+    }
+]

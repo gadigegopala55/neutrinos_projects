@@ -1,0 +1,41 @@
+{
+    "/add-task": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "tasks"
+            ]
+        }
+    },
+    "/get-task": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "tasks"
+            ]
+        }
+    },
+    "/update-task": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "tasks"
+            ]
+        }
+    }
+}

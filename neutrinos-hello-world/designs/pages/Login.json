@@ -1,0 +1,238 @@
+[
+    {
+        "id": "sd_cXjCJaMCwU85DbUo",
+        "type": "tab",
+        "createdDate": "2023-08-02T07:01:42.654Z",
+        "label": "Login",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "LoginComponent"
+    },
+    {
+        "id": "sd_OhCfMA33S78Exkc6",
+        "type": "OnInit",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_OhCfMA33S78Exkc6",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 80,
+        "wires": [
+            [
+                "sd_YG9IAyr62PNvLvDi"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "LoginComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_YG9IAyr62PNvLvDi",
+        "type": "PageVariables",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_YG9IAyr62PNvLvDi",
+        "category": "Function",
+        "x": 215,
+        "y": 80,
+        "wires": [
+            [
+                "sd_BEc0b0gDs9dfYbuI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_r8ocQf6FSHqVyIYX",
+        "type": "PageStart",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "navigateHome",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "navigateHome",
+        "category": "General",
+        "x": 65,
+        "y": 220,
+        "wires": [
+            [
+                "sd_e64KbvINlmwXq3iJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "LoginComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_e64KbvINlmwXq3iJ",
+        "type": "Navigation",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/home",
+        "functionName": "sd_e64KbvINlmwXq3iJ",
+        "category": "Navigation",
+        "x": 225,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_BEc0b0gDs9dfYbuI",
+        "type": "NavigationData",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "queryParams",
+        "operation": "keys",
+        "key": "bh",
+        "resultMapping": "bh.local.query",
+        "functionName": "sd_BEc0b0gDs9dfYbuI",
+        "category": "Navigation",
+        "x": 360,
+        "y": 80,
+        "wires": [
+            [
+                "sd_xADQlpZHFKLSuVia"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "key": {
+                "type": "bh",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh.local",
+                "value": "query",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xADQlpZHFKLSuVia",
+        "type": "Script",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.local.query);",
+        "functionName": "sd_xADQlpZHFKLSuVia",
+        "category": "Function",
+        "x": 520,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "LoginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_hUDPJCKB2xrc3bbX",
+        "type": "PageStart",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "call get my name",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "callGetMyName",
+        "category": "General",
+        "x": 65,
+        "y": 360,
+        "wires": [
+            [
+                "sd_K9Q2yPpmPECCeZ2s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "LoginComponent",
+        "generated": false
+    },
+    {
+        "id": "sd_K9Q2yPpmPECCeZ2s",
+        "type": "PageCallService",
+        "z": "sd_cXjCJaMCwU85DbUo",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_c2q08HMR2qCBU5Bp",
+            "type": "tab",
+            "createdDate": "2023-08-02T09:27:18.702Z",
+            "label": "name",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_RvnJKVT11GDVToLB",
+            "flowName": "getMyName"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "name",
+                "valueType": "this.page",
+                "value": "name",
+                "mapVarName": "name",
+                "localVar": "this.page.name"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/name",
+        "startName": "getMyName",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_K9Q2yPpmPECCeZ2s",
+        "category": "General",
+        "x": 220,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generated": true,
+        "generateNext": false,
+        "serviceName": "LoginComponent"
+    }
+]

@@ -1,0 +1,222 @@
+[
+    {
+        "id": "sd_2ymBiWkC5USeGupg",
+        "type": "tab",
+        "createdDate": "2023-08-09T08:24:26.612Z",
+        "label": "dialog_pending",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dialog_pendingComponent"
+    },
+    {
+        "id": "sd_EALw0ltZxiH03gLi",
+        "type": "OnInit",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_EALw0ltZxiH03gLi",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 60,
+        "wires": [
+            [
+                "sd_1Bd3bZTJ4WpJWkZq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialog_pendingComponent"
+    },
+    {
+        "id": "sd_1Bd3bZTJ4WpJWkZq",
+        "type": "PageVariables",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_1Bd3bZTJ4WpJWkZq",
+        "category": "Function",
+        "x": 185,
+        "y": 60,
+        "wires": [
+            [
+                "sd_dpJ6aPojv0KiZ0zs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialog_pendingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_dpJ6aPojv0KiZ0zs",
+        "type": "Script",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.status_a = ['Pending', 'InProgress', 'Completed'];",
+        "functionName": "sd_dpJ6aPojv0KiZ0zs",
+        "category": "Function",
+        "x": 340,
+        "y": 60,
+        "wires": [
+            [
+                "sd_tEdD3X6E66080foQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialog_pendingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_tEdD3X6E66080foQ",
+        "type": "GetDialogData",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "dialogDataMapping": "this.page.data",
+        "functionName": "sd_tEdD3X6E66080foQ",
+        "category": "Dialog",
+        "x": 465,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "dialogDataMapping": {
+                "type": "this.page",
+                "value": "data",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialog_pendingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_e9PQwRgddceGysVi",
+        "type": "PageStart",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "positive action",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "positiveAction",
+        "category": "General",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_yIlcVpAiiUOJlHnG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialog_pendingComponent"
+    },
+    {
+        "id": "sd_w3VDSnf8VRPfCpoG",
+        "type": "PageStart",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "negative action",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "false"
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "negativeAction",
+        "category": "General",
+        "x": 65,
+        "y": 360,
+        "wires": [
+            [
+                "sd_yIlcVpAiiUOJlHnG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialog_pendingComponent"
+    },
+    {
+        "id": "sd_yIlcVpAiiUOJlHnG",
+        "type": "Script",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.status);\n\n\npage.result = {\n    'status': bh.input.status,\n    'status_b': page.status_b\n}\n// page.status = bh.input.status;\n\nconsole.log(page.result);",
+        "functionName": "sd_yIlcVpAiiUOJlHnG",
+        "category": "Function",
+        "x": 210,
+        "y": 280,
+        "wires": [
+            [
+                "sd_k8MO2C8QYOf0SaGL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialog_pendingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_k8MO2C8QYOf0SaGL",
+        "type": "CloseDialog",
+        "z": "sd_2ymBiWkC5USeGupg",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "data": "this.page.result",
+        "functionName": "sd_k8MO2C8QYOf0SaGL",
+        "category": "Dialog",
+        "x": 350,
+        "y": 280,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialog_pendingComponent",
+        "generated": true
+    }
+]

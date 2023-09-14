@@ -1,0 +1,28 @@
+{
+    "/user-login": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "user_session"
+            ]
+        }
+    },
+    "/user-logout": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "user_session"
+            ]
+        }
+    }
+}

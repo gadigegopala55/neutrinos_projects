@@ -1,0 +1,200 @@
+[
+    {
+        "id": "sd_XXNHtS1riNIyBC5s",
+        "type": "tab",
+        "createdDate": "2023-08-09T05:08:17.620Z",
+        "label": "dialog",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "dialogComponent"
+    },
+    {
+        "id": "sd_xoUC6Am036LEwqSF",
+        "type": "OnInit",
+        "z": "sd_XXNHtS1riNIyBC5s",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_xoUC6Am036LEwqSF",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_veBkvyktcKx6aXr8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialogComponent"
+    },
+    {
+        "id": "sd_veBkvyktcKx6aXr8",
+        "type": "PageVariables",
+        "z": "sd_XXNHtS1riNIyBC5s",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_veBkvyktcKx6aXr8",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_SEjGB16BWDokxETA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialogComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SEjGB16BWDokxETA",
+        "type": "GetDialogData",
+        "z": "sd_XXNHtS1riNIyBC5s",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "dialogDataMapping": "this.page.data",
+        "functionName": "sd_SEjGB16BWDokxETA",
+        "category": "Dialog",
+        "x": 340,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "dialogDataMapping": {
+                "type": "this.page",
+                "value": "data",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialogComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_4mH4KnQln3RIEMFK",
+        "type": "PageStart",
+        "z": "sd_XXNHtS1riNIyBC5s",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "positive action",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "true"
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "positiveAction",
+        "category": "General",
+        "x": 60,
+        "y": 180,
+        "wires": [
+            [
+                "sd_3YSkajuRHz4sK12u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialogComponent"
+    },
+    {
+        "id": "sd_7SnGXWaGaRomBs0Z",
+        "type": "PageStart",
+        "z": "sd_XXNHtS1riNIyBC5s",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "negative action",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "status",
+                "defaultValue": {
+                    "type": "bool",
+                    "value": "false"
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "negativeAction",
+        "category": "General",
+        "x": 60,
+        "y": 340,
+        "wires": [
+            [
+                "sd_3YSkajuRHz4sK12u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dialogComponent"
+    },
+    {
+        "id": "sd_3YSkajuRHz4sK12u",
+        "type": "Script",
+        "z": "sd_XXNHtS1riNIyBC5s",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.status);\n\npage.status = bh.input.status;",
+        "functionName": "sd_3YSkajuRHz4sK12u",
+        "category": "Function",
+        "x": 205,
+        "y": 260,
+        "wires": [
+            [
+                "sd_vxhtcKqwpixPwt2Z"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialogComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_vxhtcKqwpixPwt2Z",
+        "type": "CloseDialog",
+        "z": "sd_XXNHtS1riNIyBC5s",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "data": "this.page.status",
+        "functionName": "sd_vxhtcKqwpixPwt2Z",
+        "category": "Dialog",
+        "x": 345,
+        "y": 260,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "status",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dialogComponent",
+        "generated": true
+    }
+]

@@ -1,0 +1,9 @@
+{
+    "_DM_sr9yzmwhq": {
+        "id": "_DM_sr9yzmwhq",
+        "name": "books",
+        "dbType": "dbModel",
+        "dbConfigId": "sd_f4nPAR7KNwtz5TC3",
+        "dbName": "postgres"
+    }
+}

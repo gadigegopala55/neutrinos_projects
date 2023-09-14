@@ -1,0 +1,38 @@
+{
+    "routes": [
+        {
+            "path": "training",
+            "component": "homeComponent"
+        },
+        {
+            "path": "login",
+            "component": "loginComponent"
+        },
+        {
+            "path": "register",
+            "component": "registerComponent"
+        },
+        {
+            "path": "demo",
+            "component": "reactive_formsComponent"
+        },
+        {
+            "path": "dashboard",
+            "component": "dashboardComponent"
+        },
+        {
+            "path": "profile",
+            "component": "profileComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "login",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

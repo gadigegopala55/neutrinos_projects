@@ -1,0 +1,2541 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "type": "tab",
+        "createdDate": "2023-06-29T13:35:22.518Z",
+        "label": "apis",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "apis",
+        "relativeParentPath": "Student"
+    },
+    {
+        "id": "sd_DfcMcvodT7iImPek",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "add-student",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 140,
+        "wires": [
+            [
+                "sd_fCQtZpwZMzqNiaJq"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "apis",
+        "functionName": "sd_DfcMcvodT7iImPek"
+    },
+    {
+        "id": "sd_fCQtZpwZMzqNiaJq",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+            "type": "tab",
+            "createdDate": "2023-06-29T13:35:32.159Z",
+            "label": "flows",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_nm4dF8L6BfSPqxeu",
+            "flowName": "student_function"
+        },
+        "inputVariables": [
+            {
+                "key": "name",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.name"
+            },
+            {
+                "key": "roll_number",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.roll_number"
+            },
+            {
+                "key": "clas",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.clas"
+            },
+            {
+                "key": "section",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.section"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./flows",
+        "startName": "student_function",
+        "inputParams": [
+            "bh.input.body.name",
+            "bh.input.body.roll_number",
+            "bh.input.body.clas",
+            "bh.input.body.section",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_fCQtZpwZMzqNiaJq",
+        "category": "General",
+        "x": 265,
+        "y": 140,
+        "wires": [
+            [
+                "sd_jmQT7qllpLwXxGE4"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_jmQT7qllpLwXxGE4",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_jmQT7qllpLwXxGE4",
+        "category": "Function",
+        "x": 390,
+        "y": 140,
+        "wires": [
+            [
+                "sd_WXOJ0Sp79vYO9efM"
+            ],
+            [
+                "sd_q8kN6TNnJOOurooT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_WXOJ0Sp79vYO9efM",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = 'INSERT INTO students (name,roll_number,class,section) VALUES ($1,$2,$3,$4) RETURNING id';\n\nbh.params = [\n    bh.input.body.name,\n    bh.input.body.roll_number,\n    bh.input.body.clas,\n    bh.input.body.section\n];",
+        "functionName": "sd_WXOJ0Sp79vYO9efM",
+        "category": "Function",
+        "x": 550,
+        "y": 80,
+        "wires": [
+            [
+                "sd_NW4Ukerbdk5wAa0v"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_q8kN6TNnJOOurooT",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_q8kN6TNnJOOurooT",
+        "category": "HTTP",
+        "x": 545,
+        "y": 220,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_mFkQ1gd61riZS42I",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_mFkQ1gd61riZS42I",
+        "category": "HTTP",
+        "x": 950,
+        "y": 80,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_NW4Ukerbdk5wAa0v",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_NW4Ukerbdk5wAa0v",
+        "category": "Storage",
+        "x": 690,
+        "y": 80,
+        "wires": [
+            [
+                "sd_FJXbK6xvKOyi6U9u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_FJXbK6xvKOyi6U9u",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\n    \"data\": {\n        \"id\": bh.resultId[0].id,\n        \"name\": bh.input.body.name,\n        \"roll_number\": bh.input.body.roll_number,\n        \"class\": bh.input.body.clas,\n        \"section\": bh.input.body.section\n    },\n    \"message\": \"Student data added successfully\"\n};",
+        "functionName": "sd_FJXbK6xvKOyi6U9u",
+        "category": "Function",
+        "x": 810,
+        "y": 80,
+        "wires": [
+            [
+                "sd_mFkQ1gd61riZS42I"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_bxpdwWHF8r0cgiPX",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "add-subject",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 400,
+        "wires": [
+            [
+                "sd_jFoIHVvSHd5Xpvdc"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "apis",
+        "functionName": "sd_bxpdwWHF8r0cgiPX"
+    },
+    {
+        "id": "sd_jFoIHVvSHd5Xpvdc",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+            "type": "tab",
+            "createdDate": "2023-06-29T13:35:32.159Z",
+            "label": "flows",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_97bZ8xb4JyMo9ekZ",
+            "flowName": "subject_function"
+        },
+        "inputVariables": [
+            {
+                "key": "subject_name",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.subject_name"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./flows",
+        "startName": "subject_function",
+        "inputParams": [
+            "bh.input.body.subject_name",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_jFoIHVvSHd5Xpvdc",
+        "category": "General",
+        "x": 265,
+        "y": 400,
+        "wires": [
+            [
+                "sd_63zdhlza9m6eccWf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_63zdhlza9m6eccWf",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_63zdhlza9m6eccWf",
+        "category": "Function",
+        "x": 390,
+        "y": 400,
+        "wires": [
+            [
+                "sd_1w7jqyHlOab7qLfR"
+            ],
+            [
+                "sd_1bqi57dtCX3vyYg6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_1w7jqyHlOab7qLfR",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `INSERT INTO subjects (subject_name) SELECT $1 WHERE NOT EXISTS (SELECT id,subject_name from subjects WHERE subject_name = $2) RETURNING id`;\n\nbh.params = [\n    bh.input.body.subject_name,\n    bh.input.body.subject_name\n];",
+        "functionName": "sd_1w7jqyHlOab7qLfR",
+        "category": "Function",
+        "x": 550,
+        "y": 340,
+        "wires": [
+            [
+                "sd_1pAVWO52o3eLNesq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_1bqi57dtCX3vyYg6",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_1bqi57dtCX3vyYg6",
+        "category": "HTTP",
+        "x": 545,
+        "y": 480,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_3xbKTOwdF47tWtJh",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_3xbKTOwdF47tWtJh",
+        "category": "HTTP",
+        "x": 1125,
+        "y": 340,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_1pAVWO52o3eLNesq",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_1pAVWO52o3eLNesq",
+        "category": "Storage",
+        "x": 690,
+        "y": 340,
+        "wires": [
+            [
+                "sd_wmwz6iTg1EbmK49C"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_wmwz6iTg1EbmK49C",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if (bh.resultId.length == 0){\n    bh.status = false,\n    bh.result = {\"message\": \"Subject already exists\"}\n}else{\n    bh.result = {\n        \"data\": {\n            \"id\": bh.resultId[0].id,\n            \"subject_name\": bh.input.body.subject_name\n        },\n        \"message\": \"Subject added successfully\"\n    };\n}",
+        "functionName": "sd_wmwz6iTg1EbmK49C",
+        "category": "Function",
+        "x": 810,
+        "y": 340,
+        "wires": [
+            [
+                "sd_qrDOQW4WKmlBpqgc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_qrDOQW4WKmlBpqgc",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_qrDOQW4WKmlBpqgc",
+        "category": "Function",
+        "x": 925,
+        "y": 340,
+        "wires": [
+            [
+                "sd_3xbKTOwdF47tWtJh"
+            ],
+            [
+                "sd_GGMUg7LktxcB08yr"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_GGMUg7LktxcB08yr",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `SELECT id from subjects where subject_name = $1`;\n\nbh.params = [\n    bh.input.body.subject_name\n]",
+        "functionName": "sd_GGMUg7LktxcB08yr",
+        "category": "Function",
+        "x": 845,
+        "y": 520,
+        "wires": [
+            [
+                "sd_AQhwcvYcKAbiSHia"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_AQhwcvYcKAbiSHia",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_AQhwcvYcKAbiSHia",
+        "category": "Storage",
+        "x": 945,
+        "y": 520,
+        "wires": [
+            [
+                "sd_HM1R2aZaw2E7OT7e"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_HM1R2aZaw2E7OT7e",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\n    \"data\": {\n        \"id\": bh.resultId[0].id,\n        \"subject_name\": bh.input.body.subject_name\n    },\n    \"message\": \"Subject already exists , you can check the details in the data\"\n}",
+        "functionName": "sd_HM1R2aZaw2E7OT7e",
+        "category": "Function",
+        "x": 1065,
+        "y": 520,
+        "wires": [
+            [
+                "sd_Wjn7oj11M84lGz7V"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_Wjn7oj11M84lGz7V",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_Wjn7oj11M84lGz7V",
+        "category": "HTTP",
+        "x": 1185,
+        "y": 520,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_vOrHgWBUpOPEDmp5",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "add-exam",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 800,
+        "wires": [
+            [
+                "sd_rLKmdpW6ofOGNiaB"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "apis",
+        "functionName": "sd_vOrHgWBUpOPEDmp5"
+    },
+    {
+        "id": "sd_rLKmdpW6ofOGNiaB",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+            "type": "tab",
+            "createdDate": "2023-06-29T13:35:32.159Z",
+            "label": "flows",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_oHRKdA60EwsCMvCL",
+            "flowName": "exams_function"
+        },
+        "inputVariables": [
+            {
+                "key": "exam_name",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.exam_name"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./flows",
+        "startName": "exams_function",
+        "inputParams": [
+            "bh.input.body.exam_name",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_rLKmdpW6ofOGNiaB",
+        "category": "General",
+        "x": 265,
+        "y": 800,
+        "wires": [
+            [
+                "sd_IjNwX2StWo79wG9g"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_IjNwX2StWo79wG9g",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_IjNwX2StWo79wG9g",
+        "category": "Function",
+        "x": 390,
+        "y": 800,
+        "wires": [
+            [
+                "sd_PJjvZzk7KGzaKYb4"
+            ],
+            [
+                "sd_fR96RUCJcXWTDvsC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_PJjvZzk7KGzaKYb4",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `INSERT INTO exams (exam_name) SELECT $1 WHERE NOT EXISTS (SELECT id,exam_name from exams WHERE exam_name = $2) RETURNING id`;\n\nbh.params = [\n    bh.input.body.exam_name,\n    bh.input.body.exam_name\n];",
+        "functionName": "sd_PJjvZzk7KGzaKYb4",
+        "category": "Function",
+        "x": 550,
+        "y": 740,
+        "wires": [
+            [
+                "sd_VurlnTJHWBjCdMca"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_fR96RUCJcXWTDvsC",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_fR96RUCJcXWTDvsC",
+        "category": "HTTP",
+        "x": 545,
+        "y": 880,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_Cc96rNjYMMMW4p7Q",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_Cc96rNjYMMMW4p7Q",
+        "category": "HTTP",
+        "x": 1125,
+        "y": 740,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_VurlnTJHWBjCdMca",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_VurlnTJHWBjCdMca",
+        "category": "Storage",
+        "x": 690,
+        "y": 740,
+        "wires": [
+            [
+                "sd_xlOhZNxsZDytyzAA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_xlOhZNxsZDytyzAA",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if (bh.resultId.length == 0){\n    bh.status = false,\n    bh.result = {\"message\": \"exam_name already exists\"}\n}else{\n    bh.result = {\n        \"data\": {\n            \"id\": bh.resultId[0].id,\n            \"subject_name\": bh.input.body.exam_name\n        },\n        \"message\": \"exam_name added successfully\"\n    };\n}",
+        "functionName": "sd_xlOhZNxsZDytyzAA",
+        "category": "Function",
+        "x": 810,
+        "y": 740,
+        "wires": [
+            [
+                "sd_nEdBDs9mYv1sx6Jw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_nEdBDs9mYv1sx6Jw",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_nEdBDs9mYv1sx6Jw",
+        "category": "Function",
+        "x": 925,
+        "y": 740,
+        "wires": [
+            [
+                "sd_Cc96rNjYMMMW4p7Q"
+            ],
+            [
+                "sd_jWzaTVbj5NIq6eWk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_jWzaTVbj5NIq6eWk",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `SELECT id from exams where exam_name = $1`;\n\nbh.params = [\n    bh.input.body.exam_name\n]",
+        "functionName": "sd_jWzaTVbj5NIq6eWk",
+        "category": "Function",
+        "x": 845,
+        "y": 920,
+        "wires": [
+            [
+                "sd_1GT6U1QkTlmFCL7C"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_1GT6U1QkTlmFCL7C",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_1GT6U1QkTlmFCL7C",
+        "category": "Storage",
+        "x": 945,
+        "y": 920,
+        "wires": [
+            [
+                "sd_EwUX63uTr6KS7MjY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_EwUX63uTr6KS7MjY",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\n    \"data\": {\n        \"id\": bh.resultId[0].id,\n        \"exam_name\": bh.input.body.exam_name\n    },\n    \"message\": \"exam_name already exists , you can check the details in the data\"\n}",
+        "functionName": "sd_EwUX63uTr6KS7MjY",
+        "category": "Function",
+        "x": 1065,
+        "y": 920,
+        "wires": [
+            [
+                "sd_ap3tsXk8gtCUg5Ag"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_ap3tsXk8gtCUg5Ag",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_ap3tsXk8gtCUg5Ag",
+        "category": "HTTP",
+        "x": 1185,
+        "y": 920,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_YdmXFMc1zn5jFTf2",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "add-mark",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 105,
+        "y": 1260,
+        "wires": [
+            [
+                "sd_Ju2ntw3vEPUfr7SL"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "apis",
+        "functionName": "sd_YdmXFMc1zn5jFTf2"
+    },
+    {
+        "id": "sd_Ju2ntw3vEPUfr7SL",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+            "type": "tab",
+            "createdDate": "2023-06-29T13:35:32.159Z",
+            "label": "flows",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_lylfaKeIKlIJ2WPL",
+            "flowName": "marks_function"
+        },
+        "inputVariables": [
+            {
+                "key": "student_id",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.student_id"
+            },
+            {
+                "key": "exam_id",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.exam_id"
+            },
+            {
+                "key": "subject_id",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.subject_id"
+            },
+            {
+                "key": "mark",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.mark"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./flows",
+        "startName": "marks_function",
+        "inputParams": [
+            "bh.input.body.student_id",
+            "bh.input.body.exam_id",
+            "bh.input.body.subject_id",
+            "bh.input.body.mark",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_Ju2ntw3vEPUfr7SL",
+        "category": "General",
+        "x": 245,
+        "y": 1260,
+        "wires": [
+            [
+                "sd_kDqJvwFIavweynmc"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_kDqJvwFIavweynmc",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_kDqJvwFIavweynmc",
+        "category": "Function",
+        "x": 370,
+        "y": 1260,
+        "wires": [
+            [
+                "sd_80UjFELlBDuzpsE0"
+            ],
+            [
+                "sd_q0MVS6KiUEnbkQm6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_80UjFELlBDuzpsE0",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `INSERT INTO marks (student_id,exam_id,subject_id,mark) SELECT $1,$2,$3,$4 WHERE NOT EXISTS (SELECT id from marks WHERE student_id = $1 AND exam_id = $2 AND subject_id = $3) RETURNING id`;\n\nbh.params = [\n    bh.input.body.student_id,\n    bh.input.body.exam_id,\n    bh.input.body.subject_id,\n    bh.input.body.mark\n];",
+        "functionName": "sd_80UjFELlBDuzpsE0",
+        "category": "Function",
+        "x": 530,
+        "y": 1200,
+        "wires": [
+            [
+                "sd_77cVZ4uotbJleHB7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_q0MVS6KiUEnbkQm6",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_q0MVS6KiUEnbkQm6",
+        "category": "HTTP",
+        "x": 525,
+        "y": 1340,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_OSuk1tomgqcj2wwO",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_OSuk1tomgqcj2wwO",
+        "category": "HTTP",
+        "x": 1105,
+        "y": 1200,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_77cVZ4uotbJleHB7",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "add_marks_sql",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "add_marks_sql",
+        "category": "Storage",
+        "x": 665,
+        "y": 1200,
+        "wires": [
+            [
+                "sd_e6oLfjyQkXowGBk3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_e6oLfjyQkXowGBk3",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if (bh.resultId.length == 0){\n    bh.status = false,\n    bh.result = {\"message\": \"marks for the given combination already exists\"}\n}else{\n    bh.result = {\n        \"data\": {\n            \"id\": bh.resultId[0].id,\n            \"student_id\": bh.input.body.student_id,\n            \"exam_id\": bh.input.body.exam_id,\n            \"subject_id\": bh.input.body.subject_id,\n            \"mark\": bh.input.body.mark\n        },\n        \"message\": \"marks added successfully\"\n    };\n}",
+        "functionName": "sd_e6oLfjyQkXowGBk3",
+        "category": "Function",
+        "x": 790,
+        "y": 1200,
+        "wires": [
+            [
+                "sd_OlDBx3NgOjHGU02u"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_OlDBx3NgOjHGU02u",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_OlDBx3NgOjHGU02u",
+        "category": "Function",
+        "x": 905,
+        "y": 1200,
+        "wires": [
+            [
+                "sd_OSuk1tomgqcj2wwO"
+            ],
+            [
+                "sd_kbjbF0JVGZR3Gwkb"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_kbjbF0JVGZR3Gwkb",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = `SELECT id,mark from marks where student_id = $1 AND exam_id = $2 AND subject_id = $3`;\n\nbh.params = [\n    bh.input.body.student_id,\n    bh.input.body.exam_id,\n    bh.input.body.subject_id\n]",
+        "functionName": "sd_kbjbF0JVGZR3Gwkb",
+        "category": "Function",
+        "x": 825,
+        "y": 1380,
+        "wires": [
+            [
+                "sd_yc3hfyNq4RJL6BGE"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_yc3hfyNq4RJL6BGE",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_yc3hfyNq4RJL6BGE",
+        "category": "Storage",
+        "x": 925,
+        "y": 1380,
+        "wires": [
+            [
+                "sd_27l02VCVWelxei9j"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_27l02VCVWelxei9j",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\n    \"data\": {\n        \"id\": bh.resultId[0].id,\n        \"student_id\": bh.input.body.student_id,\n        \"exam_id\": bh.input.body.exam_id,\n        \"subject_id\": bh.input.body.subject_id,\n        \"mark\": bh.resultId[0].mark\n    },\n    \"message\": \"marks for the given combination already exists , you can check the details in the data\"\n}",
+        "functionName": "sd_27l02VCVWelxei9j",
+        "category": "Function",
+        "x": 1045,
+        "y": 1380,
+        "wires": [
+            [
+                "sd_mEtFXZxl7SColQmg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_mEtFXZxl7SColQmg",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_mEtFXZxl7SColQmg",
+        "category": "HTTP",
+        "x": 1165,
+        "y": 1380,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_kMslcX39esDkpzHK",
+        "type": "Catch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "all-nodes",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_DxYUnxftkOOFnken",
+            "sd_fa6dBxG3DUl3dHqN"
+        ],
+        "functionName": "sd_kMslcX39esDkpzHK",
+        "category": "General",
+        "x": 105,
+        "y": 1440,
+        "wires": [
+            [
+                "sd_DxYUnxftkOOFnken"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "apis"
+    },
+    {
+        "id": "sd_fa6dBxG3DUl3dHqN",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 500,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 500,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_fa6dBxG3DUl3dHqN",
+        "category": "HTTP",
+        "x": 305,
+        "y": 1440,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_DxYUnxftkOOFnken",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.result = {\"message\": bh.error.driverError.detail}",
+        "functionName": "sd_DxYUnxftkOOFnken",
+        "category": "Function",
+        "x": 205,
+        "y": 1440,
+        "wires": [
+            [
+                "sd_fa6dBxG3DUl3dHqN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_6XC3ux2qQAJaHSxb",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "get-rank",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "marks_sequence",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 125,
+        "y": 1700,
+        "wires": [
+            [
+                "sd_lGVyrzPQ6gl7CfAV"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "apis",
+        "functionName": "sd_6XC3ux2qQAJaHSxb"
+    },
+    {
+        "id": "sd_lGVyrzPQ6gl7CfAV",
+        "type": "CallService",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "SSD_SERVICE_ID_sd_UanDwIBRhhyg5YOz",
+            "type": "tab",
+            "createdDate": "2023-06-29T13:35:32.159Z",
+            "label": "flows",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_2A6JVkWHMryrHEyx",
+            "flowName": "get_rank"
+        },
+        "inputVariables": [
+            {
+                "key": "exam_id",
+                "map": true,
+                "valueType": "bh.input",
+                "value": "body.exam_id"
+            },
+            {
+                "key": "status",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            },
+            {
+                "key": "result",
+                "map": true,
+                "valueType": "bh",
+                "value": ""
+            }
+        ],
+        "bhVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "status",
+                "valueType": "bh",
+                "value": "status",
+                "mapVarName": "status",
+                "localVar": "bh.status"
+            },
+            {
+                "mapVarType": "input",
+                "key": "result",
+                "valueType": "bh",
+                "value": "result",
+                "mapVarName": "result",
+                "localVar": "bh.result"
+            }
+        ],
+        "callService": "./flows",
+        "startName": "get_rank",
+        "inputParams": [
+            "bh.input.body.exam_id",
+            null,
+            null
+        ],
+        "accept_bh": false,
+        "functionName": "sd_lGVyrzPQ6gl7CfAV",
+        "category": "General",
+        "x": 260,
+        "y": 1700,
+        "wires": [
+            [
+                "sd_TwRt2y1UqHTTxa1o"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_TwRt2y1UqHTTxa1o",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_TwRt2y1UqHTTxa1o",
+        "category": "Function",
+        "x": 385,
+        "y": 1700,
+        "wires": [
+            [
+                "sd_PLxon917wxJ5Q2fP"
+            ],
+            [
+                "sd_pLxupwq1w6WKeC1B"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_PLxon917wxJ5Q2fP",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.query = 'WITH total_marks AS (select student_id, sum(mark) as total_marks from marks where exam_id = $1 group by student_id) select s.name, t.total_marks, RANK() OVER (order by t.total_marks desc) as rank from total_marks t JOIN students s ON t.student_id = s.id order by rank;'\n\nbh.params = [\n    bh.input.body.exam_id\n];",
+        "functionName": "sd_PLxon917wxJ5Q2fP",
+        "category": "Function",
+        "x": 545,
+        "y": 1640,
+        "wires": [
+            [
+                "sd_G3fNuu0VYgURoZqf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_pLxupwq1w6WKeC1B",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 400,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 400,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_pLxupwq1w6WKeC1B",
+        "category": "HTTP",
+        "x": 945,
+        "y": 1840,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_rfS8pSJ6HlQdqLFU",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_rfS8pSJ6HlQdqLFU",
+        "category": "HTTP",
+        "x": 1025,
+        "y": 1640,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_G3fNuu0VYgURoZqf",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_xDzx3dxKbrMOh8oE",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh",
+            "value": "resultId"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {
+            "type": "bh",
+            "value": "params"
+        },
+        "dbType": "postgres",
+        "functionName": "sd_G3fNuu0VYgURoZqf",
+        "category": "Storage",
+        "x": 685,
+        "y": 1640,
+        "wires": [
+            [
+                "sd_bmF3n5MQP0uGJdOR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_bmF3n5MQP0uGJdOR",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(bh.resultId.length == 0){\n    bh.status = false,\n    bh.result = {\"message\": \"data not found with the given exam_id\"}\n}else{\n    bh.result = {\n    \"Ranks\": bh.resultId\n    };\n};\n",
+        "functionName": "sd_bmF3n5MQP0uGJdOR",
+        "category": "Function",
+        "x": 805,
+        "y": 1640,
+        "wires": [
+            [
+                "sd_KCV36iT8sr9DVhK7"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    },
+    {
+        "id": "sd_KCV36iT8sr9DVhK7",
+        "type": "Switch",
+        "z": "SSD_SERVICE_ID_sd_UBKqRXAYOn2PWtmi",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "status",
+        "propertyType": "bh",
+        "propertyGv": "bh.status",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_KCV36iT8sr9DVhK7",
+        "category": "Function",
+        "x": 905,
+        "y": 1640,
+        "wires": [
+            [
+                "sd_rfS8pSJ6HlQdqLFU"
+            ],
+            [
+                "sd_pLxupwq1w6WKeC1B"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "apis",
+        "generated": true
+    }
+]

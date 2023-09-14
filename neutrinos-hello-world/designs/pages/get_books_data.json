@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_VgyYgLCicrj8VySM",
+        "type": "tab",
+        "createdDate": "2023-08-04T11:18:00.292Z",
+        "label": "get_books_data",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "get_books_dataComponent"
+    },
+    {
+        "id": "sd_LmzFun89NmzDUBkz",
+        "type": "OnInit",
+        "z": "sd_VgyYgLCicrj8VySM",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_LmzFun89NmzDUBkz",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_FXES7rPPuGqEOw6K"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "get_books_dataComponent"
+    },
+    {
+        "id": "sd_FXES7rPPuGqEOw6K",
+        "type": "PageVariables",
+        "z": "sd_VgyYgLCicrj8VySM",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_FXES7rPPuGqEOw6K",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "get_books_dataComponent",
+        "generated": true
+    }
+]

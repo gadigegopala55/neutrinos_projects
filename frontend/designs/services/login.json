@@ -1,0 +1,156 @@
+[
+    {
+        "id": "sd_tDWsJ0c91cmg11dV",
+        "type": "tab",
+        "createdDate": "2023-07-15T12:14:21.673Z",
+        "label": "login",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "login",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_jc9NxSKPJRZ7Ow9m",
+        "type": "Start",
+        "z": "sd_tDWsJ0c91cmg11dV",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "login",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "username",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "password",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "response",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "login",
+        "category": "General",
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "sd_UtLJorbmAT1TlSu1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "login"
+    },
+    {
+        "id": "sd_UtLJorbmAT1TlSu1",
+        "type": "Script",
+        "z": "sd_tDWsJ0c91cmg11dV",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = `http://localhost:8081/api/login`\n\nbh.body = {\n    'username' : bh.input.username,\n    'password' : bh.input.password\n}\n\nconsole.log(bh.body);",
+        "functionName": "sd_UtLJorbmAT1TlSu1",
+        "category": "Function",
+        "x": 225,
+        "y": 100,
+        "wires": [
+            [
+                "sd_06kpHSjV3jt8TtgT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_06kpHSjV3jt8TtgT",
+        "type": "HttpRequest",
+        "z": "sd_tDWsJ0c91cmg11dV",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.body",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "body"
+        },
+        "resultMapping": "bh.response",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "response"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_06kpHSjV3jt8TtgT",
+        "category": "HTTP",
+        "x": 365,
+        "y": 100,
+        "wires": [
+            [
+                "sd_nGSuMeDrzLrNUYO9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    },
+    {
+        "id": "sd_nGSuMeDrzLrNUYO9",
+        "type": "Script",
+        "z": "sd_tDWsJ0c91cmg11dV",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.response);",
+        "functionName": "sd_nGSuMeDrzLrNUYO9",
+        "category": "Function",
+        "x": 505,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "login",
+        "generated": true
+    }
+]

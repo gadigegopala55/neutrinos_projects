@@ -1,0 +1,143 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_6WL2tzDdas9WT4tZ",
+        "type": "tab",
+        "createdDate": "2023-06-21T11:05:46.795Z",
+        "label": "random_number",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "random_number",
+        "relativeParentPath": "Random"
+    },
+    {
+        "id": "sd_iYeKf0tW8KSnlqsY",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_6WL2tzDdas9WT4tZ",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "RandomNumber",
+        "path": "random",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": "",
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 220,
+        "y": 160,
+        "wires": [
+            [
+                "sd_kTEetuJsuB5TAtSC"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "random_number",
+        "functionName": "sd_iYeKf0tW8KSnlqsY"
+    },
+    {
+        "id": "sd_TW2VJH00awHFnV4X",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_6WL2tzDdas9WT4tZ",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_TW2VJH00awHFnV4X",
+        "category": "HTTP",
+        "x": 565,
+        "y": 160,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "random_number",
+        "generated": true
+    },
+    {
+        "id": "sd_kTEetuJsuB5TAtSC",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_6WL2tzDdas9WT4tZ",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "let number = Math.round((Math.random() * 1000) + 1);\nbh.result = {\"number\": number};\nconsole.log(bh.result);",
+        "functionName": "sd_kTEetuJsuB5TAtSC",
+        "category": "Function",
+        "x": 385,
+        "y": 160,
+        "wires": [
+            [
+                "sd_TW2VJH00awHFnV4X"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "random_number",
+        "generated": true
+    }
+]
